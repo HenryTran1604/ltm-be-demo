@@ -1,0 +1,998 @@
+2024-07-06 17:09:10 - Starting BeApplication using Java 21.0.1 with PID 97480 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 17:09:10 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 17:09:14 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 17:09:14 - Starting service [Tomcat]
+2024-07-06 17:09:14 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 17:09:14 - Initializing Spring embedded WebApplicationContext
+2024-07-06 17:09:15 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 17:09:15 - Started BeApplication in 6.07 seconds (process running for 7.542)
+2024-07-06 17:11:38 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 17:12:33 - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'multipart/form-data;boundary=--------------------------486353023353694852373182;charset=UTF-8' is not supported]
+2024-07-06 17:16:00 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: uid is marked non-null but is null] with root cause
+java.lang.NullPointerException: uid is marked non-null but is null
+	at com.ltm.be.entity.UserEntity.setUid(UserEntity.java:12)
+	at com.ltm.be.converter.UserConverter.toEntity(UserConverter.java:12)
+	at com.ltm.be.service.impl.UserServiceImpl.addUser(UserServiceImpl.java:21)
+	at com.ltm.be.controller.UserController.addUser(UserController.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-07-06 17:16:54 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at java.base/java.io.File.<init>(File.java:278)
+	at com.ltm.be.dao.UserDAO.readUsersFromFile(UserDAO.java:48)
+	at com.ltm.be.dao.UserDAO.saveUser(UserDAO.java:17)
+	at com.ltm.be.service.impl.UserServiceImpl.addUser(UserServiceImpl.java:22)
+	at com.ltm.be.controller.UserController.addUser(UserController.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-07-06 17:18:17 - Starting BeApplication using Java 21.0.1 with PID 42628 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 17:18:17 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 17:18:21 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 17:18:21 - Starting service [Tomcat]
+2024-07-06 17:18:21 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 17:18:21 - Initializing Spring embedded WebApplicationContext
+2024-07-06 17:18:22 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 17:18:22 - Started BeApplication in 6.066 seconds (process running for 7.64)
+2024-07-06 17:18:28 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 17:18:28 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at java.base/java.io.File.<init>(File.java:278)
+	at com.ltm.be.dao.UserDAO.readUsersFromFile(UserDAO.java:48)
+	at com.ltm.be.dao.UserDAO.saveUser(UserDAO.java:17)
+	at com.ltm.be.service.impl.UserServiceImpl.addUser(UserServiceImpl.java:22)
+	at com.ltm.be.controller.UserController.addUser(UserController.java:24)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-07-06 17:19:51 - Starting BeApplication using Java 21.0.1 with PID 108588 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 17:19:51 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 17:19:54 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 17:19:54 - Starting service [Tomcat]
+2024-07-06 17:19:54 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 17:19:54 - Initializing Spring embedded WebApplicationContext
+2024-07-06 17:19:55 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 17:19:56 - Started BeApplication in 5.677 seconds (process running for 6.885)
+2024-07-06 17:20:15 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 17:21:29 - Starting BeApplication using Java 21.0.1 with PID 131200 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 17:21:29 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 17:21:32 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 17:21:32 - Starting service [Tomcat]
+2024-07-06 17:21:32 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 17:21:32 - Initializing Spring embedded WebApplicationContext
+2024-07-06 17:21:33 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 17:21:33 - Started BeApplication in 4.378 seconds (process running for 5.591)
+2024-07-06 17:21:37 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 17:22:02 - Starting BeApplication using Java 21.0.1 with PID 5128 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 17:22:02 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 17:22:05 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 17:22:05 - Starting service [Tomcat]
+2024-07-06 17:22:05 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 17:22:05 - Initializing Spring embedded WebApplicationContext
+2024-07-06 17:22:06 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 17:22:06 - Started BeApplication in 4.666 seconds (process running for 5.913)
+2024-07-06 17:22:09 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 17:28:21 - Starting BeApplication using Java 21.0.1 with PID 72124 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 17:28:21 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 17:28:24 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 17:28:24 - Starting service [Tomcat]
+2024-07-06 17:28:24 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 17:28:24 - Initializing Spring embedded WebApplicationContext
+2024-07-06 17:28:25 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 17:28:25 - Started BeApplication in 4.218 seconds (process running for 5.402)
+2024-07-06 17:28:28 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 17:30:02 - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "7/3/2024 10:57:59 AM": not a valid representation (error: Failed to parse Date value '7/3/2024 10:57:59 AM': Cannot parse date "7/3/2024 10:57:59 AM": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))]
+2024-07-06 17:30:12 - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "7/3/2024 10:57:59": not a valid representation (error: Failed to parse Date value '7/3/2024 10:57:59': Cannot parse date "7/3/2024 10:57:59": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))]
+2024-07-06 17:30:16 - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "7/3/2024": not a valid representation (error: Failed to parse Date value '7/3/2024': Cannot parse date "7/3/2024": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))]
+2024-07-06 20:40:07 - Starting BeApplication using Java 21.0.1 with PID 115104 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 20:40:07 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 20:40:10 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 20:40:10 - Starting service [Tomcat]
+2024-07-06 20:40:10 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 20:40:10 - Initializing Spring embedded WebApplicationContext
+2024-07-06 20:40:11 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 20:40:11 - Started BeApplication in 4.344 seconds (process running for 5.876)
+2024-07-06 20:40:19 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 20:40:55 - Starting BeApplication using Java 21.0.1 with PID 15624 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 20:40:55 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 20:40:57 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 20:40:57 - Starting service [Tomcat]
+2024-07-06 20:40:57 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 20:40:57 - Initializing Spring embedded WebApplicationContext
+2024-07-06 20:40:58 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 20:40:58 - Started BeApplication in 3.71 seconds (process running for 4.861)
+2024-07-06 20:41:03 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 20:42:24 - Starting BeApplication using Java 21.0.1 with PID 32424 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 20:42:24 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 20:42:27 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 20:42:27 - Starting service [Tomcat]
+2024-07-06 20:42:27 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 20:42:27 - Initializing Spring embedded WebApplicationContext
+2024-07-06 20:42:29 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 20:42:29 - Started BeApplication in 5.752 seconds (process running for 7.344)
+2024-07-06 20:42:37 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 20:42:59 - Starting BeApplication using Java 21.0.1 with PID 134072 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 20:42:59 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 20:43:01 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 20:43:01 - Starting service [Tomcat]
+2024-07-06 20:43:01 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 20:43:01 - Initializing Spring embedded WebApplicationContext
+2024-07-06 20:43:02 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 20:43:02 - Started BeApplication in 4.016 seconds (process running for 5.18)
+2024-07-06 20:43:06 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 20:43:30 - Resolved [java.lang.NullPointerException: id is marked non-null but is null]
+2024-07-06 21:16:36 - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'text/plain;charset=UTF-8' is not supported]
+2024-07-06 21:16:42 - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'text/plain;charset=UTF-8' is not supported]
+2024-07-06 21:18:49 - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.ltm.be.dto.UserDto` from Array value (token `JsonToken.START_ARRAY`)]
+2024-07-06 21:20:20 - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.ltm.be.dto.UserDto` from Array value (token `JsonToken.START_ARRAY`)]
+2024-07-06 21:24:04 - Resolved [java.lang.NullPointerException: id is marked non-null but is null]
+2024-07-06 21:24:32 - Resolved [java.lang.NullPointerException: id is marked non-null but is null]
+2024-07-06 21:25:25 - Starting BeApplication using Java 21.0.1 with PID 60428 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 21:25:25 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 21:25:28 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 21:25:28 - Starting service [Tomcat]
+2024-07-06 21:25:28 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 21:25:28 - Initializing Spring embedded WebApplicationContext
+2024-07-06 21:25:30 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 21:25:30 - Started BeApplication in 6.804 seconds (process running for 8.018)
+2024-07-06 21:26:21 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 21:34:17 - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'text/plain;charset=UTF-8' is not supported]
+2024-07-06 21:52:34 - Starting BeApplication using Java 21.0.1 with PID 60264 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 21:52:34 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 21:52:37 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 21:52:37 - Starting service [Tomcat]
+2024-07-06 21:52:37 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 21:52:37 - Initializing Spring embedded WebApplicationContext
+2024-07-06 21:52:38 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 21:52:38 - Started BeApplication in 5.03 seconds (process running for 6.279)
+2024-07-06 21:52:54 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 21:54:03 - Starting BeApplication using Java 21.0.1 with PID 113204 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 21:54:03 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 21:54:06 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 21:54:06 - Starting service [Tomcat]
+2024-07-06 21:54:06 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 21:54:06 - Initializing Spring embedded WebApplicationContext
+2024-07-06 21:54:07 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 21:54:07 - Started BeApplication in 4.1 seconds (process running for 5.4)
+2024-07-06 21:54:52 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 22:26:24 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:26:24 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:26:27 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:26:27 - Starting service [Tomcat]
+2024-07-06 22:26:27 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:26:27 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:26:28 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:26:28 - Started BeApplication in 5.117 seconds (process running for 6.445)
+2024-07-06 22:26:28 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 22:35:41 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:35:41 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:35:41 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:35:42 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:35:42 - Starting service [Tomcat]
+2024-07-06 22:35:42 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:35:42 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:35:42 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'beApplication': Post-processing of merged bean definition failed
+2024-07-06 22:35:42 - Stopping service [Tomcat]
+2024-07-06 22:35:42 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'beApplication': Post-processing of merged bean definition failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:577)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.ltm.be.BeApplication.main(BeApplication.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ltm.be.BeApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@76ed5528]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:757)
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:689)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.buildResourceMetadata(CommonAnnotationBeanPostProcessor.java:431)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:412)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:312)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1085)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:574)
+	... 18 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/ltm/be/tcpserver/TCPServer
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:752)
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.ltm.be.tcpserver.TCPServer
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 28 common frames omitted
+2024-07-06 22:35:47 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:35:47 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:35:48 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:35:48 - Starting service [Tomcat]
+2024-07-06 22:35:48 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:35:48 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:35:48 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'beApplication': Unsatisfied dependency expressed through field 'tcpServer': Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'webSocketService': No qualifying bean of type 'com.ltm.be.service.ILogService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-07-06 22:35:48 - Stopping service [Tomcat]
+2024-07-06 22:35:48 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field webSocketService in com.ltm.be.tcpserver.ClientHandlerFactory required a bean of type 'com.ltm.be.service.ILogService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.ltm.be.service.ILogService' in your configuration.
+
+2024-07-06 22:35:54 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:35:54 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:35:54 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:35:54 - Starting service [Tomcat]
+2024-07-06 22:35:54 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:35:54 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:35:54 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'beApplication': Post-processing of merged bean definition failed
+2024-07-06 22:35:54 - Stopping service [Tomcat]
+2024-07-06 22:35:54 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'beApplication': Post-processing of merged bean definition failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:577)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.ltm.be.BeApplication.main(BeApplication.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ltm.be.BeApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@76ed5528]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:757)
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:689)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.buildResourceMetadata(CommonAnnotationBeanPostProcessor.java:431)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:412)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:312)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1085)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:574)
+	... 18 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/ltm/be/tcpserver/TCPServer
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:752)
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.ltm.be.tcpserver.TCPServer
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 28 common frames omitted
+2024-07-06 22:35:58 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:35:58 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:35:59 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:35:59 - Starting service [Tomcat]
+2024-07-06 22:35:59 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:35:59 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:35:59 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'beApplication': Unsatisfied dependency expressed through field 'tcpServer': Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'webSocketService': No qualifying bean of type 'com.ltm.be.service.ILogService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-07-06 22:35:59 - Stopping service [Tomcat]
+2024-07-06 22:35:59 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field webSocketService in com.ltm.be.tcpserver.ClientHandlerFactory required a bean of type 'com.ltm.be.service.ILogService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.ltm.be.service.ILogService' in your configuration.
+
+2024-07-06 22:36:30 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:36:30 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:36:31 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:36:31 - Starting service [Tomcat]
+2024-07-06 22:36:31 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:36:31 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:36:31 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'beApplication': Post-processing of merged bean definition failed
+2024-07-06 22:36:31 - Stopping service [Tomcat]
+2024-07-06 22:36:31 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'beApplication': Post-processing of merged bean definition failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:577)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.ltm.be.BeApplication.main(BeApplication.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ltm.be.BeApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@76ed5528]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:757)
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:689)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.buildResourceMetadata(CommonAnnotationBeanPostProcessor.java:431)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:412)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:312)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1085)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:574)
+	... 18 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/ltm/be/tcpserver/TCPServer
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:752)
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.ltm.be.tcpserver.TCPServer
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 28 common frames omitted
+2024-07-06 22:36:36 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:36:36 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:36:36 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:36:36 - Starting service [Tomcat]
+2024-07-06 22:36:36 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:36:36 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:36:36 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'beApplication': Unsatisfied dependency expressed through field 'tcpServer': Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'webSocketService': No qualifying bean of type 'com.ltm.be.service.ILogService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-07-06 22:36:36 - Stopping service [Tomcat]
+2024-07-06 22:36:36 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field webSocketService in com.ltm.be.tcpserver.ClientHandlerFactory required a bean of type 'com.ltm.be.service.ILogService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.ltm.be.service.ILogService' in your configuration.
+
+2024-07-06 22:36:41 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:36:41 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:36:42 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:36:42 - Starting service [Tomcat]
+2024-07-06 22:36:42 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:36:42 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:36:42 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'beApplication': Post-processing of merged bean definition failed
+2024-07-06 22:36:42 - Stopping service [Tomcat]
+2024-07-06 22:36:42 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'beApplication': Post-processing of merged bean definition failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:577)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.ltm.be.BeApplication.main(BeApplication.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ltm.be.BeApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@76ed5528]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:757)
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:689)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.buildResourceMetadata(CommonAnnotationBeanPostProcessor.java:431)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:412)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:312)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1085)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:574)
+	... 18 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/ltm/be/tcpserver/TCPServer
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:752)
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.ltm.be.tcpserver.TCPServer
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 28 common frames omitted
+2024-07-06 22:36:47 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:36:47 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:36:48 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:36:48 - Starting service [Tomcat]
+2024-07-06 22:36:48 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:36:48 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:36:48 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:36:48 - Started BeApplication in 1.523 seconds (process running for 626.484)
+2024-07-06 22:37:28 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:37:28 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:37:28 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:37:29 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:37:29 - Starting service [Tomcat]
+2024-07-06 22:37:29 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:37:29 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:37:29 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService': Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'userDAO': Error creating bean with name 'userDAO': Lookup method resolution failed
+2024-07-06 22:37:29 - Stopping service [Tomcat]
+2024-07-06 22:37:29 - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService': Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'userDAO': Error creating bean with name 'userDAO': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1421)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.ltm.be.BeApplication.main(BeApplication.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'userDAO': Error creating bean with name 'userDAO': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1421)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	... 23 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userDAO': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:497)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:367)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1296)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	... 37 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ltm.be.dao.UserDAO] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@8017815]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:475)
+	... 50 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/ltm/be/entity/UserEntity
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 52 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.ltm.be.entity.UserEntity
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:534)
+	at java.base/java.lang.Class.forName(Class.java:513)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 56 common frames omitted
+2024-07-06 22:37:31 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:37:31 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:37:32 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:37:32 - Starting service [Tomcat]
+2024-07-06 22:37:32 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:37:32 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:37:32 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService': Error creating bean with name 'userServiceImpl' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\service\impl\UserServiceImpl.class]: Post-processing of merged bean definition failed
+2024-07-06 22:37:32 - Stopping service [Tomcat]
+2024-07-06 22:37:32 - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService': Error creating bean with name 'userServiceImpl' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\service\impl\UserServiceImpl.class]: Post-processing of merged bean definition failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1421)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.ltm.be.BeApplication.main(BeApplication.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\service\impl\UserServiceImpl.class]: Post-processing of merged bean definition failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:577)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	... 23 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ltm.be.service.impl.UserServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@13443b38]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:757)
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:689)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.buildResourceMetadata(CommonAnnotationBeanPostProcessor.java:431)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:412)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:312)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1085)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:574)
+	... 32 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/ltm/be/converter/UserConverter
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:752)
+	... 38 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.ltm.be.converter.UserConverter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:534)
+	at java.base/java.lang.Class.forName(Class.java:513)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 42 common frames omitted
+2024-07-06 22:37:47 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:37:47 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:37:47 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:37:47 - Starting service [Tomcat]
+2024-07-06 22:37:47 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:37:47 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:37:47 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Lookup method resolution failed
+2024-07-06 22:37:47 - Stopping service [Tomcat]
+2024-07-06 22:37:47 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:497)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:367)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1296)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.ltm.be.BeApplication.main(BeApplication.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ltm.be.controller.UserController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@39c3967c]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:475)
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/ltm/be/dto/UserDto
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.ltm.be.dto.UserDto
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:534)
+	at java.base/java.lang.Class.forName(Class.java:513)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 28 common frames omitted
+2024-07-06 22:37:50 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:37:50 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:37:50 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:37:50 - Starting service [Tomcat]
+2024-07-06 22:37:50 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:37:50 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:37:50 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:37:50 - Started BeApplication in 0.559 seconds (process running for 688.519)
+2024-07-06 22:38:03 - Starting BeApplication using Java 21.0.1 with PID 138392 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:38:03 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:38:05 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:38:05 - Starting service [Tomcat]
+2024-07-06 22:38:05 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:38:05 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:38:06 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:38:06 - Started BeApplication in 3.791 seconds (process running for 4.947)
+2024-07-06 22:38:26 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 22:40:36 - Starting BeApplication using Java 21.0.1 with PID 78760 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 22:40:36 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 22:40:38 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:40:38 - Starting service [Tomcat]
+2024-07-06 22:40:38 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 22:40:38 - Initializing Spring embedded WebApplicationContext
+2024-07-06 22:40:39 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 22:40:39 - Started BeApplication in 3.854 seconds (process running for 5.118)
+2024-07-06 22:40:55 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 23:53:56 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-07-06 23:53:56 - Starting BeApplication using Java 21.0.1 with PID 78760 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 23:53:56 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 23:53:57 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 23:53:57 - Starting service [Tomcat]
+2024-07-06 23:53:57 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 23:53:57 - Initializing Spring embedded WebApplicationContext
+2024-07-06 23:53:57 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userConverter': Lookup method resolution failed
+2024-07-06 23:53:57 - Stopping service [Tomcat]
+2024-07-06 23:53:57 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userConverter': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:497)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:367)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1296)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.ltm.be.BeApplication.main(BeApplication.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ltm.be.converter.UserConverter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@9abc07d]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:475)
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/ltm/be/dto/UserDto
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.ltm.be.dto.UserDto
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:534)
+	at java.base/java.lang.Class.forName(Class.java:513)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 28 common frames omitted
+2024-07-06 23:54:00 - Starting BeApplication using Java 21.0.1 with PID 78760 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 23:54:00 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 23:54:01 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 23:54:01 - Starting service [Tomcat]
+2024-07-06 23:54:01 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 23:54:01 - Initializing Spring embedded WebApplicationContext
+2024-07-06 23:54:01 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService': Error creating bean with name 'userServiceImpl' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\service\impl\UserServiceImpl.class]: Post-processing of merged bean definition failed
+2024-07-06 23:54:01 - Stopping service [Tomcat]
+2024-07-06 23:54:01 - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService': Error creating bean with name 'userServiceImpl' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\service\impl\UserServiceImpl.class]: Post-processing of merged bean definition failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1421)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.ltm.be.BeApplication.main(BeApplication.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\service\impl\UserServiceImpl.class]: Post-processing of merged bean definition failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:577)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	... 23 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ltm.be.service.impl.UserServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@3976284e]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:757)
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:689)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.buildResourceMetadata(CommonAnnotationBeanPostProcessor.java:431)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:412)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:312)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1085)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:574)
+	... 32 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/ltm/be/converter/UserConverter
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:752)
+	... 38 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.ltm.be.converter.UserConverter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:534)
+	at java.base/java.lang.Class.forName(Class.java:513)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 42 common frames omitted
+2024-07-06 23:54:03 - Starting BeApplication using Java 21.0.1 with PID 78760 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 23:54:03 - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 23:54:03 - IP: 127.0.0.1 reach limit 10 request per SECONDS -> Denied, Wait for 10 SECONDS
+
+2024-07-06 23:54:03 - 127.0.0.1 connected!
+2024-07-06 23:54:03 - 127.0.0.1 connected!
+2024-07-06 23:54:03 - 127.0.0.1 connected!
+2024-07-06 23:54:03 - 127.0.0.1 connected!
+2024-07-06 23:54:03 - 127.0.0.1 connected!
+2024-07-06 23:54:03 - 127.0.0.1 connected!
+2024-07-06 23:54:03 - 127.0.0.1 connected!
+2024-07-06 23:54:03 - 127.0.0.1 connected!
+2024-07-06 23:54:03 - 127.0.0.1 connected!
+2024-07-06 23:54:03 - 127.0.0.1 connected!
+2024-07-06 23:54:03 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-06 23:54:03 - Starting service [Tomcat]
+2024-07-06 23:54:03 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-06 23:54:03 - Initializing Spring embedded WebApplicationContext
+2024-07-06 23:54:04 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-06 23:54:04 - Started BeApplication in 1.215 seconds (process running for 4409.474)
+2024-07-06 23:54:10 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-06 23:54:16 - 127.0.0.1 connected!
+2024-07-06 23:54:16 - 127.0.0.1 connected!
+2024-07-06 23:54:16 - 127.0.0.1 connected!
+2024-07-06 23:54:16 - 127.0.0.1 connected!
+2024-07-06 23:54:16 - 127.0.0.1 connected!
+2024-07-06 23:54:16 - 127.0.0.1 connected!
+2024-07-06 23:54:16 - 127.0.0.1 connected!
+2024-07-06 23:54:16 - 127.0.0.1 connected!
+2024-07-06 23:54:16 - 127.0.0.1 connected!
+2024-07-06 23:54:16 - IP: 127.0.0.1 reach limit 10 request per SECONDS -> Denied, Wait for 10 SECONDS
+
+2024-07-06 23:54:16 - 127.0.0.1 connected!
+2024-07-06 23:54:48 - 127.0.0.1 connected!
+2024-07-06 23:54:48 - 127.0.0.1 connected!
+2024-07-06 23:54:48 - 127.0.0.1 connected!
+2024-07-06 23:54:48 - 127.0.0.1 connected!
+2024-07-06 23:54:48 - 127.0.0.1 connected!
+2024-07-06 23:54:48 - 127.0.0.1 connected!
+2024-07-06 23:54:48 - 127.0.0.1 connected!
+2024-07-06 23:54:48 - 127.0.0.1 connected!
+2024-07-06 23:54:48 - 127.0.0.1 connected!
+2024-07-06 23:54:48 - 127.0.0.1 connected!
+2024-07-06 23:54:48 - IP: 127.0.0.1 reach limit 10 request per SECONDS -> Denied, Wait for 10 SECONDS
+
+2024-07-06 23:59:59 - Starting BeApplication using Java 21.0.1 with PID 23648 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-06 23:59:59 - No active profile set, falling back to 1 default profile: "default"
