@@ -23,3 +23,107 @@
 2024-07-07 14:56:22 - /127.0.0.1 51161: B20DCmt123: question: 16|27|19|18 server answer: 81, client answer: 80, status: false
 2024-07-07 14:56:23 - 127.0.0.1 connected!
 2024-07-07 14:56:23 - /127.0.0.1 51163: B20DCmt123: question: 16|27|19|18 server answer: 81, client answer: 80, status: false
+2024-07-07 16:05:02 - Starting BeApplication using Java 21.0.1 with PID 788 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-07 16:05:02 - No active profile set, falling back to 1 default profile: "default"
+2024-07-07 16:05:04 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-07 16:05:04 - Starting service [Tomcat]
+2024-07-07 16:05:04 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-07 16:05:04 - Initializing Spring embedded WebApplicationContext
+2024-07-07 16:05:05 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'beApplication': Unsatisfied dependency expressed through field 'tcpServer': Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'userDAO': Error creating bean with name 'userDAO' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\dao\UserDAO.class]: Failed to instantiate [com.ltm.be.dao.UserDAO]: Constructor threw exception
+2024-07-07 16:05:05 - Stopping service [Tomcat]
+2024-07-07 16:05:05 - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'beApplication': Unsatisfied dependency expressed through field 'tcpServer': Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'userDAO': Error creating bean with name 'userDAO' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\dao\UserDAO.class]: Failed to instantiate [com.ltm.be.dao.UserDAO]: Constructor threw exception
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1421)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.ltm.be.BeApplication.main(BeApplication.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'userDAO': Error creating bean with name 'userDAO' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\dao\UserDAO.class]: Failed to instantiate [com.ltm.be.dao.UserDAO]: Constructor threw exception
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1421)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	... 23 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'userDAO': Error creating bean with name 'userDAO' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\dao\UserDAO.class]: Failed to instantiate [com.ltm.be.dao.UserDAO]: Constructor threw exception
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1421)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	... 37 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userDAO' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\dao\UserDAO.class]: Failed to instantiate [com.ltm.be.dao.UserDAO]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1319)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	... 51 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.ltm.be.dao.UserDAO]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:221)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:88)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1313)
+	... 62 common frames omitted
+Caused by: java.lang.NullPointerException: Cannot invoke "com.ltm.be.config.StorageProperties.getUsersLocation()" because "this.storageProperties" is null
+	at com.ltm.be.dao.DAO.<init>(DAO.java:16)
+	at com.ltm.be.dao.UserDAO.<init>(UserDAO.java:17)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:195)
+	... 64 common frames omitted
+2024-07-07 16:07:09 - Starting BeApplication using Java 21.0.1 with PID 138212 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-07 16:07:09 - No active profile set, falling back to 1 default profile: "default"
+2024-07-07 16:07:11 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-07 16:07:11 - Starting service [Tomcat]
+2024-07-07 16:07:11 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-07 16:07:12 - Initializing Spring embedded WebApplicationContext
+2024-07-07 16:07:12 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-07 16:07:12 - Started BeApplication in 3.851 seconds (process running for 4.998)
+2024-07-07 16:07:19 - Initializing Spring DispatcherServlet 'dispatcherServlet'

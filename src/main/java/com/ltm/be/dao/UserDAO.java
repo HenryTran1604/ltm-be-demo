@@ -2,17 +2,25 @@ package com.ltm.be.dao;
 
 import com.ltm.be.config.StorageProperties;
 import com.ltm.be.entity.UserEntity;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 @Component
-public class UserDAO extends DAO{
+@NoArgsConstructor
+public class UserDAO{
+    @Autowired
+    private ResourceLoader resourceLoader;
+    @Autowired
+    protected StorageProperties storageProperties;
 
-    public UserDAO(StorageProperties storageProperties) {
-        super(storageProperties);
-    }
     public UserEntity saveUser(UserEntity userEntity) {
         List<UserEntity> UserEntities = readUsersFromFile();
         UserEntities.add(userEntity);
@@ -47,7 +55,7 @@ public class UserDAO extends DAO{
     }
 
     private void writeUsersToFile(List<UserEntity> UserEntities) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(this.usersPath))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(this.storageProperties.getUsersLocation()))) {
             oos.writeObject(UserEntities);
         } catch (IOException e) {
             e.printStackTrace();
@@ -55,15 +63,17 @@ public class UserDAO extends DAO{
     }
 
     private List<UserEntity> readUsersFromFile() {
-        File file = new File(this.usersPath);
-        if (!file.exists()) {
+        Resource usersResource = resourceLoader.getResource(this.storageProperties.getUsersLocation());
+
+        if (!usersResource.exists()) {
             return new ArrayList<>();
         }
 
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(this.usersPath))) {
+        try (InputStream is = usersResource.getInputStream();
+             ObjectInputStream ois = new ObjectInputStream(is)) {
             return (List<UserEntity>) ois.readObject();
         } catch (Exception e) {
-//            e.printStackTrace();
+            e.printStackTrace();
         }
         return new ArrayList<>();
     }
