@@ -23,7 +23,7 @@ public class UserDAO extends DAO{
     public UserEntity getUserById(String id) {
         List<UserEntity> users = getAllUsers();
         for(UserEntity user : users) {
-            if(user.getId().equals(id)) {
+            if(user.getId().equalsIgnoreCase(id)) {
                 return user;
             }
         }

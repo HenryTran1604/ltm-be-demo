@@ -1,55 +1,25 @@
-2024-07-07 00:00:01 - Initializing ProtocolHandler ["http-nio-8080"]
-2024-07-07 00:00:01 - Starting service [Tomcat]
-2024-07-07 00:00:01 - Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-07 00:00:01 - Initializing Spring embedded WebApplicationContext
-2024-07-07 00:00:02 - Starting ProtocolHandler ["http-nio-8080"]
-2024-07-07 00:00:02 - Started BeApplication in 4.355 seconds (process running for 5.523)
-2024-07-07 00:02:16 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-07 00:02:33 - IP: 127.0.0.1 reach limit 10 request per SECONDS -> Denied, Wait for 10 SECONDS
-
-2024-07-07 00:02:33 - 127.0.0.1 connected!
-2024-07-07 00:02:33 - 127.0.0.1 connected!
-2024-07-07 00:02:33 - 127.0.0.1 connected!
-2024-07-07 00:02:33 - 127.0.0.1 connected!
-2024-07-07 00:02:33 - 127.0.0.1 connected!
-2024-07-07 00:02:33 - 127.0.0.1 connected!
-2024-07-07 00:02:33 - 127.0.0.1 connected!
-2024-07-07 00:02:33 - 127.0.0.1 connected!
-2024-07-07 00:02:33 - 127.0.0.1 connected!
-2024-07-07 00:02:33 - 127.0.0.1 connected!
-2024-07-07 00:04:31 - 127.0.0.1 connected!
-2024-07-07 00:04:31 - 127.0.0.1 connected!
-2024-07-07 00:04:31 - 127.0.0.1 connected!
-2024-07-07 00:04:31 - 127.0.0.1 connected!
-2024-07-07 00:04:31 - 127.0.0.1 connected!
-2024-07-07 00:04:31 - 127.0.0.1 connected!
-2024-07-07 00:04:31 - 127.0.0.1 connected!
-2024-07-07 00:04:31 - 127.0.0.1 connected!
-2024-07-07 00:04:31 - 127.0.0.1 connected!
-2024-07-07 00:04:31 - 127.0.0.1 connected!
-2024-07-07 00:04:31 - IP: 127.0.0.1 reach limit 10 request per SECONDS -> Denied, Wait for 10 SECONDS
-
-2024-07-07 00:04:50 - 127.0.0.1 connected!
-2024-07-07 00:04:50 - 127.0.0.1 connected!
-2024-07-07 00:04:50 - 127.0.0.1 connected!
-2024-07-07 00:04:50 - 127.0.0.1 connected!
-2024-07-07 00:04:50 - 127.0.0.1 connected!
-2024-07-07 00:04:50 - 127.0.0.1 connected!
-2024-07-07 00:04:50 - 127.0.0.1 connected!
-2024-07-07 00:04:50 - 127.0.0.1 connected!
-2024-07-07 00:04:50 - 127.0.0.1 connected!
-2024-07-07 00:04:50 - 127.0.0.1 connected!
-2024-07-07 00:04:50 - IP: 127.0.0.1 reach limit 10 request per SECONDS -> Denied, Wait for 10 SECONDS
-
-2024-07-07 00:08:48 - 127.0.0.1 connected!
-2024-07-07 00:08:48 - 127.0.0.1 connected!
-2024-07-07 00:08:48 - 127.0.0.1 connected!
-2024-07-07 00:08:48 - 127.0.0.1 connected!
-2024-07-07 00:08:48 - 127.0.0.1 connected!
-2024-07-07 00:08:48 - 127.0.0.1 connected!
-2024-07-07 00:08:48 - 127.0.0.1 connected!
-2024-07-07 00:08:48 - 127.0.0.1 connected!
-2024-07-07 00:08:48 - 127.0.0.1 connected!
-2024-07-07 00:08:48 - 127.0.0.1 connected!
-2024-07-07 00:08:48 - IP: 127.0.0.1 reach limit 10 request per SECONDS -> Denied, Wait for 10 SECONDS
-
+2024-07-07 14:50:53 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-07 14:50:56 - 127.0.0.1 connected!
+2024-07-07 14:50:56 - /127.0.0.1 50913: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
+2024-07-07 14:54:20 - 127.0.0.1 connected!
+2024-07-07 14:54:20 - /127.0.0.1 51058: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
+2024-07-07 14:54:22 - 127.0.0.1 connected!
+2024-07-07 14:54:22 - /127.0.0.1 51059: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
+2024-07-07 14:54:23 - 127.0.0.1 connected!
+2024-07-07 14:54:23 - /127.0.0.1 51061: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
+2024-07-07 14:54:23 - 127.0.0.1 connected!
+2024-07-07 14:54:23 - /127.0.0.1 51062: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
+2024-07-07 14:54:24 - 127.0.0.1 connected!
+2024-07-07 14:54:24 - /127.0.0.1 51063: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
+2024-07-07 14:54:25 - 127.0.0.1 connected!
+2024-07-07 14:54:25 - /127.0.0.1 51065: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
+2024-07-07 14:54:25 - 127.0.0.1 connected!
+2024-07-07 14:54:25 - /127.0.0.1 51066: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
+2024-07-07 14:55:23 - 127.0.0.1 connected!
+2024-07-07 14:55:23 - /127.0.0.1 51115: B20DCCN321: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
+2024-07-07 14:56:18 - 127.0.0.1 connected!
+2024-07-07 14:56:18 - /127.0.0.1 51157: B20DCmt123: question: 16|27|19|18 server answer: 81, client answer: 80, status: false
+2024-07-07 14:56:22 - 127.0.0.1 connected!
+2024-07-07 14:56:22 - /127.0.0.1 51161: B20DCmt123: question: 16|27|19|18 server answer: 81, client answer: 80, status: false
+2024-07-07 14:56:23 - 127.0.0.1 connected!
+2024-07-07 14:56:23 - /127.0.0.1 51163: B20DCmt123: question: 16|27|19|18 server answer: 81, client answer: 80, status: false

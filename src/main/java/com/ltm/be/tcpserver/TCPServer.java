@@ -20,7 +20,7 @@ public class TCPServer implements Runnable {
 
     private ServerSocket server;
     private ExecutorService pool;
-    private Set<String> blackListIP;
+//    private Set<String> blackListIP;
     private Map<String, Integer> requestCounts; // count number of request in 1 time unit
     private Map<String, Integer> remainDeniedTime;
 
@@ -31,7 +31,7 @@ public class TCPServer implements Runnable {
 
     public TCPServer() {
         this.requestCounts = new ConcurrentHashMap<>();
-        this.blackListIP = ConcurrentHashMap.newKeySet();
+//        this.blackListIP = ConcurrentHashMap.newKeySet();
         this.remainDeniedTime = new ConcurrentHashMap<>();
 
         loadBlackList();

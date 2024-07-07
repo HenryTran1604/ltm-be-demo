@@ -16,5 +16,5 @@ public class UserDto {
     private String ip;
     private LocalDateTime createdAt;
     private int score;
-    private List<ExerciseDto> exerciseList;
+    private List<UserExerciseDto> exercises;
 }

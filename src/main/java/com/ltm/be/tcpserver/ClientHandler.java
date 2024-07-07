@@ -1,6 +1,11 @@
 package com.ltm.be.tcpserver;
 
+import com.ltm.be.converter.UserConverter;
+import com.ltm.be.dao.UserDAO;
 import com.ltm.be.service.ILogService;
+import com.ltm.be.service.IScoreBoardService;
+import com.ltm.be.tcpserver.contest.Ex1;
+import com.ltm.be.tcpserver.contest.GeneralExercise;
 import org.springframework.stereotype.Component;
 
 import java.io.DataInputStream;
@@ -15,10 +20,17 @@ public class ClientHandler implements Runnable {
     private static final int TIME_OUT = 5000;
     private Socket socket;
     private ILogService logService;
+    private IScoreBoardService scoreBoardService;
+    private UserDAO userDAO;
+    private UserConverter userConverter;
     public ClientHandler(){}
-    public ClientHandler(Socket socket, ILogService logService) {
+    public ClientHandler(Socket socket, ILogService logService, IScoreBoardService scoreBoardService, UserDAO userDAO,
+                         UserConverter userConverter) {
         this.socket = socket;
         this.logService = logService;
+        this.scoreBoardService = scoreBoardService;
+        this.userDAO = userDAO;
+        this.userConverter = userConverter;
     }
 
     @Override
@@ -30,6 +42,8 @@ public class ClientHandler implements Runnable {
 
             System.out.println("Connect to " + this.socket.getInetAddress().getHostAddress());
             logService.sendLog(this.socket.getInetAddress().getHostAddress() + " connected!");
+            Ex1 ex1 = new Ex1(this.socket, this.logService, this.scoreBoardService, this.userDAO, this.userConverter);
+            ex1.run();
 
             dos.close();
             dis.close();
