@@ -10,6 +10,6 @@ public interface IUserService {
     boolean isUserExistedWithUidAndIP(UserDto userDto);
     List<UserDto> getAllUsers();
     UserDto getUserById(String id);
-    void updateUser(UserDto userDto);
+    UserDto updateUser(UserDto userDto);
     void deleteUser(UserDto userDto);
 }

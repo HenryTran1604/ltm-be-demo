@@ -49,13 +49,14 @@ public class TCPClient implements Runnable{
             String question = dis.readUTF();
             int sum = calcSum(question);
             System.out.println("question: " + question);
-            TimeUnit.SECONDS.sleep(6);
+            TimeUnit.SECONDS.sleep(0);
             // send back to server
             dos.writeInt(sum);
             dis.close();
             dos.close();
             System.out.println("---------End--------");
         } catch(IOException ex) {
+            ex.printStackTrace();
             // TODO: handle
         } catch (InterruptedException ex) {
             Logger.getLogger(TCPClient.class.getName()).log(Level.SEVERE, null, ex);
@@ -73,8 +74,8 @@ public class TCPClient implements Runnable{
             // TODO: handle
         }
     }
-    public static void main(String[] args) throws IOException, InterruptedException {
-        String studentCode = "B20DCCN320";
+    public static void main(String[] args){
+        String studentCode = "B20DCMT123";
         int questionCode = 40;
         String serverAddress = "localhost";
         int serverPort = 806;

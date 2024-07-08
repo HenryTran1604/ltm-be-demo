@@ -9,6 +9,7 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -54,9 +55,15 @@ public class UserDAO{
         throw new RuntimeException("UserEntity not found: " + updatedUserEntity.getId());
     }
 
-    private void writeUsersToFile(List<UserEntity> UserEntities) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(this.storageProperties.getUsersLocation()))) {
-            oos.writeObject(UserEntities);
+    private void writeUsersToFile(List<UserEntity> userEntities) {
+        Resource userResource = resourceLoader.getResource(this.storageProperties.getUsersLocation());
+
+        try {
+            File file = userResource.getFile();  // Chuyển đổi Resource thành File
+            try (OutputStream os = new FileOutputStream(file);
+                 ObjectOutputStream oos = new ObjectOutputStream(os)) {
+                oos.writeObject(userEntities);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

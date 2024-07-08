@@ -1,129 +1,189 @@
-2024-07-07 14:50:53 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-07 14:50:56 - 127.0.0.1 connected!
-2024-07-07 14:50:56 - /127.0.0.1 50913: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
-2024-07-07 14:54:20 - 127.0.0.1 connected!
-2024-07-07 14:54:20 - /127.0.0.1 51058: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
-2024-07-07 14:54:22 - 127.0.0.1 connected!
-2024-07-07 14:54:22 - /127.0.0.1 51059: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
-2024-07-07 14:54:23 - 127.0.0.1 connected!
-2024-07-07 14:54:23 - /127.0.0.1 51061: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
-2024-07-07 14:54:23 - 127.0.0.1 connected!
-2024-07-07 14:54:23 - /127.0.0.1 51062: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
-2024-07-07 14:54:24 - 127.0.0.1 connected!
-2024-07-07 14:54:24 - /127.0.0.1 51063: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
-2024-07-07 14:54:25 - 127.0.0.1 connected!
-2024-07-07 14:54:25 - /127.0.0.1 51065: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
-2024-07-07 14:54:25 - 127.0.0.1 connected!
-2024-07-07 14:54:25 - /127.0.0.1 51066: B20DCCN320: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
-2024-07-07 14:55:23 - 127.0.0.1 connected!
-2024-07-07 14:55:23 - /127.0.0.1 51115: B20DCCN321: question: 16|27|19|18 server answer: 80, client answer: 80, status: true
-2024-07-07 14:56:18 - 127.0.0.1 connected!
-2024-07-07 14:56:18 - /127.0.0.1 51157: B20DCmt123: question: 16|27|19|18 server answer: 81, client answer: 80, status: false
-2024-07-07 14:56:22 - 127.0.0.1 connected!
-2024-07-07 14:56:22 - /127.0.0.1 51161: B20DCmt123: question: 16|27|19|18 server answer: 81, client answer: 80, status: false
-2024-07-07 14:56:23 - 127.0.0.1 connected!
-2024-07-07 14:56:23 - /127.0.0.1 51163: B20DCmt123: question: 16|27|19|18 server answer: 81, client answer: 80, status: false
-2024-07-07 16:05:02 - Starting BeApplication using Java 21.0.1 with PID 788 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
-2024-07-07 16:05:02 - No active profile set, falling back to 1 default profile: "default"
-2024-07-07 16:05:04 - Initializing ProtocolHandler ["http-nio-8080"]
-2024-07-07 16:05:04 - Starting service [Tomcat]
-2024-07-07 16:05:04 - Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-07 16:05:04 - Initializing Spring embedded WebApplicationContext
-2024-07-07 16:05:05 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'beApplication': Unsatisfied dependency expressed through field 'tcpServer': Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'userDAO': Error creating bean with name 'userDAO' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\dao\UserDAO.class]: Failed to instantiate [com.ltm.be.dao.UserDAO]: Constructor threw exception
-2024-07-07 16:05:05 - Stopping service [Tomcat]
-2024-07-07 16:05:05 - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'beApplication': Unsatisfied dependency expressed through field 'tcpServer': Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'userDAO': Error creating bean with name 'userDAO' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\dao\UserDAO.class]: Failed to instantiate [com.ltm.be.dao.UserDAO]: Constructor threw exception
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1421)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at com.ltm.be.BeApplication.main(BeApplication.java:15)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'userDAO': Error creating bean with name 'userDAO' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\dao\UserDAO.class]: Failed to instantiate [com.ltm.be.dao.UserDAO]: Constructor threw exception
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1421)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
-	... 23 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'userDAO': Error creating bean with name 'userDAO' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\dao\UserDAO.class]: Failed to instantiate [com.ltm.be.dao.UserDAO]: Constructor threw exception
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1421)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
-	... 37 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userDAO' defined in file [C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes\com\ltm\be\dao\UserDAO.class]: Failed to instantiate [com.ltm.be.dao.UserDAO]: Constructor threw exception
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1319)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
-	... 51 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.ltm.be.dao.UserDAO]: Constructor threw exception
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:221)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:88)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1313)
-	... 62 common frames omitted
-Caused by: java.lang.NullPointerException: Cannot invoke "com.ltm.be.config.StorageProperties.getUsersLocation()" because "this.storageProperties" is null
-	at com.ltm.be.dao.DAO.<init>(DAO.java:16)
-	at com.ltm.be.dao.UserDAO.<init>(UserDAO.java:17)
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:195)
-	... 64 common frames omitted
-2024-07-07 16:07:09 - Starting BeApplication using Java 21.0.1 with PID 138212 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
-2024-07-07 16:07:09 - No active profile set, falling back to 1 default profile: "default"
-2024-07-07 16:07:11 - Initializing ProtocolHandler ["http-nio-8080"]
-2024-07-07 16:07:11 - Starting service [Tomcat]
-2024-07-07 16:07:11 - Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-07 16:07:12 - Initializing Spring embedded WebApplicationContext
-2024-07-07 16:07:12 - Starting ProtocolHandler ["http-nio-8080"]
-2024-07-07 16:07:12 - Started BeApplication in 3.851 seconds (process running for 4.998)
-2024-07-07 16:07:19 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-08 00:03:32 - 127.0.0.1 connected!
+2024-07-08 00:03:33 - /127.0.0.1 57546: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:04:06 - 127.0.0.1 connected!
+2024-07-08 00:04:06 - /127.0.0.1 57575: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:04:28 - Starting BeApplication using Java 21.0.1 with PID 108220 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:04:28 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:04:33 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:04:33 - Starting service [Tomcat]
+2024-07-08 00:04:33 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:04:33 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:04:35 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:04:35 - Started BeApplication in 8.719 seconds (process running for 10.761)
+2024-07-08 00:04:44 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-08 00:05:02 - 127.0.0.1 connected!
+2024-07-08 00:05:02 - /127.0.0.1 57623: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:09:57 - Starting BeApplication using Java 21.0.1 with PID 41968 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:09:57 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:10:02 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:10:02 - Starting service [Tomcat]
+2024-07-08 00:10:02 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:10:02 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:10:04 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:10:05 - Started BeApplication in 8.729 seconds (process running for 11.304)
+2024-07-08 00:10:26 - 127.0.0.1 connected!
+2024-07-08 00:10:26 - /127.0.0.1 57838: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:16:01 - Starting BeApplication using Java 21.0.1 with PID 129460 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:16:01 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:16:06 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:16:06 - Starting service [Tomcat]
+2024-07-08 00:16:06 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:16:06 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:16:08 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:16:08 - Started BeApplication in 8.768 seconds (process running for 10.802)
+2024-07-08 00:16:33 - 127.0.0.1 connected!
+2024-07-08 00:16:33 - /127.0.0.1 58094: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:16:34 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:16:34 - Starting BeApplication using Java 21.0.1 with PID 129460 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:16:34 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:16:36 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:16:36 - Starting service [Tomcat]
+2024-07-08 00:16:36 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:16:37 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:16:38 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:16:38 - Started BeApplication in 4.5 seconds (process running for 40.92)
+2024-07-08 00:16:46 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-08 00:17:09 - 127.0.0.1 connected!
+2024-07-08 00:17:09 - /127.0.0.1 58132: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:17:10 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:17:10 - Starting BeApplication using Java 21.0.1 with PID 129460 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:17:10 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:17:12 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:17:12 - Starting service [Tomcat]
+2024-07-08 00:17:12 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:17:12 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:17:14 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:17:14 - Started BeApplication in 4.134 seconds (process running for 76.5)
+2024-07-08 00:17:21 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-08 00:24:27 - Starting BeApplication using Java 21.0.1 with PID 49276 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:24:27 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:24:34 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:24:34 - Starting service [Tomcat]
+2024-07-08 00:24:34 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:24:34 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:24:37 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:24:37 - Started BeApplication in 11.368 seconds (process running for 14.476)
+2024-07-08 00:24:56 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-08 00:27:24 - 127.0.0.1 connected!
+2024-07-08 00:27:24 - /127.0.0.1 58537: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:27:25 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:27:26 - Starting BeApplication using Java 21.0.1 with PID 49276 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:27:26 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:27:28 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:27:28 - Starting service [Tomcat]
+2024-07-08 00:27:28 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:27:29 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:27:29 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:27:30 - Started BeApplication in 3.977 seconds (process running for 186.796)
+2024-07-08 00:27:30 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-08 00:27:43 - 127.0.0.1 connected!
+2024-07-08 00:27:43 - /127.0.0.1 58560: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:27:44 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:27:45 - Starting BeApplication using Java 21.0.1 with PID 49276 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:27:45 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:27:46 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:27:46 - Starting service [Tomcat]
+2024-07-08 00:27:46 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:27:46 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:27:47 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:27:47 - Started BeApplication in 2.286 seconds (process running for 203.893)
+2024-07-08 00:27:55 - 127.0.0.1 connected!
+2024-07-08 00:27:55 - /127.0.0.1 58570: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:27:56 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:27:57 - Starting BeApplication using Java 21.0.1 with PID 49276 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:27:57 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:27:58 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:27:58 - Starting service [Tomcat]
+2024-07-08 00:27:58 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:27:58 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:27:58 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:27:58 - Started BeApplication in 1.857 seconds (process running for 215.684)
+2024-07-08 00:28:00 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-08 00:28:13 - 127.0.0.1 connected!
+2024-07-08 00:28:13 - /127.0.0.1 58587: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:28:14 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:28:14 - Starting BeApplication using Java 21.0.1 with PID 49276 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:28:14 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:28:15 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:28:15 - Starting service [Tomcat]
+2024-07-08 00:28:15 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:28:15 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:28:15 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:28:15 - Started BeApplication in 1.459 seconds (process running for 232.726)
+2024-07-08 00:29:10 - 127.0.0.1 connected!
+2024-07-08 00:29:10 - /127.0.0.1 58626: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:29:11 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:29:12 - Starting BeApplication using Java 21.0.1 with PID 49276 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:29:12 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:29:13 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:29:13 - Starting service [Tomcat]
+2024-07-08 00:29:13 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:29:13 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:29:13 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:29:13 - Started BeApplication in 2.084 seconds (process running for 290.556)
+2024-07-08 00:29:18 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-08 00:29:38 - 127.0.0.1 connected!
+2024-07-08 00:29:38 - /127.0.0.1 58648: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:29:39 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:29:40 - Starting BeApplication using Java 21.0.1 with PID 49276 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:29:40 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:29:41 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:29:41 - Starting service [Tomcat]
+2024-07-08 00:29:41 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:29:41 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:29:41 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:29:41 - Started BeApplication in 1.431 seconds (process running for 318.758)
+2024-07-08 00:29:58 - Starting BeApplication using Java 21.0.1 with PID 69400 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:29:58 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:30:03 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:30:03 - Starting service [Tomcat]
+2024-07-08 00:30:03 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:30:03 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:30:05 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:30:05 - Started BeApplication in 9.112 seconds (process running for 11.205)
+2024-07-08 00:30:19 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-08 00:30:34 - 127.0.0.1 connected!
+2024-07-08 00:30:34 - /127.0.0.1 58688: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:30:35 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:30:36 - Starting BeApplication using Java 21.0.1 with PID 69400 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:30:36 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:30:39 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:30:39 - Starting service [Tomcat]
+2024-07-08 00:30:39 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:30:40 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:30:43 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:30:43 - Started BeApplication in 7.227 seconds (process running for 49.006)
+2024-07-08 00:33:36 - Starting BeApplication using Java 21.0.1 with PID 64764 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:33:36 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:33:42 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:33:42 - Starting service [Tomcat]
+2024-07-08 00:33:42 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:33:43 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:33:46 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:33:46 - Started BeApplication in 11.163 seconds (process running for 13.407)
+2024-07-08 00:33:51 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-08 00:34:30 - 127.0.0.1 connected!
+2024-07-08 00:34:30 - /127.0.0.1 58833: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:34:50 - 127.0.0.1 connected!
+2024-07-08 00:34:50 - /127.0.0.1 58848: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:35:03 - 127.0.0.1 connected!
+2024-07-08 00:35:03 - /127.0.0.1 58858: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:35:15 - 127.0.0.1 connected!
+2024-07-08 00:35:15 - /127.0.0.1 58868: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:35:22 - 127.0.0.1 connected!
+2024-07-08 00:35:22 - /127.0.0.1 58875: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:43:05 - Starting BeApplication using Java 21.0.1 with PID 135440 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-08 00:43:05 - No active profile set, falling back to 1 default profile: "default"
+2024-07-08 00:43:10 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:43:10 - Starting service [Tomcat]
+2024-07-08 00:43:10 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-08 00:43:10 - Initializing Spring embedded WebApplicationContext
+2024-07-08 00:43:12 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-08 00:43:12 - Started BeApplication in 7.652 seconds (process running for 9.523)
+2024-07-08 00:43:27 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-08 00:43:47 - 127.0.0.1 connected!
+2024-07-08 00:43:47 - /127.0.0.1 59149: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:43:55 - 127.0.0.1 connected!
+2024-07-08 00:43:55 - /127.0.0.1 59156: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-08 00:44:04 - 127.0.0.1 connected!
+2024-07-08 00:44:04 - /127.0.0.1 59166: B20DCMT123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true

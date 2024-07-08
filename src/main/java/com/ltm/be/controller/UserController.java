@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
+@RequestMapping("/api")
 public class UserController {
     @Autowired
     private IUserService userService;
@@ -27,4 +28,8 @@ public class UserController {
         UserDto dto = userService.addUser(user);
         return ResponseEntity.ok(dto);
     }
+//    @PostMapping("/users/update")
+//    public ResponseEntity<?> updateUser(@RequestBody UserDto user) {
+//
+//    }
 }

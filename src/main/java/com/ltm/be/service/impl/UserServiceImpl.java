@@ -49,8 +49,10 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public void updateUser(UserDto userDto) {
-
+    public UserDto updateUser(UserDto userDto) {
+        UserEntity entity = userConverter.toEntity(userDto);
+        userDAO.updateUser(entity);
+        return userConverter.toDto(entity);
     }
 
     @Override
