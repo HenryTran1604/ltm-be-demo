@@ -8,12 +8,15 @@ import org.springframework.stereotype.Component;
 public class ExerciseConverter {
     public ExerciseDto toDto(ExerciseEntity entity) {
         ExerciseDto dto = new ExerciseDto();
-        dto.setPathName(entity.getPathName());
+        dto.setId(entity.getId());
+        dto.setName(entity.getName());
+        dto.setPath(entity.getPath());
         return dto;
     }
     public ExerciseEntity toEntity (ExerciseDto dto) {
         ExerciseEntity entity = new ExerciseEntity();
-        entity.setPathName(dto.getPathName());
+        entity.setName(dto.getName());
+        entity.setPath(dto.getPath());
         return entity;
     }
 }

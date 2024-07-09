@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface IExerciseService {
     List<ExerciseDto> getAllExercises();
-    ExerciseDto getExerciseByName(String name);
+    ExerciseDto getAllExerciseById(Long id);
     ExerciseDto addExercise(ExerciseDto dto);
-
 }

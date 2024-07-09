@@ -1,6 +1,8 @@
 package com.ltm.be.tcpserver;
 
-import com.ltm.be.service.ILogService;
+import com.ltm.be.service.*;
+import com.ltm.be.tcpserver.contest.Ex1;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.io.DataInputStream;
@@ -11,16 +13,16 @@ import java.net.SocketException;
 import java.net.SocketTimeoutException;
 
 @Component
+@AllArgsConstructor
 public class ClientHandler implements Runnable {
     private static final int TIME_OUT = 5000;
     private Socket socket;
-    private ILogService logService;
+    private IWebSocketService webSocketService;
+    private IUserService userService;
+    private ISubmissionService submissionService;
+    private IExerciseService exerciseService;
+    private IUserExerciseService scoreBoardService;
     public ClientHandler(){}
-    public ClientHandler(Socket socket, ILogService logService) {
-        this.socket = socket;
-        this.logService = logService;
-    }
-
     @Override
     public void run() {
         try {
@@ -29,13 +31,16 @@ public class ClientHandler implements Runnable {
             DataOutputStream dos = new DataOutputStream(this.socket.getOutputStream());
 
             System.out.println("Connect to " + this.socket.getInetAddress().getHostAddress());
-            logService.sendLog(this.socket.getInetAddress().getHostAddress() + " connected!");
+            webSocketService.sendLog(this.socket.getInetAddress().getHostAddress() + " connected!");
+            Ex1 ex1 = new Ex1(this.socket, this.webSocketService, this.userService,
+                    this.submissionService, this.exerciseService, this.scoreBoardService);
+            ex1.run();
 
             dos.close();
             dis.close();
         } catch (SocketTimeoutException ex) {
             if(this.socket != null)
-                logService.sendLog(this.socket.getInetAddress().getHostAddress() + " Time out!");
+                webSocketService.sendLog(this.socket.getInetAddress().getHostAddress() + " Time out!");
             shutdown();
         } catch (SocketException ex) {
             // TODO: handle

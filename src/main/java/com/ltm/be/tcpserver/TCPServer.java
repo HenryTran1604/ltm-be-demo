@@ -1,6 +1,6 @@
 package com.ltm.be.tcpserver;
 
-import com.ltm.be.service.ILogService;
+import com.ltm.be.service.IWebSocketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -27,7 +27,7 @@ public class TCPServer implements Runnable {
     @Autowired
     private ClientHandlerFactory clientHandlerFactory;
     @Autowired
-    private ILogService webSocketService;
+    private IWebSocketService webSocketService;
 
     public TCPServer() {
         this.requestCounts = new ConcurrentHashMap<>();

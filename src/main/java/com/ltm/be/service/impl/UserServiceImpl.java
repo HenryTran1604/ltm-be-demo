@@ -1,60 +1,45 @@
 package com.ltm.be.service.impl;
 
 import com.ltm.be.converter.UserConverter;
-import com.ltm.be.dao.UserDAO;
+import com.ltm.be.converter.UserConverter;
 import com.ltm.be.dto.UserDto;
 import com.ltm.be.entity.UserEntity;
+import com.ltm.be.repository.UserRepository;
 import com.ltm.be.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import java.util.List;
 @Service
 public class UserServiceImpl implements IUserService {
     @Autowired
-    private UserDAO userDAO;
+    private UserRepository userRepository;
     @Autowired
     private UserConverter userConverter;
 
     @Override
-    public UserDto addUser(UserDto userDto) {
-        UserEntity entity = userConverter.toEntity(userDto);
-        entity.setCreatedAt(LocalDateTime.now());
-        userDAO.saveUser(entity);
-        return userConverter.toDto(entity);
-    }
-
-    @Override
-    public boolean isUserExistedWithId(UserDto userDto) {
-        return userDAO.getUserById(userDto.getId()) != null;
-    }
-
-    @Override
-    public boolean isUserExistedWithUidAndIP(UserDto userDto) {
-        return false;
+    public UserDto addUser(UserDto user) {
+        user.setCreatedAt(LocalDateTime.now());
+        UserEntity userEntity = userRepository.save(userConverter.toEntity(user));
+        return userConverter.toDto(userEntity);
     }
 
     @Override
     public List<UserDto> getAllUsers() {
-        return userDAO.getAllUsers().stream().map(userConverter::toDto).toList();
+        List<UserEntity> users = userRepository.findAll();
+        return users.stream().map(userConverter::toDto).toList(); // immutable
     }
 
     @Override
-    public UserDto getUserById(String id) {
-        UserEntity entity = userDAO.getUserById(id);
-        return userConverter.toDto(entity);
+    public UserDto getUserByStudentCode(String studentCode) {
+        UserEntity user = userRepository.findByStudentCode(studentCode);
+        return userConverter.toDto(user);
     }
 
     @Override
-    public void updateUser(UserDto userDto) {
-
-    }
-
-    @Override
-    public void deleteUser(UserDto userDto) {
-
+    public boolean existByStudentCode(String studentCode) {
+        return userRepository.existsByStudentCode(studentCode);
     }
 }

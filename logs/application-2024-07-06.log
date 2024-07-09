@@ -11,7 +11,7 @@
 2024-07-06 17:16:00 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: uid is marked non-null but is null] with root cause
 java.lang.NullPointerException: uid is marked non-null but is null
 	at com.ltm.be.entity.UserEntity.setUid(UserEntity.java:12)
-	at com.ltm.be.converter.UserConverter.toEntity(UserConverter.java:12)
+	at com.ltm.be.converter.ISubmissionService.toEntity(ISubmissionService.java:12)
 	at com.ltm.be.service.impl.UserServiceImpl.addUser(UserServiceImpl.java:21)
 	at com.ltm.be.controller.UserController.addUser(UserController.java:23)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -356,7 +356,7 @@ Caused by: java.lang.ClassNotFoundException: com.ltm.be.tcpserver.TCPServer
 2024-07-06 22:35:48 - Starting service [Tomcat]
 2024-07-06 22:35:48 - Starting Servlet engine: [Apache Tomcat/10.1.25]
 2024-07-06 22:35:48 - Initializing Spring embedded WebApplicationContext
-2024-07-06 22:35:48 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'beApplication': Unsatisfied dependency expressed through field 'tcpServer': Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'webSocketService': No qualifying bean of type 'com.ltm.be.service.ILogService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-07-06 22:35:48 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'beApplication': Unsatisfied dependency expressed through field 'tcpServer': Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'webSocketService': No qualifying bean of type 'com.ltm.be.service.IWebSocketService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 2024-07-06 22:35:48 - Stopping service [Tomcat]
 2024-07-06 22:35:48 - 
 
@@ -366,7 +366,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field webSocketService in com.ltm.be.tcpserver.ClientHandlerFactory required a bean of type 'com.ltm.be.service.ILogService' that could not be found.
+Field webSocketService in com.ltm.be.tcpserver.ClientHandlerFactory required a bean of type 'com.ltm.be.service.IWebSocketService' that could not be found.
 
 The injection point has the following annotations:
 	- @org.springframework.beans.factory.annotation.Autowired(required=true)
@@ -374,7 +374,7 @@ The injection point has the following annotations:
 
 Action:
 
-Consider defining a bean of type 'com.ltm.be.service.ILogService' in your configuration.
+Consider defining a bean of type 'com.ltm.be.service.IWebSocketService' in your configuration.
 
 2024-07-06 22:35:54 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
 2024-07-06 22:35:54 - No active profile set, falling back to 1 default profile: "default"
@@ -431,7 +431,7 @@ Caused by: java.lang.ClassNotFoundException: com.ltm.be.tcpserver.TCPServer
 2024-07-06 22:35:59 - Starting service [Tomcat]
 2024-07-06 22:35:59 - Starting Servlet engine: [Apache Tomcat/10.1.25]
 2024-07-06 22:35:59 - Initializing Spring embedded WebApplicationContext
-2024-07-06 22:35:59 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'beApplication': Unsatisfied dependency expressed through field 'tcpServer': Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'webSocketService': No qualifying bean of type 'com.ltm.be.service.ILogService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-07-06 22:35:59 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'beApplication': Unsatisfied dependency expressed through field 'tcpServer': Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'webSocketService': No qualifying bean of type 'com.ltm.be.service.IWebSocketService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 2024-07-06 22:35:59 - Stopping service [Tomcat]
 2024-07-06 22:35:59 - 
 
@@ -441,7 +441,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field webSocketService in com.ltm.be.tcpserver.ClientHandlerFactory required a bean of type 'com.ltm.be.service.ILogService' that could not be found.
+Field webSocketService in com.ltm.be.tcpserver.ClientHandlerFactory required a bean of type 'com.ltm.be.service.IWebSocketService' that could not be found.
 
 The injection point has the following annotations:
 	- @org.springframework.beans.factory.annotation.Autowired(required=true)
@@ -449,7 +449,7 @@ The injection point has the following annotations:
 
 Action:
 
-Consider defining a bean of type 'com.ltm.be.service.ILogService' in your configuration.
+Consider defining a bean of type 'com.ltm.be.service.IWebSocketService' in your configuration.
 
 2024-07-06 22:36:30 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
 2024-07-06 22:36:30 - No active profile set, falling back to 1 default profile: "default"
@@ -506,7 +506,7 @@ Caused by: java.lang.ClassNotFoundException: com.ltm.be.tcpserver.TCPServer
 2024-07-06 22:36:36 - Starting service [Tomcat]
 2024-07-06 22:36:36 - Starting Servlet engine: [Apache Tomcat/10.1.25]
 2024-07-06 22:36:36 - Initializing Spring embedded WebApplicationContext
-2024-07-06 22:36:36 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'beApplication': Unsatisfied dependency expressed through field 'tcpServer': Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'webSocketService': No qualifying bean of type 'com.ltm.be.service.ILogService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-07-06 22:36:36 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'beApplication': Unsatisfied dependency expressed through field 'tcpServer': Error creating bean with name 'TCPServer': Unsatisfied dependency expressed through field 'clientHandlerFactory': Error creating bean with name 'clientHandlerFactory': Unsatisfied dependency expressed through field 'webSocketService': No qualifying bean of type 'com.ltm.be.service.IWebSocketService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 2024-07-06 22:36:36 - Stopping service [Tomcat]
 2024-07-06 22:36:36 - 
 
@@ -516,7 +516,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field webSocketService in com.ltm.be.tcpserver.ClientHandlerFactory required a bean of type 'com.ltm.be.service.ILogService' that could not be found.
+Field webSocketService in com.ltm.be.tcpserver.ClientHandlerFactory required a bean of type 'com.ltm.be.service.IWebSocketService' that could not be found.
 
 The injection point has the following annotations:
 	- @org.springframework.beans.factory.annotation.Autowired(required=true)
@@ -524,7 +524,7 @@ The injection point has the following annotations:
 
 Action:
 
-Consider defining a bean of type 'com.ltm.be.service.ILogService' in your configuration.
+Consider defining a bean of type 'com.ltm.be.service.IWebSocketService' in your configuration.
 
 2024-07-06 22:36:41 - Starting BeApplication using Java 21.0.1 with PID 8584 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
 2024-07-06 22:36:41 - No active profile set, falling back to 1 default profile: "default"
@@ -727,13 +727,13 @@ Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ltm.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1085)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:574)
 	... 32 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: com/ltm/be/converter/UserConverter
+Caused by: java.lang.NoClassDefFoundError: com/ltm/be/converter/ISubmissionService
 	at java.base/java.lang.Class.getDeclaredFields0(Native Method)
 	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
 	at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
 	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:752)
 	... 38 common frames omitted
-Caused by: java.lang.ClassNotFoundException: com.ltm.be.converter.UserConverter
+Caused by: java.lang.ClassNotFoundException: com.ltm.be.converter.ISubmissionService
 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
 	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
@@ -830,10 +830,10 @@ Caused by: java.lang.ClassNotFoundException: com.ltm.be.dto.UserDto
 2024-07-06 23:53:57 - Starting service [Tomcat]
 2024-07-06 23:53:57 - Starting Servlet engine: [Apache Tomcat/10.1.25]
 2024-07-06 23:53:57 - Initializing Spring embedded WebApplicationContext
-2024-07-06 23:53:57 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userConverter': Lookup method resolution failed
+2024-07-06 23:53:57 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ISubmissionService': Lookup method resolution failed
 2024-07-06 23:53:57 - Stopping service [Tomcat]
 2024-07-06 23:53:57 - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userConverter': Lookup method resolution failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ISubmissionService': Lookup method resolution failed
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:497)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:367)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1296)
@@ -857,7 +857,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ltm.be.converter.UserConverter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@9abc07d]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ltm.be.converter.ISubmissionService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@9abc07d]
 	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
 	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:475)
@@ -933,13 +933,13 @@ Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ltm.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1085)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:574)
 	... 32 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: com/ltm/be/converter/UserConverter
+Caused by: java.lang.NoClassDefFoundError: com/ltm/be/converter/ISubmissionService
 	at java.base/java.lang.Class.getDeclaredFields0(Native Method)
 	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
 	at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
 	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:752)
 	... 38 common frames omitted
-Caused by: java.lang.ClassNotFoundException: com.ltm.be.converter.UserConverter
+Caused by: java.lang.ClassNotFoundException: com.ltm.be.converter.ISubmissionService
 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
 	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)

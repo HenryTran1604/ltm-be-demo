@@ -8,5 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ExerciseDto {
-    private String pathName;
+    private Long id;
+    private String name;
+    private String path;
 }
