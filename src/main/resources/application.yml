@@ -2,6 +2,6 @@ spring:
   application:
     name: be
   profiles:
-    active: dev
+    active: @spring.profiles.active@
 storage:
   clientLogsLocation: logs/application.log

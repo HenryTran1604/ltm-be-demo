@@ -1,0 +1,17 @@
+# Bỏ qua các thư mục và tệp không cần thiết
+target/
+build/
+.mvn/
+src/
+out/
+
+.idea/
+# Bỏ qua các tệp và thư mục tạm thời
+tmp/
+temp/
+logs/
+.gitignore
+.dockerignore
+Dockerfile
+!target/be-0.0.1-SNAPSHOT.jar
+
