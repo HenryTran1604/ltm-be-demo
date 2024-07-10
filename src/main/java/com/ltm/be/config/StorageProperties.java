@@ -8,6 +8,5 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "storage")
 public class StorageProperties {
-    private String usersLocation;
-    private String exercisesLocation;
+    private String clientLogsLocation;
 }

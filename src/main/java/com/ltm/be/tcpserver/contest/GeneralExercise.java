@@ -7,6 +7,7 @@ import com.ltm.be.service.*;
 
 import java.net.Socket;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class GeneralExercise {
@@ -41,7 +42,7 @@ public class GeneralExercise {
         return matcher.matches();
     }
     public void updateUserSubmissions(Long userId, Long exerciseId, Integer status) {
-        submissionService.updateByUserAndExercise(userId, exerciseId, LocalDate.now(), status, "");
+        submissionService.updateByUserAndExercise(userId, exerciseId, LocalDateTime.now(), status, "");
     }
     public UserExerciseDto getNewStatus(Long userId, Long exerciseId, Integer ac) {
         int count = submissionService.countByUserIdAndExerciseId(userId, exerciseId);

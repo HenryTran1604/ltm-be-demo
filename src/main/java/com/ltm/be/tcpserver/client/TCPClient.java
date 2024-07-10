@@ -75,7 +75,7 @@ public class TCPClient implements Runnable{
         }
     }
     public static void main(String[] args) throws IOException, InterruptedException {
-        String studentCode = "B20DCCN327";
+        String studentCode = "B20DCCN123";
         int questionCode = 40;
         String serverAddress = "localhost";
         int serverPort = 806;

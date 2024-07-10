@@ -16,6 +16,6 @@ public class UserExerciseController {
 
     @GetMapping("/user/exercise")
     public List<UserExerciseDto> getAllUserExercisesById(@RequestParam Long userId) {
-        return userExerciseService.getScoreBoardsByUserId(userId);
+        return userExerciseService.getUserExercisesByUserId(userId);
     }
 }

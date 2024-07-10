@@ -17,9 +17,9 @@ public class ClientHandlerFactory {
     @Autowired
     private IExerciseService exerciseService;
     @Autowired
-    private IUserExerciseService scoreBoardService;
+    private IUserExerciseService userExerciseService;
 
     public ClientHandler create(Socket socket) {
-        return new ClientHandler(socket, webSocketService, userService, submissionService, exerciseService, scoreBoardService);
+        return new ClientHandler(socket, webSocketService, userService, submissionService, exerciseService, userExerciseService);
     }
 }

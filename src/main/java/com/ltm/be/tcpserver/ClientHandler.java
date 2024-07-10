@@ -29,8 +29,6 @@ public class ClientHandler implements Runnable {
             this.socket.setSoTimeout(TIME_OUT);
             DataInputStream dis = new DataInputStream(this.socket.getInputStream());
             DataOutputStream dos = new DataOutputStream(this.socket.getOutputStream());
-
-            System.out.println("Connect to " + this.socket.getInetAddress().getHostAddress());
             webSocketService.sendLog(this.socket.getInetAddress().getHostAddress() + " connected!");
             Ex1 ex1 = new Ex1(this.socket, this.webSocketService, this.userService,
                     this.submissionService, this.exerciseService, this.scoreBoardService);

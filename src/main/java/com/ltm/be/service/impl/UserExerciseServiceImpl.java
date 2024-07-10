@@ -21,7 +21,7 @@ public class UserExerciseServiceImpl implements IUserExerciseService {
     @Autowired
     private IUserService userService;
 
-    public List<UserExerciseDto> getScoreBoardsByUserId(Long userId) {
+    public List<UserExerciseDto> getUserExercisesByUserId(Long userId) {
         List<ExerciseDto> exerciseDtos = exerciseService.getAllExercises();
         List<UserExerciseDto> userExerciseDtos = new ArrayList<>();
         for(ExerciseDto exerciseDto : exerciseDtos) {

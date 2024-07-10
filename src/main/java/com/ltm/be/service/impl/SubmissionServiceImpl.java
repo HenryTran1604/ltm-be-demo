@@ -29,7 +29,7 @@ public class SubmissionServiceImpl implements ISubmissionService {
     }
 
     @Override
-    public void updateByUserAndExercise(Long userId, Long exerciseId, LocalDate submittedAt, Integer ac, String srcPath) {
+    public void updateByUserAndExercise(Long userId, Long exerciseId, LocalDateTime submittedAt, Integer ac, String srcPath) {
         submissionRepository.addByUserIdAndExerciseId(userId, exerciseId, submittedAt, ac, srcPath);
     }
 

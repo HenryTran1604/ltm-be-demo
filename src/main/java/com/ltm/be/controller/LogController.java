@@ -1,10 +1,8 @@
 package com.ltm.be.controller;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.ltm.be.service.ILogService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,16 +13,16 @@ import java.util.List;
 @RequestMapping("/api")
 @CrossOrigin("*")
 public class LogController {
+    @Autowired
+    private ILogService logService;
+    @GetMapping("/client-logs")
+    public List<String> getAllInfoLogs() {
+        return logService.getAllClientLogs();
+    }
 
-    @GetMapping("/log-message")
-    public List<String> logMessage() {
-        List<String> lines = null;
-        try {
-            lines = Files.readAllLines(Paths.get("logs/application.log"));
-        } catch (IOException e) {
-            e.printStackTrace();
-            // TODO: handle
-        }
-        return lines;
+    @DeleteMapping("/clear-logs")
+    public ResponseEntity<?> clearLog() {
+        logService.clearLogs();
+        return ResponseEntity.ok().build();
     }
 }

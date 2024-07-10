@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -37,6 +38,6 @@ public interface SubmissionRepository extends JpaRepository<SubmissionEntity, Lo
             "INSERT INTO submission (user_id, exercise_id, submitted_at, ac, src_path) " +
                     "Values (?1, ?2, ?3, ?4, ?5)",
             nativeQuery = true)
-    void addByUserIdAndExerciseId(Long userID, Long exerciseId, LocalDate submittedAt, Integer AC, String srcPath);
+    void addByUserIdAndExerciseId(Long userID, Long exerciseId, LocalDateTime submittedAt, Integer AC, String srcPath);
     boolean existsByUserIdAndExerciseIdAndAc(Long userId, Long exerciseId, Integer ac);
 }
