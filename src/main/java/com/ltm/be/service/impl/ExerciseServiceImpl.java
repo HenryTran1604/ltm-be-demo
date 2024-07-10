@@ -31,6 +31,8 @@ public class ExerciseServiceImpl implements IExerciseService {
 
     @Override
     public ExerciseDto addExercise(ExerciseDto dto) {
-        return null;
+        ExerciseEntity entity = exerciseConverter.toEntity(dto);
+        ExerciseDto response = exerciseConverter.toDto(exerciseRepository.save(entity));
+        return response;
     }
 }
