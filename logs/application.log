@@ -1,393 +1,184 @@
-2024-07-10 19:43:29 - HikariPool-1 - Shutdown initiated...
-2024-07-10 19:43:29 - HikariPool-1 - Shutdown completed.
-2024-07-10 20:23:18 - Starting BeApplicationTests using Java 17.0.10 with PID 15364 (started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
-2024-07-10 20:23:19 - The following 1 profile is active: "prod"
-2024-07-10 20:23:29 - HikariPool-1 - Starting...
-2024-07-10 20:23:35 - HikariPool-1 - Starting...
-2024-07-10 20:23:36 - HHH000342: Could not obtain connection to query metadata
-java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:290)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
-	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
-	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
-	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
-	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463)
-	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
-	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279)
-	at java.base/java.util.Optional.orElseGet(Optional.java:364)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278)
-	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
-	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
-	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-2024-07-10 20:23:36 - Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-2024-07-10 20:23:36 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-2024-07-10 20:23:36 - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
-	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
-	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
-	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463)
-	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
-	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279)
-	at java.base/java.util.Optional.orElseGet(Optional.java:364)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278)
-	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
-	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
-	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
-	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
-	... 93 common frames omitted
-Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:152)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:362)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	... 108 common frames omitted
-2024-07-10 20:23:36 - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.ltm.be.BeApplicationTests@38fb151a]
-java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@517a46f3 testClass = com.ltm.be.BeApplicationTests, locations = [], classes = [com.ltm.be.BeApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5a18cd76, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6995bf68, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@77d67cf3, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@7502291e, org.springframework.boot.test.context.SpringBootTestAnnotation@f7daddf5], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
-	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279)
-	at java.base/java.util.Optional.orElseGet(Optional.java:364)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278)
-	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
-	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
-	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
-	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
-	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
-	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463)
-	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
-	... 73 common frames omitted
-Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
-	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
-	... 93 common frames omitted
-Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:152)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:362)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	... 108 common frames omitted
-2024-07-10 20:26:34 - Starting BeApplicationTests using Java 17.0.10 with PID 6192 (started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
-2024-07-10 20:26:34 - The following 1 profile is active: "dev"
-2024-07-10 20:26:38 - HikariPool-1 - Starting...
-2024-07-10 20:26:39 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3ccfac29
-2024-07-10 20:26:39 - HikariPool-1 - Start completed.
-2024-07-10 20:26:44 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-10 20:26:45 - Started BeApplicationTests in 11.84 seconds (process running for 14.208)
-2024-07-10 20:26:46 - HikariPool-1 - Shutdown initiated...
-2024-07-10 20:26:46 - HikariPool-1 - Shutdown completed.
-2024-07-10 20:27:28 - Starting BeApplicationTests using Java 17.0.10 with PID 10100 (started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
-2024-07-10 20:27:28 - The following 1 profile is active: "dev"
-2024-07-10 20:27:32 - HikariPool-1 - Starting...
-2024-07-10 20:27:33 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@77ea960f
-2024-07-10 20:27:33 - HikariPool-1 - Start completed.
-2024-07-10 20:27:36 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-10 20:27:37 - Started BeApplicationTests in 9.55 seconds (process running for 11.702)
-2024-07-10 20:27:38 - HikariPool-1 - Shutdown initiated...
-2024-07-10 20:27:38 - HikariPool-1 - Shutdown completed.
+2024-07-15 00:53:07 - Init duration for springdoc-openapi is: 2099 ms
+2024-07-15 00:58:40 - HikariPool-1 - Shutdown initiated...
+2024-07-15 00:58:40 - HikariPool-1 - Shutdown completed.
+2024-07-15 00:59:02 - Starting BeApplication using Java 21.0.1 with PID 4412 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-15 00:59:02 - The following 1 profile is active: "dev"
+2024-07-15 00:59:09 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-15 00:59:10 - Starting service [Tomcat]
+2024-07-15 00:59:10 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15 00:59:10 - Initializing Spring embedded WebApplicationContext
+2024-07-15 00:59:12 - HikariPool-1 - Starting...
+2024-07-15 00:59:12 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@29873519
+2024-07-15 00:59:12 - HikariPool-1 - Start completed.
+2024-07-15 00:59:16 - SQL Warning Code: 0, SQLState: 00000
+2024-07-15 00:59:16 - constraint "uk470iox0je1uel3w7i0r5b4ltr" of relation "user" does not exist, skipping
+2024-07-15 00:59:16 - SQL Warning Code: 0, SQLState: 00000
+2024-07-15 00:59:16 - constraint "ukiwcdyt8mgmc03korjdps3bc1k" of relation "user_exercise" does not exist, skipping
+2024-07-15 00:59:18 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15 00:59:19 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-15 00:59:20 - Started BeApplication in 18.517 seconds (process running for 20.406)
+2024-07-15 00:59:20 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-15 00:59:20 - /127.0.0.1 62575: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 00:59:38 - /127.0.0.1 62592: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 00:59:42 - /127.0.0.1 62597: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 00:59:43 - /127.0.0.1 62600: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 00:59:43 - /127.0.0.1 62602: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 00:59:45 - /127.0.0.1 62604: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 01:48:55 - /127.0.0.1 63393: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 01:49:33 - /127.0.0.1 63413: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:34:05 - HikariPool-1 - Shutdown initiated...
+2024-07-15 02:34:05 - HikariPool-1 - Shutdown completed.
+2024-07-15 02:34:21 - Starting BeApplication using Java 21.0.1 with PID 4080 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-15 02:34:21 - The following 1 profile is active: "dev"
+2024-07-15 02:34:25 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-15 02:34:25 - Starting service [Tomcat]
+2024-07-15 02:34:25 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15 02:34:25 - Initializing Spring embedded WebApplicationContext
+2024-07-15 02:34:27 - HikariPool-1 - Starting...
+2024-07-15 02:34:27 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@309601c4
+2024-07-15 02:34:27 - HikariPool-1 - Start completed.
+2024-07-15 02:34:32 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15 02:34:33 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-15 02:34:33 - Started BeApplication in 13.547 seconds (process running for 14.777)
+2024-07-15 02:34:34 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-15 02:34:48 - /127.0.0.1 64456: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:35:07 - /127.0.0.1 64472: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:35:11 - /127.0.0.1 64478: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:35:56 - /127.0.0.1 64520: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:36:41 - /127.0.0.1 64568: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:44:17 - /127.0.0.1 64917: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:44:56 - /127.0.0.1 64958: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:45:06 - /127.0.0.1 64982: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:45:14 - /127.0.0.1 65006: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:45:23 - /127.0.0.1 65034: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:45:29 - /127.0.0.1 65050: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:45:36 - /127.0.0.1 65069: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:46:13 - /127.0.0.1 65137: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:46:17 - /127.0.0.1 65145: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:46:22 - /127.0.0.1 65157: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:46:24 - /127.0.0.1 65164: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:46:28 - /127.0.0.1 65172: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:48:49 - /127.0.0.1 65271: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:50:02 - /127.0.0.1 65321: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:51:22 - /127.0.0.1 65463: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:51:56 - /127.0.0.1 65511: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:54:53 - /127.0.0.1 49301: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:58:03 - /127.0.0.1 49624: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:58:07 - /127.0.0.1 49633: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:58:34 - /127.0.0.1 49674: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:59:13 - /127.0.0.1 49751: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 02:59:32 - /127.0.0.1 49789: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:05:22 - /127.0.0.1 50340: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:05:55 - /127.0.0.1 50374: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:06:38 - /127.0.0.1 50412: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:06:45 - /127.0.0.1 50422: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:11:39 - /127.0.0.1 50708: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:12:11 - /127.0.0.1 50743: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:12:20 - /127.0.0.1 50763: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:18 - /127.0.0.1 50882: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:22 - /127.0.0.1 50890: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:25 - /127.0.0.1 50897: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:25 - /127.0.0.1 50904: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:26 - /127.0.0.1 50910: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:27 - /127.0.0.1 50915: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:28 - /127.0.0.1 50921: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:29 - /127.0.0.1 50926: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:29 - /127.0.0.1 50931: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:30 - /127.0.0.1 50937: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:31 - /127.0.0.1 50942: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:39 - /127.0.0.1 50958: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:40 - /127.0.0.1 50964: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:41 - /127.0.0.1 50969: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:41 - /127.0.0.1 50975: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:42 - /127.0.0.1 50980: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:14:43 - /127.0.0.1 50986: b20dccn327: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:16:48 - /127.0.0.1 Mã sinh viên b20dccn123 không hợp lệ!
+2024-07-15 03:17:20 - /127.0.0.1 Mã sinh viên b20dccn123 không hợp lệ!
+2024-07-15 03:20:50 - kubernetes.docker.internal/127.0.0.1 Mã sinh viên b20dccn123 không hợp lệ!
+2024-07-15 03:22:23 - /127.0.0.1 Mã sinh viên b20dccn123 không hợp lệ!
+2024-07-15 03:24:28 - /127.0.0.1 51656: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:27:30 - /127.0.0.1 51800: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:29:39 - /127.0.0.1 52020: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:36:16 - /127.0.0.1 52516: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:37:18 - /127.0.0.1 52596: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:37:21 - /127.0.0.1 52610: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:37:24 - /127.0.0.1 52621: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:38:03 - /127.0.0.1 53008: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:39:26 - /127.0.0.1 53081: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:40:54 - /127.0.0.1 53219: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 03:42:30 - /127.0.0.1 53329: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 04:06:23 - Init duration for springdoc-openapi is: 1394 ms
+2024-07-15 04:08:01 - HikariPool-1 - Shutdown initiated...
+2024-07-15 04:08:01 - HikariPool-1 - Shutdown completed.
+2024-07-15 04:08:32 - Starting BeApplication using Java 21.0.1 with PID 3916 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-15 04:08:32 - The following 1 profile is active: "dev"
+2024-07-15 04:08:42 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-15 04:08:42 - Starting service [Tomcat]
+2024-07-15 04:08:42 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15 04:08:42 - Initializing Spring embedded WebApplicationContext
+2024-07-15 04:08:43 - HikariPool-1 - Starting...
+2024-07-15 04:08:44 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1f973ecd
+2024-07-15 04:08:44 - HikariPool-1 - Start completed.
+2024-07-15 04:08:54 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15 04:08:55 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-15 04:08:56 - Started BeApplication in 25.441 seconds (process running for 27.864)
+2024-07-15 04:08:59 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-15 04:09:01 - Init duration for springdoc-openapi is: 1181 ms
+2024-07-15 04:12:43 - HikariPool-1 - Shutdown initiated...
+2024-07-15 04:12:43 - HikariPool-1 - Shutdown completed.
+2024-07-15 04:13:02 - Starting BeApplication using Java 21.0.1 with PID 15420 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-15 04:13:02 - The following 1 profile is active: "dev"
+2024-07-15 04:13:08 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-15 04:13:09 - Starting service [Tomcat]
+2024-07-15 04:13:09 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15 04:13:09 - Initializing Spring embedded WebApplicationContext
+2024-07-15 04:13:10 - HikariPool-1 - Starting...
+2024-07-15 04:13:11 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@102650d0
+2024-07-15 04:13:11 - HikariPool-1 - Start completed.
+2024-07-15 04:13:15 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15 04:13:16 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-15 04:13:16 - Started BeApplication in 15.385 seconds (process running for 16.85)
+2024-07-15 04:14:07 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-15 04:25:00 - HikariPool-1 - Shutdown initiated...
+2024-07-15 04:25:00 - HikariPool-1 - Shutdown completed.
+2024-07-15 04:25:16 - Starting BeApplication using Java 21.0.1 with PID 12768 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-15 04:25:16 - The following 1 profile is active: "dev"
+2024-07-15 04:25:22 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-15 04:25:22 - Starting service [Tomcat]
+2024-07-15 04:25:22 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15 04:25:22 - Initializing Spring embedded WebApplicationContext
+2024-07-15 04:25:23 - HikariPool-1 - Starting...
+2024-07-15 04:25:24 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2e9f8eb6
+2024-07-15 04:25:24 - HikariPool-1 - Start completed.
+2024-07-15 04:25:28 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15 04:25:30 - Started BeApplication in 14.443 seconds (process running for 16.044)
+2024-07-15 04:25:30 - HikariPool-1 - Shutdown initiated...
+2024-07-15 04:25:30 - HikariPool-1 - Shutdown completed.
+2024-07-15 04:25:49 - Starting BeApplication using Java 21.0.1 with PID 8748 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-15 04:25:49 - The following 1 profile is active: "dev"
+2024-07-15 04:25:55 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-15 04:25:55 - Starting service [Tomcat]
+2024-07-15 04:25:55 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-15 04:25:55 - Initializing Spring embedded WebApplicationContext
+2024-07-15 04:25:57 - HikariPool-1 - Starting...
+2024-07-15 04:25:57 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@352f62e2
+2024-07-15 04:25:57 - HikariPool-1 - Start completed.
+2024-07-15 04:26:02 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-15 04:26:04 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-15 04:26:04 - Started BeApplication in 16.303 seconds (process running for 17.561)
+2024-07-15 04:26:04 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-15 04:26:06 - Init duration for springdoc-openapi is: 966 ms
+2024-07-15 04:27:12 - /127.0.0.1 55358: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 04:30:29 - /127.0.0.1 55707: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 04:30:36 - /127.0.0.1 55718: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 04:30:48 - /127.0.0.1 55734: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 04:31:54 - /127.0.0.1 55803: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 04:33:30 - /127.0.0.1 55900: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 04:33:47 - /127.0.0.1 55938: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 04:37:54 - /127.0.0.1 56126: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 04:39:50 - /127.0.0.1 56389: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 04:40:00 - /127.0.0.1 56401: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 04:41:39 - /127.0.0.1 56497: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 04:46:09 - /127.0.0.1 57095: b20dccn123: question: 22|19|17|23 server answer: 81, client answer: 81, status: true
+2024-07-15 04:50:24 - HikariPool-1 - Shutdown initiated...
+2024-07-15 04:50:24 - HikariPool-1 - Shutdown completed.

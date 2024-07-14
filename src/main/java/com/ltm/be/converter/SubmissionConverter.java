@@ -2,23 +2,21 @@ package com.ltm.be.converter;
 
 import com.ltm.be.dto.SubmissionDto;
 import com.ltm.be.entity.SubmissionEntity;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class SubmissionConverter {
-    @Autowired
-    private UserConverter userConverter;
-    @Autowired
-    private ExerciseConverter exerciseConverter;
+    private final UserExerciseConverter userExerciseConverter;
     public SubmissionDto toDto(SubmissionEntity entity) {
         SubmissionDto dto = new SubmissionDto();
         dto.setId(entity.getId());
-        dto.setUserDto(userConverter.toDto(entity.getUser()));
-        dto.setExerciseDto(exerciseConverter.toDto(entity.getExercise()));
-        dto.setAC(entity.getAc());
+        dto.setUserExerciseDto(userExerciseConverter.toDto(entity.getUserExercise()));
+        dto.setAc(entity.isAc());
         dto.setSrcPath(entity.getSrcPath());
-        dto.setSubmittedAt(entity.getSubmittedAt());
+        dto.setCreatedAt(entity.getCreatedAt());
         return dto;
     }
 }

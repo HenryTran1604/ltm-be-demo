@@ -1,36 +1,31 @@
 package com.ltm.be.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-@Data
+@Getter
+@Setter
+@Builder
 @Entity
-@Table(name = "submission")
-@AllArgsConstructor
 @NoArgsConstructor
-public class SubmissionEntity implements Serializable {
+@AllArgsConstructor
+@Table(name = "submission")
+public class SubmissionEntity extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "ac")
-    private Integer ac;
-
-    @Column(name = "submitted_at")
-    private LocalDateTime submittedAt;
+    private boolean ac;
 
     @Column(name = "src_path")
     private String srcPath;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private UserEntity user;
+    @JoinColumn(name = "user_exercise_id", nullable = false)
+    private UserExerciseEntity userExercise;
 
-    @ManyToOne
-    @JoinColumn(name = "exercise_id", nullable = false)
-    private ExerciseEntity exercise;
 }

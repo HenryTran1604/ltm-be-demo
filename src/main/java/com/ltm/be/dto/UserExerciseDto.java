@@ -10,8 +10,9 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserExerciseDto {
+    private Long id;
     private Long userId;
     private Long exerciseId;
-    private Integer AC;
+    private boolean ac;
     private Integer attemptCount;
 }

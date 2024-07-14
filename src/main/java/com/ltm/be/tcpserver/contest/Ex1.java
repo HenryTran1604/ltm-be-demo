@@ -80,10 +80,10 @@ public class Ex1 extends GeneralExercise implements IExercise{
                     String resposne = String.format("%s %d: %s: question: %s server answer: %d, client answer: %d, status: %s",
                             this.socket.getInetAddress(), this.socket.getPort(), studentCode, question, clientAns, serverAns, clientAns == serverAns);
 
-                    webSocketService.sendLog(resposne);
-                    updateUserSubmissions(user.getId(), QUESTION_CODE, clientAns == serverAns ? 1 : 0);
-                    UserExerciseDto userExerciseDto = getNewStatus(user.getId(), 1L, clientAns == serverAns ? 1 : 0);
-                    this.webSocketService.sendUpdatedScoreBoard(userExerciseDto);
+//                    webSocketService.sendLog(resposne);
+//                    updateUserSubmissions(user.getId(), QUESTION_CODE, clientAns == serverAns);
+//                    UserExerciseDto userExerciseDto = getNewStatus(user.getId(), 1L, clientAns == serverAns);
+//                    this.webSocketService.sendUpdatedScoreBoard(userExerciseDto);
                 }
                 else {
                     String response = String.format("%s Mã sinh viên %s không hợp lệ!", this.socket.getInetAddress(), studentCode);

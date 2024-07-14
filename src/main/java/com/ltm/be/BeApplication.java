@@ -1,22 +1,17 @@
 package com.ltm.be;
 
-import com.ltm.be.tcpserver.TCPServer;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
 
 @SpringBootApplication
 public class BeApplication {
-	@Autowired
-	private TCPServer tcpServer;
 	public static void main(String[] args) {
 		SpringApplication.run(BeApplication.class, args);
 	}
-	@EventListener(ApplicationReadyEvent.class)
-	public void startServer() {
-		new Thread(tcpServer).start();
-	}
+//	@EventListener(ApplicationReadyEvent.class)
+//	public void startServer() {
+//		new Thread(tcpServer).start();
+//	}
 
 }

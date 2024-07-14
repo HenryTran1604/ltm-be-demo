@@ -1,11 +1,11 @@
 package com.ltm.be.service;
 
 import com.ltm.be.dto.ExerciseDto;
-
-import java.util.List;
+import com.ltm.be.payload.request.ExerciseRequest;
+import com.ltm.be.payload.response.PageResponse;
 
 public interface IExerciseService {
-    List<ExerciseDto> getAllExercises();
+    PageResponse<?> getAllExercises(int pageNo, int pageSize);
     ExerciseDto getAllExerciseById(Long id);
-    ExerciseDto addExercise(ExerciseDto dto);
+    void addExercise(ExerciseRequest request);
 }

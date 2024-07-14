@@ -12,10 +12,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class SubmissionDto {
     private Long id;
-    private UserDto userDto;
-    private ExerciseDto exerciseDto;
-    private Integer AC;
-    private Integer score;
-    private LocalDateTime submittedAt;
+    private UserExerciseDto userExerciseDto;
+    private boolean ac;
+    private LocalDateTime createdAt;
     private String srcPath;
 }

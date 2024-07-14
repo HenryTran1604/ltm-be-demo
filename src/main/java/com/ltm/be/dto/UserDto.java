@@ -1,8 +1,11 @@
 package com.ltm.be.dto;
 
 import com.ltm.be.entity.SubmissionEntity;
+import com.ltm.be.util.IP;
+import com.ltm.be.util.StudentCode;
 import jakarta.persistence.Column;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,5 +24,4 @@ public class UserDto {
     private String studentCode;
     private String ip;
     private LocalDateTime createdAt;
-    private Integer score;
 }

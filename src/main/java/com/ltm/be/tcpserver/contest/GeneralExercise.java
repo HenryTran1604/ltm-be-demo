@@ -41,16 +41,4 @@ public class GeneralExercise {
         Matcher matcher = pattern.matcher(requestCode);
         return matcher.matches();
     }
-    public void updateUserSubmissions(Long userId, Long exerciseId, Integer status) {
-        submissionService.updateByUserAndExercise(userId, exerciseId, LocalDateTime.now(), status, "");
-    }
-    public UserExerciseDto getNewStatus(Long userId, Long exerciseId, Integer ac) {
-        int count = submissionService.countByUserIdAndExerciseId(userId, exerciseId);
-        UserExerciseDto dto = new UserExerciseDto();
-        dto.setUserId(userId);
-        dto.setExerciseId(exerciseId);
-        dto.setAttemptCount(count);
-        dto.setAC(ac);
-        return dto;
-    }
 }

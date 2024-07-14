@@ -1,10 +1,17 @@
 server:
-  port: 8081
+  port: 8080
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/ltm_demo?createDatabaseIfNotExist=true
-    username: root
+    url: jdbc:postgresql://localhost:5432/ltm_demo
+    username: postgres
     password: 1234
   jpa:
     hibernate:
       ddl-auto: update
+open:
+  api:
+    title: API for network programming
+    version: v1.0.0
+    description: demo
+    serverUrl: http://localhost:${server.port}
+    serverName: server dev

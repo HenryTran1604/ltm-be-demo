@@ -2,6 +2,11 @@ spring:
   application:
     name: be
   profiles:
-    active: @spring.profiles.active@
+#    active: @spring.profiles.active@
+    active: dev
+  jpa:
+    properties:
+      hibernates:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 storage:
   clientLogsLocation: logs/application.log

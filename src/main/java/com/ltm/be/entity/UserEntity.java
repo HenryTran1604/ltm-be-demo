@@ -2,24 +2,27 @@ package com.ltm.be.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@Builder
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
-@Table( name = "user",
+@AllArgsConstructor
+@Table( name = "\"user\"",
         uniqueConstraints = {
         @UniqueConstraint(columnNames = {"studentCode", "ip"})
 })
-public class UserEntity implements Serializable {
+public class UserEntity extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,9 +33,6 @@ public class UserEntity implements Serializable {
     @Column(name = "ip")
     private String ip;
 
-    @Column(name = "create_at")
-    private LocalDateTime createdAt;
-
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL) // note
-    private List<SubmissionEntity> submissions;
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // note
+    private Set<UserExerciseEntity> userExercises = new HashSet<>();
 }

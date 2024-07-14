@@ -3,6 +3,7 @@ package com.ltm.be.converter;
 import com.ltm.be.dto.UserDto;
 import com.ltm.be.entity.SubmissionEntity;
 import com.ltm.be.entity.UserEntity;
+import com.ltm.be.entity.UserExerciseEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -15,19 +16,19 @@ public class UserConverter {
         entity.setId(dto.getId());
         entity.setStudentCode(dto.getStudentCode());
         entity.setIp(dto.getIp());
-        entity.setCreatedAt(dto.getCreatedAt());
+
         return entity;
     }
+
     public UserDto toDto(UserEntity entity) {
         UserDto dto = new UserDto();
         dto.setId(entity.getId());
         dto.setStudentCode(entity.getStudentCode());
         dto.setIp(entity.getIp());
         dto.setCreatedAt(entity.getCreatedAt());
-        List<SubmissionEntity> submissions = entity.getSubmissions();
-
-        int score = entity.getSubmissions() == null ? 0 : entity.getSubmissions().stream().mapToInt(SubmissionEntity::getAc).sum();
-        dto.setScore(score);
+//        dto.setScore(entity.getUserExercises() == null ? 0 : (int) entity.getUserExercises().stream()
+//                .filter(UserExerciseEntity::isAc)
+//                .count());
         return dto;
     }
 }

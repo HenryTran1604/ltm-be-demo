@@ -1,18 +1,18 @@
 package com.ltm.be.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 
-@Data
+@Getter
+@Setter
+@Builder
 @Entity
-@Table(name = "exercise")
-@AllArgsConstructor
 @NoArgsConstructor
-public class ExerciseEntity implements Serializable {
+@AllArgsConstructor
+@Table(name = "exercise")
+public class ExerciseEntity extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
