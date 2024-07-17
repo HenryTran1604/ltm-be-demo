@@ -26,9 +26,7 @@ public class UserConverter {
         dto.setStudentCode(entity.getStudentCode());
         dto.setIp(entity.getIp());
         dto.setCreatedAt(entity.getCreatedAt());
-//        dto.setScore(entity.getUserExercises() == null ? 0 : (int) entity.getUserExercises().stream()
-//                .filter(UserExerciseEntity::isAc)
-//                .count());
+        dto.setRole(entity.getRole().getName());
         return dto;
     }
 }

@@ -9,9 +9,5 @@ public class BeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BeApplication.class, args);
 	}
-//	@EventListener(ApplicationReadyEvent.class)
-//	public void startServer() {
-//		new Thread(tcpServer).start();
-//	}
 
 }

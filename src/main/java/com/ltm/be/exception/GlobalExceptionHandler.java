@@ -27,7 +27,7 @@ public class GlobalExceptionHandler {
                     content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                             examples = @ExampleObject(
                                     name = "400 Response",
-                                    summary = "Handle resource not found exception",
+                                    summary = "Handle Method Argument Not Valid exception",
                                     value = """
                                             {
                                             "timestamp": "2023-10-19T06:07:35.321+00:00",

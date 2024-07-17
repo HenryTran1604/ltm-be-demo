@@ -3,8 +3,6 @@ package com.ltm.be.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.io.Serializable;
-
 @Getter
 @Setter
 @Builder
@@ -12,13 +10,14 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "exercise")
-public class ExerciseEntity extends AbstractEntity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class ExerciseEntity extends AbstractEntity<Integer>{
     @Column(name = "name")
     private String name;
 
-    @Column(name = "path")
-    private String path;
+    @Column(name = "content", columnDefinition = "TEXT")
+    private String content;
+
+    @ManyToOne
+    @JoinColumn(name = "topic_id")
+    private TopicEntity topic;
 }

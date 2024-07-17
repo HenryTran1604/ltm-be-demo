@@ -10,13 +10,14 @@ public class ExerciseConverter {
         ExerciseDto dto = new ExerciseDto();
         dto.setId(entity.getId());
         dto.setName(entity.getName());
-        dto.setPath(entity.getPath());
+        dto.setContent(entity.getContent());
+        dto.setCreatedAt(entity.getCreatedAt());
         return dto;
     }
     public ExerciseEntity toEntity (ExerciseDto dto) {
         ExerciseEntity entity = new ExerciseEntity();
         entity.setName(dto.getName());
-        entity.setPath(dto.getPath());
+        entity.setContent(dto.getContent());
         return entity;
     }
 }

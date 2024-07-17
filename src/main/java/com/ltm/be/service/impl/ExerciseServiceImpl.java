@@ -8,21 +8,19 @@ import com.ltm.be.payload.request.ExerciseRequest;
 import com.ltm.be.payload.response.PageResponse;
 import com.ltm.be.repository.ExerciseRepository;
 import com.ltm.be.service.IExerciseService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class ExerciseServiceImpl implements IExerciseService {
-    @Autowired
-    private ExerciseRepository exerciseRepository;
-    @Autowired
-    private ExerciseConverter exerciseConverter;
+    private final ExerciseRepository exerciseRepository;
+    private final ExerciseConverter exerciseConverter;
     @Override
     public PageResponse<?> getAllExercises(int pageNo, int pageSize) {
         int page = 0;
@@ -51,7 +49,7 @@ public class ExerciseServiceImpl implements IExerciseService {
     public void addExercise(ExerciseRequest request) {
         ExerciseEntity entity = ExerciseEntity.builder()
                 .name(request.getName())
-                .path(request.getPath())
+                .content(request.getContent())
                 .build();
         exerciseRepository.save(entity);
     }

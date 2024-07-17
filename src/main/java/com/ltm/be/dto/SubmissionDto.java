@@ -1,19 +1,15 @@
 package com.ltm.be.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-@Data
-@Component
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SubmissionDto {
-    private Long id;
-    private UserExerciseDto userExerciseDto;
+public class SubmissionDto extends AbstractDto<Long> {
     private boolean ac;
-    private LocalDateTime createdAt;
     private String srcPath;
+    private UserExerciseDto userExerciseDto;
 }

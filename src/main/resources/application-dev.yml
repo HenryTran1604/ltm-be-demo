@@ -8,6 +8,11 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+token:
+  secretKey: c2VjcmV0QGtleS5hcGlfaGFzX2JlZW5fZGVzaWduZWRfYnlfVGF5TFE=
+  expirationTime:
+    access: 86400000
+    refresh: 1209600000
 open:
   api:
     title: API for network programming

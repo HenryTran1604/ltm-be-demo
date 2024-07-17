@@ -13,13 +13,13 @@ import java.util.List;
 @AllArgsConstructor
 @Table(name = "user_exercise",
         uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "exercise_id"})})
-public class UserExerciseEntity extends AbstractEntity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class UserExerciseEntity extends AbstractEntity<Long>{
 
     @Column(name = "ac")
     private boolean ac;
+
+    @Column(name = "src_path")
+    private String srcPath;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

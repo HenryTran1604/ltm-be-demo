@@ -11,10 +11,10 @@ import java.util.Date;
 @Getter
 @Setter
 @MappedSuperclass
-public abstract class AbstractEntity {
+public abstract class AbstractEntity<T> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long id;
+    protected T id;
 
     @Column(name = "created_at")
     @CreationTimestamp // tự động thêm

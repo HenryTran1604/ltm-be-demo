@@ -6,22 +6,19 @@ import com.ltm.be.util.StudentCode;
 import jakarta.persistence.Column;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Pattern;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
-@Data
-@Component
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDto {
-    private Long id;
+public class UserDto extends AbstractDto<Long>{
     private String studentCode;
     private String ip;
-    private LocalDateTime createdAt;
+    private String role;
 }

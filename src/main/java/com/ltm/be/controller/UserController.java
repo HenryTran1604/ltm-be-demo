@@ -2,9 +2,7 @@ package com.ltm.be.controller;
 
 import com.ltm.be.dto.UserDto;
 import com.ltm.be.exception.InvalidDataException;
-import com.ltm.be.exception.ResourceNotFoundException;
-import com.ltm.be.payload.request.UserRequest;
-import com.ltm.be.payload.response.PageResponse;
+import com.ltm.be.payload.request.RegisterRequest;
 import com.ltm.be.payload.response.ResponseData;
 import com.ltm.be.payload.response.ResponseError;
 import com.ltm.be.service.IUserService;
@@ -14,11 +12,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -39,7 +34,7 @@ public class UserController {
             summary = "Register new user"
     )
     @PostMapping("/register")
-    public ResponseData<?> addUser(@Valid @RequestBody UserRequest user) {
+    public ResponseData<?> addUser(@Valid @RequestBody RegisterRequest user) {
         try {
             UserDto userDto = userService.addUser(user);
             return new ResponseData<>(HttpStatus.CREATED.value(), "Add user successfully!", userDto);

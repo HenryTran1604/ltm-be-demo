@@ -6,12 +6,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
     List<UserEntity> findAll();
-    UserEntity findByStudentCode(String studentCode);
-    UserEntity findByStudentCodeAndIp(String studentCode, String ip);
+    Optional<UserEntity> findByStudentCode(String studentCode);
+    Optional<UserEntity> findByStudentCodeAndIp(String studentCode, String ip);
     boolean existsByStudentCode(String studentCode);
     boolean existsByStudentCodeAndIp(String studentCode, String ip);
 }

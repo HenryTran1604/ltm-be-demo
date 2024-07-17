@@ -4,13 +4,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Getter
 @Setter
@@ -18,20 +17,23 @@ import java.util.Set;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table( name = "\"user\"",
+@Table(name = "\"user\"",
         uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"studentCode", "ip"})
-})
-public class UserEntity extends AbstractEntity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+                @UniqueConstraint(columnNames = {"studentCode", "ip"})
+        })
+public class UserEntity extends AbstractEntity<Long> {
     @Column(name = "student_code")
     private String studentCode;
 
     @Column(name = "ip")
     private String ip;
+
+    @Column(name = "password")
+    private String password;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id", nullable = false)
+    private RoleEntity role;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // note
     private Set<UserExerciseEntity> userExercises = new HashSet<>();

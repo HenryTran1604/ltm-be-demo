@@ -1,18 +1,15 @@
 package com.ltm.be.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.stereotype.Component;
 
-@Data
-@Component
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserExerciseDto {
-    private Long id;
+public class UserExerciseDto extends AbstractDto<Long> {
     private Long userId;
-    private Long exerciseId;
+    private Integer exerciseId;
     private boolean ac;
     private Integer attemptCount;
 }
