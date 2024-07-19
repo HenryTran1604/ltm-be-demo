@@ -1,25 +1,25 @@
 package com.ltm.be.converter;
 
 import com.ltm.be.dto.ScoreBoardDto;
-import com.ltm.be.entity.UserEntity;
-import com.ltm.be.entity.UserExerciseEntity;
+import com.ltm.be.entity.UserContestEntity;
+import com.ltm.be.entity.UserExerciseContestEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
 public class ScoreBoardConverter {
-    private final UserExerciseConverter userExerciseConverter;
-    public ScoreBoardDto toDto(UserEntity entity) {
+    private final UserExerciseContestConverter userExerciseContestConverter;
+    public ScoreBoardDto toDto(UserContestEntity entity) {
         ScoreBoardDto dto = new ScoreBoardDto();
         dto.setId(entity.getId());
-        dto.setStudentCode(entity.getStudentCode());
-        dto.setIp(entity.getIp());
+        dto.setUsername(entity.getUser().getUsername());
+        dto.setIp(entity.getUser().getIp());
         dto.setCreatedAt(entity.getCreatedAt());
-        dto.setScore(entity.getUserExercises() == null ? 0 : (int) entity.getUserExercises().stream()
-                .filter(UserExerciseEntity::isAc)
+        dto.setScore((int) entity.getUserExerciseContests().stream()
+                .filter(UserExerciseContestEntity::isAc)
                 .count());
-        dto.setUserExercises(entity.getUserExercises().stream().map(userExerciseConverter::toDto).toList());
+        dto.setUserExerciseContests(entity.getUserExerciseContests().stream().map(userExerciseContestConverter::toDto).toList());
         return dto;
     }
 }

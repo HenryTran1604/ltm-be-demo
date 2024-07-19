@@ -1,12 +1,14 @@
 package com.ltm.be.service.impl;
 
 import com.ltm.be.converter.ExerciseConverter;
+import com.ltm.be.converter.TopicConverter;
 import com.ltm.be.dto.ExerciseDto;
 import com.ltm.be.entity.ExerciseEntity;
 import com.ltm.be.exception.ResourceNotFoundException;
 import com.ltm.be.payload.request.ExerciseRequest;
 import com.ltm.be.payload.response.PageResponse;
 import com.ltm.be.repository.ExerciseRepository;
+import com.ltm.be.repository.TopicRepository;
 import com.ltm.be.service.IExerciseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -21,6 +23,8 @@ import java.util.Optional;
 public class ExerciseServiceImpl implements IExerciseService {
     private final ExerciseRepository exerciseRepository;
     private final ExerciseConverter exerciseConverter;
+    private final TopicRepository topicRepository;
+    private final TopicConverter topicConverter;
     @Override
     public PageResponse<?> getAllExercises(int pageNo, int pageSize) {
         int page = 0;
@@ -42,7 +46,7 @@ public class ExerciseServiceImpl implements IExerciseService {
     @Override
     public ExerciseDto getAllExerciseById(Long id) {
         Optional<ExerciseEntity> optional = exerciseRepository.findById(id);
-        return optional.map(entity -> exerciseConverter.toDto(entity)).orElseThrow(() -> new ResourceNotFoundException("Exercise not exist"));
+        return optional.map(exerciseConverter::toDto).orElseThrow(() -> new ResourceNotFoundException("Exercise not exist"));
     }
 
     @Override
@@ -50,6 +54,8 @@ public class ExerciseServiceImpl implements IExerciseService {
         ExerciseEntity entity = ExerciseEntity.builder()
                 .name(request.getName())
                 .content(request.getContent())
+                .alias(request.getAlias())
+                .topic(topicRepository.findById(request.getTopicId()).orElseThrow(() -> new ResourceNotFoundException("Topic not exist")))
                 .build();
         exerciseRepository.save(entity);
     }

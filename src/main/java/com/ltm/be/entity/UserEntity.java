@@ -19,11 +19,11 @@ import java.util.*;
 @AllArgsConstructor
 @Table(name = "\"user\"",
         uniqueConstraints = {
-                @UniqueConstraint(columnNames = {"studentCode", "ip"})
+                @UniqueConstraint(columnNames = {"username", "ip"})
         })
 public class UserEntity extends AbstractEntity<Long> {
-    @Column(name = "student_code")
-    private String studentCode;
+    @Column(name = "username")
+    private String username;
 
     @Column(name = "ip")
     private String ip;
@@ -36,5 +36,5 @@ public class UserEntity extends AbstractEntity<Long> {
     private RoleEntity role;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // note
-    private Set<UserExerciseEntity> userExercises = new HashSet<>();
+    private Set<UserContestEntity> userContest = new HashSet<>();
 }

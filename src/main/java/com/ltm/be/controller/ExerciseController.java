@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -23,6 +24,7 @@ public class ExerciseController {
             summary = "Add new exercise"
     )
     @PostMapping("/add")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseData<?> addExercise(@RequestBody ExerciseRequest request) {
         exerciseService.addExercise(request);
         return new ResponseData<>(HttpStatus.OK.value(),

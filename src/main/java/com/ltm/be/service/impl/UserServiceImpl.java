@@ -3,8 +3,9 @@ package com.ltm.be.service.impl;
 import com.ltm.be.converter.UserConverter;
 import com.ltm.be.dto.UserDto;
 import com.ltm.be.entity.UserEntity;
-import com.ltm.be.exception.InvalidDataException;
+import com.ltm.be.exception.DataConflictException;
 import com.ltm.be.exception.ResourceNotFoundException;
+import com.ltm.be.exception.UsernameAndIpAlreadyExistException;
 import com.ltm.be.payload.request.RegisterRequest;
 import com.ltm.be.payload.response.PageResponse;
 import com.ltm.be.repository.RoleRepository;
@@ -27,12 +28,12 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public UserDto addUser(RegisterRequest request) {
-        checkExistedUser(request.getStudentCode(), request.getIp());
+        checkExistedUser(request.getUsername(), request.getIp());
         UserEntity userEntity = UserEntity.builder()
-                .studentCode(request.getStudentCode())
+                .username(request.getUsername())
                 .ip(request.getIp())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(roleRepository.findByName("USER").orElseThrow(() -> new ResourceNotFoundException("Role user not exist")))
+                .role(roleRepository.findByName("ROLE_USER").orElseThrow(() -> new ResourceNotFoundException("Role user not exist")))
                 .build();
         UserEntity userResponse = userRepository.save(userEntity);
         return userConverter.toDto(userResponse);
@@ -55,14 +56,14 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public UserDto getUserByStudentCode(String studentCode) {
-        UserEntity userEntity = userRepository.findByStudentCode(studentCode).orElseThrow(() -> new ResourceNotFoundException("User not exists"));
+    public UserDto getUserByUsername(String username) {
+        UserEntity userEntity = userRepository.findByUsername(username).orElseThrow(() -> new ResourceNotFoundException("User not exists"));
         return userConverter.toDto(userEntity);
     }
 
     @Override
-    public boolean existByStudentCode(String studentCode) {
-        return userRepository.existsByStudentCode(studentCode);
+    public boolean existsByUsernameAndIp(String username, String ip) {
+        return userRepository.existsByUsernameAndIp(username, ip);
     }
 
     private void checkExistedUser(String username, String ip) {
@@ -71,14 +72,14 @@ public class UserServiceImpl implements IUserService {
     }
 
     private void checkExistedUsername(String username) {
-        if (userRepository.existsByStudentCode(username)) {
-            throw new InvalidDataException("Username already existed");
+        if (userRepository.existsByUsername(username)) {
+            throw new DataConflictException("Username already existed");
         }
     }
 
     private void checkExistedUsernameAndIp(String username, String ip) {
-        if (userRepository.existsByStudentCodeAndIp(username, ip)) {
-            throw new InvalidDataException("Username already registered with specific ip!");
+        if (userRepository.existsByUsernameAndIp(username, ip)) {
+            throw new UsernameAndIpAlreadyExistException("Username already registered with specific ip!");
         }
     }
 

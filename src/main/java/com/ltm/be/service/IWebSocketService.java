@@ -2,5 +2,5 @@ package com.ltm.be.service;
 
 public interface IWebSocketService {
     void sendLog(String logMessage);
-    void sendUpdatedScoreBoard();
+    void sendUpdatedScoreBoard(Long userId);
 }

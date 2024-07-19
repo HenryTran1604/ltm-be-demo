@@ -25,7 +25,8 @@ public class WebhookController {
     @Operation(
             summary = "get init scoreboard"
     )
-    public void handleScoreboard() {
-        webSocketService.sendUpdatedScoreBoard();
+    public void handleScoreboard(@RequestBody String payload) {
+        Long userId = Long.parseLong(payload);
+        webSocketService.sendUpdatedScoreBoard(userId);
     }
 }

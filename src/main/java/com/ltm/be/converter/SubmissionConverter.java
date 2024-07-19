@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class SubmissionConverter {
-    private final UserExerciseConverter userExerciseConverter;
+    private final UserExerciseContestConverter userExerciseContestConverter;
     public SubmissionDto toDto(SubmissionEntity entity) {
         SubmissionDto dto = new SubmissionDto();
         dto.setId(entity.getId());
-        dto.setUserExerciseDto(userExerciseConverter.toDto(entity.getUserExercise()));
+        dto.setUserExerciseContestDto(userExerciseContestConverter.toDto(entity.getUserExerciseContest()));
         dto.setAc(entity.isAc());
         dto.setSrcPath(entity.getSrcPath());
         dto.setCreatedAt(entity.getCreatedAt());

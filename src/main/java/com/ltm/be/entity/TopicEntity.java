@@ -17,6 +17,6 @@ public class TopicEntity extends AbstractEntity<Integer>{
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "exercise", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "topic", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<ExerciseEntity> exercises = new HashSet<>();
 }

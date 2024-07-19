@@ -5,9 +5,8 @@ import com.ltm.be.service.IScoreBoardService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
@@ -15,10 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class ScoreBoardController {
     private final IScoreBoardService scoreBoardService;
-    @GetMapping("/scoreboard")
-    public ResponseData<?> getAllScoreBoard() {
+    @GetMapping("/scoreboard/all")
+    public ResponseData<?> getAllScoreBoard(@RequestParam Long contestId) {
         return new ResponseData<>(HttpStatus.OK.value(),
                 "scoreboard",
-                scoreBoardService.getAllScoreBoard());
+                scoreBoardService.getAllScoreBoardByContestId(contestId));
+    }
+    @GetMapping("/scoreboard")
+    public ResponseData<?> getScoreBoardByUserIdAndContestId(@RequestParam Long userId, @RequestParam(defaultValue = "1") Long contestId) {
+        return new ResponseData<>(HttpStatus.OK.value(),
+                "Scoreboard",
+                scoreBoardService.getScoreBoardByUserIdAndContestId(userId, contestId));
     }
 }

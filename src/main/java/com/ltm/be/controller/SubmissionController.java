@@ -35,8 +35,4 @@ public class SubmissionController {
             return new ResponseError<>(HttpStatus.NOT_FOUND.value(), "User id = " + id + " not exist");
         }
     }
-    @GetMapping("/submissions/")
-    public List<SubmissionDto> getAllLastSubmissionsByUserIdAndAllExercises(@RequestParam Long userId) {
-        return  null;
-    }
 }

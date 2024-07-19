@@ -14,7 +14,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class LoginRequest {
     @StudentCode
-    private String studentCode;
+    private String username;
     @IP
     private String ip;
     @NotBlank(message = "Password must be not blank")

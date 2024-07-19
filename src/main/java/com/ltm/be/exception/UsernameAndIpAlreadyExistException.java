@@ -1,8 +1,7 @@
 package com.ltm.be.exception;
 
-import org.apache.coyote.BadRequestException;
 
-public class UsernameAndIpAlreadyExistException extends BadRequestException {
+public class UsernameAndIpAlreadyExistException extends RuntimeException {
     public UsernameAndIpAlreadyExistException(String message) {
         super(message);
     }

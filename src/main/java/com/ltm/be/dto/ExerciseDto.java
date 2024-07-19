@@ -6,7 +6,9 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ExerciseDto extends AbstractDto<Integer> {
+public class ExerciseDto extends AbstractDto<Long> {
     private String name;
+    private String alias;
     private String content;
+    private TopicDto topic;
 }

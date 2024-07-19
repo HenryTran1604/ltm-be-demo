@@ -20,21 +20,21 @@ import java.util.List;
 @Tag(name = "Log Controller")
 public class LogController {
     private final ILogService logService;
-    @Operation(
-            summary = "Get client communication logs"
-    )
-    @GetMapping("/client-logs")
-    public ResponseData<?> getAllInfoLogs() {
-        return new ResponseData<>(HttpStatus.OK.value(),
-                "Client logs",
-                logService.getAllClientLogs());
-    }
-    @Operation(
-            summary = "Delete client communication logs"
-    )
-    @DeleteMapping("/clear-logs")
-    public ResponseData<?> clearLog() {
-        logService.clearLogs();
-        return new ResponseData<>(HttpStatus.OK.value(), "Clear client logs successfully!");
-    }
+//    @Operation(
+//            summary = "Get client communication logs"
+//    )
+//    @GetMapping("/client-logs")
+//    public ResponseData<?> getAllInfoLogs() {
+//        return new ResponseData<>(HttpStatus.OK.value(),
+//                "Client logs",
+//                logService.getAllClientLogs());
+//    }
+//    @Operation(
+//            summary = "Delete client communication logs"
+//    )
+//    @DeleteMapping("/clear-logs")
+//    public ResponseData<?> clearLog() {
+//        logService.clearLogs();
+//        return new ResponseData<>(HttpStatus.OK.value(), "Clear client logs successfully!");
+//    }
 }

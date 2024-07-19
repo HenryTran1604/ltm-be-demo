@@ -15,14 +15,14 @@ import java.util.Collections;
 @Setter
 public class CustomUserDetails implements UserDetails {
     private Long id;
-    private String studentCode;
+    private String username;
     private String ip;
     private String password;
     private LocalDateTime createdAt;
     private Collection<? extends GrantedAuthority> roles;
     public CustomUserDetails(UserEntity user) {
         this.id = user.getId();
-        this.studentCode = user.getStudentCode();
+        this.username = user.getUsername();
         this.ip = user.getIp();
         this.password = user.getPassword();
         this.createdAt = user.getCreatedAt();
@@ -40,7 +40,7 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return this.studentCode;
+        return this.username;
     }
 
     @Override

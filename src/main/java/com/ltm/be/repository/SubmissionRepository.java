@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SubmissionRepository extends JpaRepository<SubmissionEntity, Long> {
-    Page<SubmissionEntity> findAllByUserExercise_UserId(Long userId, Pageable pageable);
+    Page<SubmissionEntity> findAllByUserExerciseContest_UserContestUserId(Long userId, Pageable pageable);
 
 }

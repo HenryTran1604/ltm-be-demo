@@ -1,12 +1,8 @@
 package com.ltm.be.converter;
 
 import com.ltm.be.dto.UserDto;
-import com.ltm.be.entity.SubmissionEntity;
 import com.ltm.be.entity.UserEntity;
-import com.ltm.be.entity.UserExerciseEntity;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 public class UserConverter {
@@ -14,7 +10,7 @@ public class UserConverter {
     public UserEntity toEntity(UserDto dto) {
         UserEntity entity = new UserEntity();
         entity.setId(dto.getId());
-        entity.setStudentCode(dto.getStudentCode());
+        entity.setUsername(dto.getUsername());
         entity.setIp(dto.getIp());
 
         return entity;
@@ -23,7 +19,7 @@ public class UserConverter {
     public UserDto toDto(UserEntity entity) {
         UserDto dto = new UserDto();
         dto.setId(entity.getId());
-        dto.setStudentCode(entity.getStudentCode());
+        dto.setUsername(entity.getUsername());
         dto.setIp(entity.getIp());
         dto.setCreatedAt(entity.getCreatedAt());
         dto.setRole(entity.getRole().getName());

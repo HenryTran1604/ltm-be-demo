@@ -25,7 +25,7 @@ public class SubmissionEntity extends AbstractEntity<Long>{
     private String srcPath;
 
     @ManyToOne
-    @JoinColumn(name = "user_exercise_id", nullable = false)
-    private UserExerciseEntity userExercise;
+    @JoinColumn(name = "user_exercise_contest_id", nullable = false)
+    private UserExerciseContestEntity userExerciseContest;
 
 }
