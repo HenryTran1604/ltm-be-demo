@@ -27,8 +27,19 @@ public class ExerciseController {
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseData<?> addExercise(@RequestBody ExerciseRequest request) {
         exerciseService.addExercise(request);
-        return new ResponseData<>(HttpStatus.OK.value(),
+        return new ResponseData<>(HttpStatus.CREATED.value(),
                 "Add exercises successfully!");
+    }
+
+    @Operation(
+            summary = "Update exercise"
+    )
+    @PutMapping("/update")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseData<?> updateExercise(@RequestParam Long id, @RequestBody ExerciseRequest request) {
+        exerciseService.updateExercise(id, request);
+        return new ResponseData<>(HttpStatus.CREATED.value(),
+                "Update exercises successfully!");
     }
 
     @GetMapping("/all")
@@ -37,5 +48,12 @@ public class ExerciseController {
         return new ResponseData<>(HttpStatus.OK.value(),
                 "Exercises",
                 exerciseService.getAllExercises(pageNo, pageSize));
+    }
+
+    @GetMapping("/detail/{id}")
+    public ResponseData<?> getExercisesById(@PathVariable Long id) {
+        return new ResponseData<>(HttpStatus.OK.value(),
+                "Exercises",
+                exerciseService.getAllExerciseById(id));
     }
 }

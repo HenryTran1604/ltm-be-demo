@@ -12,8 +12,11 @@ import java.util.Set;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "exercise_contest")
-public class ExerciseContestEntity extends AbstractEntity<Long>{
+@Table(name = "exercise_contest",
+        uniqueConstraints = @UniqueConstraint(
+                columnNames = {"contest_id", "exercise_id"}
+        ))
+public class ExerciseContestEntity extends AbstractEntity<Long> {
     @ManyToOne
     @JoinColumn(name = "contest_id")
     private ContestEntity contest;

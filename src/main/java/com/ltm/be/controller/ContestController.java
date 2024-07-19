@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class ContestController {
     private final IContestService contestService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/detail/{id}")
     public ResponseData<?> getContestById(@PathVariable Long id) {
         return new ResponseData<>(HttpStatus.OK.value(),
                 "Contest",
@@ -46,8 +46,8 @@ public class ContestController {
 
     @PostMapping("/assign")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseData<?> assignExercisesToUserRandomly(@RequestBody Long contestId) {
-        contestService.assignExercisesToUsers(contestId);
+    public ResponseData<?> assignExercisesToUserRandomly(@RequestParam Long id) {
+        contestService.assignExercisesToUsers(id);
         return new ResponseData<>(HttpStatus.OK.value(),
                 "Assign exercise successfully!"
         );

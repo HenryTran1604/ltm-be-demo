@@ -1,12 +1,12 @@
 package com.ltm.be.controller;
 
-import com.ltm.be.exception.LoginFailException;
 import com.ltm.be.payload.request.LoginRequest;
 import com.ltm.be.payload.request.RegisterRequest;
 import com.ltm.be.payload.response.ResponseData;
 import com.ltm.be.service.IAuthenticationService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -32,15 +32,11 @@ public class AuthenticationController {
     @Operation(
             summary = "Register new user"
     )
-    public ResponseData<?> register(@Valid @RequestBody RegisterRequest request) {
+    public ResponseData<?> register(@Valid @RequestBody RegisterRequest request, HttpServletRequest httpServletRequest) {
+        request.setIp(httpServletRequest.getRemoteAddr());
         return new ResponseData<>(HttpStatus.CREATED.value(),
                 "login successfully!",
                 authenticationService.register(request));
-    }
-    @GetMapping("/test")
-//    @CrossOrigin("*")
-    public String test() {
-        return "dsa;jfdsa";
     }
 
 }

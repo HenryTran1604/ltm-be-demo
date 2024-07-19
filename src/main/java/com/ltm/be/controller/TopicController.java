@@ -7,10 +7,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/topics")
@@ -25,5 +22,13 @@ public class TopicController {
         topicService.addTopic(request);
         return new ResponseData<>(HttpStatus.CREATED.value(),
                 "Add Topic successfully!");
+    }
+    @GetMapping("/all")
+    public ResponseData<?> getAllTopics(@RequestParam(defaultValue = "0") int pageNo,
+                                        @RequestParam(defaultValue = "30") int pageSize) {
+
+        return new ResponseData<>(HttpStatus.OK.value(),
+                "Topics",
+                topicService.getAllTopics(pageNo, pageSize));
     }
 }

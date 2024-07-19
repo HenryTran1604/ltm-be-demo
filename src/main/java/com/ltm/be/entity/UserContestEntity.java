@@ -12,7 +12,10 @@ import java.util.Set;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user_contest")
+@Table(name = "user_contest",
+        uniqueConstraints = @UniqueConstraint(
+                columnNames = {"contest_id", "user_id"}
+        ))
 public class UserContestEntity extends AbstractEntity<Long>{
     @ManyToOne
     @JoinColumn(name = "contest_id")

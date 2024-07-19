@@ -8,4 +8,6 @@ public interface IExerciseService {
     PageResponse<?> getAllExercises(int pageNo, int pageSize);
     ExerciseDto getAllExerciseById(Long id);
     void addExercise(ExerciseRequest request);
+
+    void updateExercise(Long id, ExerciseRequest request);
 }

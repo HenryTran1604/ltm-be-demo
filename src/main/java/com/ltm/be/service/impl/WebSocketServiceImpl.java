@@ -27,7 +27,7 @@ public class WebSocketServiceImpl implements IWebSocketService {
     }
     @Override
     public void sendUpdatedScoreBoard(Long userId) {
-        List<ScoreBoardDto> leaderBoard = scoreBoardService.getAllScoreBoardByContestId(1L);
+        ScoreBoardDto leaderBoard = scoreBoardService.getScoreBoardByUserIdAndContestId(userId, 1L);
         simpMessagingTemplate.convertAndSend("/topic/scoreboard/"+userId, leaderBoard);
     }
 }

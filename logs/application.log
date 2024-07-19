@@ -1427,3 +1427,34 @@ io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period
 2024-07-19 13:06:03 - Mã sinh viên b20dccn123: mã bài tập 1 không đúng!
 2024-07-19 13:06:03 - Mã sinh viên b20dccn123 không được giao bài tập 1!
 2024-07-19 13:07:12 - Mã sinh viên b20dccn123 chưa đăng kí!
+2024-07-19 13:28:52 - Mã sinh viên b20dccn115 chưa đăng kí!
+2024-07-19 13:40:10 - Mã sinh viên b20dccn115 chưa đăng kí! hoặc IP không trùng khớp
+2024-07-19 14:02:09 - HikariPool-1 - Shutdown initiated...
+2024-07-19 14:02:09 - HikariPool-1 - Shutdown completed.
+2024-07-19 14:02:34 - Starting BeApplication using Java 21.0.1 with PID 14120 (C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be\target\classes started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-19 14:02:34 - The following 1 profile is active: "dev"
+2024-07-19 14:02:40 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-19 14:02:40 - Starting service [Tomcat]
+2024-07-19 14:02:40 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-19 14:02:40 - Initializing Spring embedded WebApplicationContext
+2024-07-19 14:02:42 - HikariPool-1 - Starting...
+2024-07-19 14:02:42 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5e6522a6
+2024-07-19 14:02:42 - HikariPool-1 - Start completed.
+2024-07-19 14:02:48 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-19 14:02:50 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-19 14:02:50 - Started BeApplication in 16.122 seconds (process running for 22.233)
+2024-07-19 14:03:32 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-19 14:21:30 - Mã sinh viên b20dccn115 chưa đăng kí! hoặc IP không trùng khớp
+2024-07-19 14:23:44 - Mã sinh viên b20dccn115 chưa đăng kí! hoặc IP không trùng khớp
+2024-07-19 14:24:32 - Mã sinh viên b20dccn115 chưa đăng kí! hoặc IP không trùng khớp
+2024-07-19 14:38:57 - HikariPool-1 - Shutdown initiated...
+2024-07-19 14:38:57 - HikariPool-1 - Shutdown completed.
+2024-07-19 16:12:34 - Starting BeApplicationTests using Java 21.0.1 with PID 17900 (started by QuangHuy in C:\Users\QuangHuy\OneDrive - ptit.edu.vn\Desktop\GraduationThesis\Demo\be)
+2024-07-19 16:12:34 - The following 1 profile is active: "dev"
+2024-07-19 16:13:47 - HikariPool-1 - Starting...
+2024-07-19 16:14:00 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@71285693
+2024-07-19 16:14:00 - HikariPool-1 - Start completed.
+2024-07-19 16:15:03 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-19 16:15:07 - Started BeApplicationTests in 157.679 seconds (process running for 274.21)
+2024-07-19 16:15:10 - HikariPool-1 - Shutdown initiated...
+2024-07-19 16:15:10 - HikariPool-1 - Shutdown completed.

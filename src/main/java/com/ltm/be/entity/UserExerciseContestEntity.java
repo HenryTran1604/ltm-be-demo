@@ -11,7 +11,10 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user_exercise_contest")
+@Table(name = "user_exercise_contest",
+        uniqueConstraints = @UniqueConstraint(
+                columnNames = {"user_contest_id", "user_exercise_id"}
+        ))
 public class UserExerciseContestEntity extends AbstractEntity<Long>{
     @Column(name = "ac")
     private boolean ac;

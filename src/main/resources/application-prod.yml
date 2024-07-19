@@ -1,7 +1,19 @@
 server:
-  port: 8082
+  port: 8080
 spring:
   datasource:
-    url: jdbc:mysql://db_container:3306/ltm_demo
-    username: root
+    url: jdbc:postgresql://database:3306/ltm_demo
+    username: postgres
     password: 1234
+token:
+  secretKey: c2VjcmV0QGtleS5hcGlfaGFzX2JlZW5fZGVzaWduZWRfYnlfVGF5TFE=
+  expirationTime:
+    access: 86400000
+    refresh: 1209600000
+open:
+  api:
+    title: API for network programming
+    version: v1.0.0
+    description: demo
+    serverUrl: http://20.198.242.126:${server.port}
+    serverName: server dev

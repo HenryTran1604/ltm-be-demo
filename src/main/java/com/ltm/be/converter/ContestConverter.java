@@ -11,6 +11,7 @@ public class ContestConverter {
         dto.setId(entity.getId());
         dto.setStartTime(entity.getStartTime());
         dto.setEndTime(entity.getEndTime());
+        dto.setTitle(entity.getTitle());
         dto.setCreatedAt(entity.getCreatedAt());
         return dto;
     }

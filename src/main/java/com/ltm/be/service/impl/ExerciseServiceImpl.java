@@ -59,4 +59,16 @@ public class ExerciseServiceImpl implements IExerciseService {
                 .build();
         exerciseRepository.save(entity);
     }
+
+    @Override
+    public void updateExercise(Long id, ExerciseRequest request) {
+        ExerciseEntity entity = ExerciseEntity.builder()
+                .name(request.getName())
+                .content(request.getContent())
+                .alias(request.getAlias())
+                .topic(topicRepository.findById(request.getTopicId()).orElseThrow(() -> new ResourceNotFoundException("Topic not exist")))
+                .build();
+        entity.setId(id);
+        exerciseRepository.save(entity);
+    }
 }
