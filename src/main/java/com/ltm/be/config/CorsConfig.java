@@ -18,8 +18,7 @@ public class CorsConfig {
                         .allowedOrigins("*")
                         .allowedHeaders("*")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowCredentials(false)
-                        .maxAge(3600);
+                        .allowCredentials(false);
             }
         };
     }

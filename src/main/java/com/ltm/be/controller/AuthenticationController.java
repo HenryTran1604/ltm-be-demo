@@ -1,7 +1,7 @@
 package com.ltm.be.controller;
 
 import com.ltm.be.payload.request.LoginRequest;
-import com.ltm.be.payload.request.RegisterRequest;
+import com.ltm.be.payload.request.RegistrationRequest;
 import com.ltm.be.payload.response.ResponseData;
 import com.ltm.be.service.IAuthenticationService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -32,10 +32,10 @@ public class AuthenticationController {
     @Operation(
             summary = "Register new user"
     )
-    public ResponseData<?> register(@Valid @RequestBody RegisterRequest request, HttpServletRequest httpServletRequest) {
-        request.setIp(httpServletRequest.getRemoteAddr());
+    public ResponseData<?> register(@Valid @RequestBody RegistrationRequest request, HttpServletRequest httpServletRequest) {
+//        request.setIp(httpServletRequest.getRemoteAddr());
         return new ResponseData<>(HttpStatus.CREATED.value(),
-                "login successfully!",
+                "Register successfully!",
                 authenticationService.register(request));
     }
 

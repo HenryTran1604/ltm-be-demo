@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class TestRoleController {
+public class    TestRoleController {
     @GetMapping("/roletest")
     public void welcome(SecurityContextHolderAwareRequestWrapper request) {
         boolean b = request.isUserInRole("ROLE_ADMIN");

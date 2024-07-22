@@ -10,6 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserContestDto extends AbstractDto<Long>{
-    private UserDto userDto;
-    private ContestDto contestDto;
+    private UserDto user;
+    private ContestDto contest;
+    private boolean registered;
 }

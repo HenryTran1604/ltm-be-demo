@@ -38,13 +38,13 @@ public class ExerciseController {
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseData<?> updateExercise(@RequestParam Long id, @RequestBody ExerciseRequest request) {
         exerciseService.updateExercise(id, request);
-        return new ResponseData<>(HttpStatus.CREATED.value(),
+        return new ResponseData<>(HttpStatus.OK.value(),
                 "Update exercises successfully!");
     }
 
     @GetMapping("/all")
     public ResponseData<?> getAllExercises(@RequestParam(defaultValue = "0") int pageNo,
-                                           @Min(1) @RequestParam(defaultValue = "10") int pageSize) {
+                                           @Min(1) @RequestParam(defaultValue = "50") int pageSize) {
         return new ResponseData<>(HttpStatus.OK.value(),
                 "Exercises",
                 exerciseService.getAllExercises(pageNo, pageSize));

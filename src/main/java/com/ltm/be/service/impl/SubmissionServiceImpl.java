@@ -42,4 +42,9 @@ public class SubmissionServiceImpl implements ISubmissionService {
         throw new ResourceNotFoundException("Student not found");
     }
 
+    @Override
+    public PageResponse<?> getAllByUserIdAndContestId(Long id, int pageNo, int pageSize) {
+        return null;
+    }
+
 }

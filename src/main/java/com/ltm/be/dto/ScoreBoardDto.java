@@ -9,9 +9,9 @@ import java.util.List;
 @Setter
 public class ScoreBoardDto {
     private Long id;
+    private Long userContestId;
     private String username;
     private String ip;
-    private LocalDateTime createdAt;
     private Integer score;
     private List<UserExerciseContestDto> userExerciseContests;
 }

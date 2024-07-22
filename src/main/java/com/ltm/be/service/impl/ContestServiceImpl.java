@@ -3,8 +3,10 @@ package com.ltm.be.service.impl;
 import com.ltm.be.converter.ContestConverter;
 import com.ltm.be.dto.ContestDto;
 import com.ltm.be.entity.*;
+import com.ltm.be.exception.DataConflictException;
 import com.ltm.be.exception.ResourceNotFoundException;
 import com.ltm.be.payload.request.ContestRequest;
+import com.ltm.be.payload.request.RegistrationContestRequest;
 import com.ltm.be.repository.*;
 import com.ltm.be.service.IContestService;
 import lombok.RequiredArgsConstructor;
@@ -55,26 +57,34 @@ public class ContestServiceImpl implements IContestService {
     }
 
     @Override
-    public void assignExercisesToUsers(Long contestId) {
-        List<UserContestEntity> users = userContestRepository.findAllByContestId(contestId);
+    public void assignExercisesToUsers(Long id) {
+        List<UserContestEntity> users = userContestRepository.findAllByContestId(id);
         List<TopicEntity> topics = topicRepository.findAll();
         Random random = new Random();
         for (UserContestEntity user : users) {
             for (TopicEntity topic : topics) {
                 List<ExerciseContestEntity> exercises = exerciseContestRepository.findByExercise_TopicId(topic.getId());
                 if (!exercises.isEmpty()) {
-                    int randomIndex = random.nextInt(exercises.size());
-                    ExerciseContestEntity randomExercise = exercises.get(randomIndex);
-
-                    UserExerciseContestEntity userExercise = UserExerciseContestEntity.builder()
-                            .exerciseContest(randomExercise)
-                            .userContest(user)
-                            .ac(false)
-                            .srcPath("")
-                            .build();
-                    userExerciseContestRepository.save(userExercise);
+                    int randomExerciseIndex = random.nextInt(exercises.size());
+                    ExerciseContestEntity randomExercise = exercises.get(randomExerciseIndex);
+                    List<AliasEntity> aliases = randomExercise.getExercise().getAliases();
+                    if(!aliases.isEmpty()) {
+                        int randomExerciseAlias = random.nextInt(aliases.size());
+                        System.out.println(aliases + " " + randomExerciseAlias);
+                        UserExerciseContestEntity userExercise = UserExerciseContestEntity.builder()
+                                .exerciseContest(randomExercise)
+                                .userContest(user)
+                                .ac(false)
+                                .srcPath("")
+                                .alias(aliases.get(randomExerciseAlias))
+                                .build();
+                        userExerciseContestRepository.save(userExercise);
+                    } else {
+                        throw new DataConflictException("Some exercises have no alias");
+                    }
                 }
             }
         }
     }
+
 }

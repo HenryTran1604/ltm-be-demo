@@ -15,12 +15,14 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "User Exercise Contest Controller")
 public class UserExerciseContestController {
     private final IUserExerciseContestService userExerciseContestService;
-    @GetMapping("/detail/{userId}")
-    public ResponseData<?> getExercisesAssignedToUser(@PathVariable Long userId,
-                                                      @RequestParam(defaultValue = "0", required = false) int pageNo,
-                                                      @RequestParam(defaultValue = "50", required = false) int pageSize) {
+
+    @GetMapping("/detail")
+    public ResponseData<?> getUserExercisesByUser(@RequestParam Long userId,
+                                                  @RequestParam Long contestId,
+                                                  @RequestParam(defaultValue = "0", required = false) int pageNo,
+                                                  @RequestParam(defaultValue = "50", required = false) int pageSize) {
         return new ResponseData<>(HttpStatus.OK.value(),
                 "Assign successfully!",
-                userExerciseContestService.getExercisesAssignedToUser(userId, pageNo, pageSize));
+                userExerciseContestService.getExercisesAssignedToUser(userId, contestId, pageNo, pageSize));
     }
 }

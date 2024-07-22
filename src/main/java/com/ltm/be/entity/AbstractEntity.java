@@ -16,7 +16,7 @@ public abstract class AbstractEntity<T> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected T id;
 
-    @Column(name = "created_at")
+    @Column(name = "created_at", updatable = false)
     @CreationTimestamp // tự động thêm
     @Temporal(TemporalType.TIMESTAMP)
     protected LocalDateTime createdAt;

@@ -17,7 +17,7 @@ public class UseExerciseContestServiceImpl implements IUserExerciseContestServic
     private final UserExerciseContestRepository userExerciseContestRepository;
     private final UserExerciseContestConverter userExerciseContestConverter;
     @Override
-    public PageResponse<?> getExercisesAssignedToUser(Long userId, int pageNo, int pageSize) {
+    public PageResponse<?> getExercisesAssignedToUser(Long userId, Long contestId, int pageNo, int pageSize) {
         int page = 0;
         if(pageNo > 0) {
             page = pageNo - 1;

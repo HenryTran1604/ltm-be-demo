@@ -1,10 +1,14 @@
 package com.ltm.be.payload.request;
 
+import com.ltm.be.dto.AliasDto;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -15,8 +19,8 @@ public class ExerciseRequest {
     private String name;
     @NotBlank(message = "Exercise content must not be blank")
     private String content;
-    @NotBlank(message = "Exercise alias must not be blank")
-    private String alias;
+    @NotEmpty(message = "Exercise aliases must not be empty")
+    private List<AliasRequest> aliases;
     @NotBlank(message = "Exercise must be in a topic")
     private Integer topicId;
 }

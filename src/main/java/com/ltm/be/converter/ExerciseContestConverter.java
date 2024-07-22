@@ -12,7 +12,7 @@ public class ExerciseContestConverter {
     public ExerciseContestDto toDto(ExerciseContestEntity entity) {
         ExerciseContestDto dto = new ExerciseContestDto();
         dto.setId(entity.getId());
-        dto.setExerciseDto(exerciseConverter.toDto(entity.getExercise()));
+        dto.setExercise(exerciseConverter.toDto(entity.getExercise()));
         dto.setContestId(entity.getContest().getId());
         dto.setCreatedAt(entity.getCreatedAt());
         return dto;

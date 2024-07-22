@@ -127,18 +127,18 @@ public class GlobalExceptionHandler {
                 .message(exception.getMessage())
                 .build();
     }
-    @ExceptionHandler(UsernameNotFoundException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ErrorResponse handleUsernameNotFoundException(UsernameNotFoundException exception, WebRequest request) {
-        System.out.println("Loi ở đâyyyyyyy");
-        return ErrorResponse.builder()
-                .timestamp(new Date())
-                .status(HttpStatus.BAD_REQUEST.value())
-                .path(request.getDescription(false).replace("uri=", ""))
-                .error(HttpStatus.BAD_REQUEST.getReasonPhrase())
-                .message(exception.getMessage())
-                .build();
-    }
+        @ExceptionHandler(UsernameNotFoundException.class)
+        @ResponseStatus(HttpStatus.BAD_REQUEST)
+        public ErrorResponse handleUsernameNotFoundException(UsernameNotFoundException exception, WebRequest request) {
+
+            return ErrorResponse.builder()
+                    .timestamp(new Date())
+                    .status(HttpStatus.BAD_REQUEST.value())
+                    .path(request.getDescription(false).replace("uri=", ""))
+                    .error(HttpStatus.BAD_REQUEST.getReasonPhrase())
+                    .message(exception.getMessage())
+                    .build();
+        }
     @ExceptionHandler(RuntimeException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorResponse handleRuntimeException(RuntimeException exception, WebRequest request) {
@@ -147,6 +147,17 @@ public class GlobalExceptionHandler {
                 .status(HttpStatus.BAD_REQUEST.value())
                 .path(request.getDescription(false).replace("uri=", ""))
                 .error(HttpStatus.BAD_REQUEST.getReasonPhrase())
+                .message(exception.getMessage())
+                .build();
+    }
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public ErrorResponse handleInternalServerError(Exception exception, WebRequest request) {
+        return ErrorResponse.builder()
+                .timestamp(new Date())
+                .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
+                .path(request.getDescription(false).replace("uri=", ""))
+                .error(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase())
                 .message(exception.getMessage())
                 .build();
     }

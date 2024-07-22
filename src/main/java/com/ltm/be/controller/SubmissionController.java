@@ -22,14 +22,14 @@ public class SubmissionController {
     private final ISubmissionService submissionService;
 
     @Operation(summary = "Get submission of user")
-    @GetMapping("/submissions/user/{id}")
-    public ResponseData<?> getAllByUserId(@PathVariable Long id,
+    @GetMapping("/submissions/user") // undone
+    public ResponseData<?> getAllByUserIdAndContestId(@RequestParam Long id, @RequestParam Long contestId,
                                           @RequestParam(defaultValue = "0") int pageNo,
                                           @RequestParam(defaultValue = "30") int pageSize) {
         try {
             return new ResponseData<>(HttpStatus.OK.value(),
                     "Submission of user id = " + id,
-                    submissionService.getAllByUserId(id,pageNo, pageSize));
+                    submissionService.getAllByUserIdAndContestId(id,pageNo, pageSize));
 
         } catch (ResourceNotFoundException exception) {
             return new ResponseError<>(HttpStatus.NOT_FOUND.value(), "User id = " + id + " not exist");

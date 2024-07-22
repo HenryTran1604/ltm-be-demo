@@ -13,9 +13,9 @@ public class ScoreBoardConverter {
     public ScoreBoardDto toDto(UserContestEntity entity) {
         ScoreBoardDto dto = new ScoreBoardDto();
         dto.setId(entity.getId());
+        dto.setUserContestId(entity.getId());
         dto.setUsername(entity.getUser().getUsername());
         dto.setIp(entity.getUser().getIp());
-        dto.setCreatedAt(entity.getCreatedAt());
         dto.setScore((int) entity.getUserExerciseContests().stream()
                 .filter(UserExerciseContestEntity::isAc)
                 .count());

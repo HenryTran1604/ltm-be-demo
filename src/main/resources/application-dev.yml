@@ -7,12 +7,14 @@ spring:
     password: 1234
   jpa:
     hibernate:
+#      ddl-auto: create
       ddl-auto: update
+
 token:
   secretKey: c2VjcmV0QGtleS5hcGlfaGFzX2JlZW5fZGVzaWduZWRfYnlfVGF5TFE=
   expirationTime:
-    access: 86400000
-    refresh: 1209600000
+    access: 864000000
+    refresh: 12096000000
 open:
   api:
     title: API for network programming

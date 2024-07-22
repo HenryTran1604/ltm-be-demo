@@ -3,7 +3,7 @@ package com.ltm.be.service.impl;
 import com.ltm.be.dto.UserDto;
 import com.ltm.be.exception.DataConflictException;
 import com.ltm.be.payload.request.LoginRequest;
-import com.ltm.be.payload.request.RegisterRequest;
+import com.ltm.be.payload.request.RegistrationRequest;
 import com.ltm.be.payload.response.LoginResponse;
 import com.ltm.be.security.CustomUserDetails;
 import com.ltm.be.service.IAuthenticationService;
@@ -23,14 +23,14 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
     private final IJwtService jwtService;
 
     @Override
-    public LoginResponse register(RegisterRequest request) {
+    public LoginResponse register(RegistrationRequest request) {
         UserDto userResponse = userService.addUser(request);
         String accessToken = jwtService.generateAccessToken(request.getUsername());
         String refreshToken = jwtService.generateRefreshToken(request.getUsername());
         return LoginResponse.builder()
                 .accessToken(accessToken)
                 .refreshToken(refreshToken)
-                .userDto(userResponse)
+                .user(userResponse)
                 .build();
     }
 
@@ -48,16 +48,16 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
         }
         String accessToken = jwtService.generateAccessToken(userDetails.getUsername());
         String refreshToken = jwtService.generateRefreshToken(userDetails.getUsername());
-        UserDto userDto = new UserDto();
-        userDto.setId(userDetails.getId());
-        userDto.setUsername(userDetails.getUsername());
-        userDto.setCreatedAt(userDetails.getCreatedAt());
-        userDto.setIp(userDetails.getIp());
-        userDto.setRole(role);
+        UserDto user = new UserDto();
+        user.setId(userDetails.getId());
+        user.setUsername(userDetails.getUsername());
+        user.setCreatedAt(userDetails.getCreatedAt());
+        user.setIp(userDetails.getIp());
+        user.setRole(role);
         return LoginResponse.builder()
                 .accessToken(accessToken)
                 .refreshToken(refreshToken)
-                .userDto(userDto)
+                .user(user)
                 .build();
     }
 }

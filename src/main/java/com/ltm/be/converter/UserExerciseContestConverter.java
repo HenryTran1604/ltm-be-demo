@@ -1,6 +1,5 @@
 package com.ltm.be.converter;
 
-import com.ltm.be.dto.ExerciseContestDto;
 import com.ltm.be.dto.UserExerciseContestDto;
 import com.ltm.be.entity.UserExerciseContestEntity;
 import lombok.RequiredArgsConstructor;
@@ -14,8 +13,9 @@ public class UserExerciseContestConverter {
         UserExerciseContestDto dto = new UserExerciseContestDto();
         dto.setId(entity.getId());
         dto.setUserContestId(entity.getUserContest().getId());
-        dto.setExerciseContestDto(exerciseContestConverter.toDto(entity.getExerciseContest()));
+        dto.setExerciseContest(exerciseContestConverter.toDto(entity.getExerciseContest()));
         dto.setAc(entity.isAc());
+        dto.setAlias(entity.getAlias().getCode());
         dto.setCreatedAt(entity.getCreatedAt());
         dto.setAttemptCount(entity.getSubmissions().size());
         return dto;

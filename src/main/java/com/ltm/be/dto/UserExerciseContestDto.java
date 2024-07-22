@@ -11,7 +11,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UserExerciseContestDto extends AbstractDto<Long> {
     private Long userContestId;
-    private ExerciseContestDto exerciseContestDto;
+    private String alias;
+    private ExerciseContestDto exerciseContest;
     private boolean ac;
     private String srcPath;
     private Integer attemptCount;

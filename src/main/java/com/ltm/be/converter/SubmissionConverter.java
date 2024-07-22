@@ -13,7 +13,7 @@ public class SubmissionConverter {
     public SubmissionDto toDto(SubmissionEntity entity) {
         SubmissionDto dto = new SubmissionDto();
         dto.setId(entity.getId());
-        dto.setUserExerciseContestDto(userExerciseContestConverter.toDto(entity.getUserExerciseContest()));
+        dto.setUserExerciseContest(userExerciseContestConverter.toDto(entity.getUserExerciseContest()));
         dto.setAc(entity.isAc());
         dto.setSrcPath(entity.getSrcPath());
         dto.setCreatedAt(entity.getCreatedAt());

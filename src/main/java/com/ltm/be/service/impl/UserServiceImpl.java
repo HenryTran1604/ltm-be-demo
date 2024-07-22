@@ -6,7 +6,7 @@ import com.ltm.be.entity.UserEntity;
 import com.ltm.be.exception.DataConflictException;
 import com.ltm.be.exception.ResourceNotFoundException;
 import com.ltm.be.exception.UsernameAndIpAlreadyExistException;
-import com.ltm.be.payload.request.RegisterRequest;
+import com.ltm.be.payload.request.RegistrationRequest;
 import com.ltm.be.payload.response.PageResponse;
 import com.ltm.be.repository.RoleRepository;
 import com.ltm.be.repository.UserRepository;
@@ -18,6 +18,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Locale;
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements IUserService {
@@ -27,10 +29,10 @@ public class UserServiceImpl implements IUserService {
     private final RoleRepository roleRepository;
 
     @Override
-    public UserDto addUser(RegisterRequest request) {
+    public UserDto addUser(RegistrationRequest request) {
         checkExistedUser(request.getUsername(), request.getIp());
         UserEntity userEntity = UserEntity.builder()
-                .username(request.getUsername())
+                .username(request.getUsername().toLowerCase())
                 .ip(request.getIp())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(roleRepository.findByName("ROLE_USER").orElseThrow(() -> new ResourceNotFoundException("Role user not exist")))

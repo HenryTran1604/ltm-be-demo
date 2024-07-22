@@ -14,8 +14,7 @@ public class RoleServiceImpl implements IRoleService {
     public RoleEntity createRoleIfNotFound(String name) {
         if (!roleRepository.existsByName(name)) {
             RoleEntity role = RoleEntity.builder().name(name).build();
-            RoleEntity response = roleRepository.save(role);
-            return response;
+            return roleRepository.save(role);
         }
         return null;
     }

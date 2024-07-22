@@ -3,6 +3,8 @@ package com.ltm.be.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 @Getter
@@ -16,9 +18,6 @@ public class ExerciseEntity extends AbstractEntity<Long>{
     @Column(name = "name")
     private String name;
 
-    @Column(name = "alias")
-    private String alias;
-
     @Column(name = "content", columnDefinition = "TEXT")
     private String content;
 
@@ -26,6 +25,9 @@ public class ExerciseEntity extends AbstractEntity<Long>{
     @JoinColumn(name = "topic_id")
     private TopicEntity topic;
 
+    @OneToMany(mappedBy = "exercise", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<AliasEntity> aliases = new ArrayList<>();;
+
     @OneToMany(mappedBy = "exercise", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<ExerciseContestEntity> exerciseContests;
+    private List<ExerciseContestEntity> exerciseContests = new ArrayList<>();
 }

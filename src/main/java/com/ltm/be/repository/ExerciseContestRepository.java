@@ -1,6 +1,8 @@
 package com.ltm.be.repository;
 
 import com.ltm.be.entity.ExerciseContestEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -15,4 +17,8 @@ public interface ExerciseContestRepository extends JpaRepository<ExerciseContest
             "AND exercise.topic_id = ?1", nativeQuery = true)
     List<ExerciseContestEntity> findByExercise_TopicId(Integer id);
     Optional<ExerciseContestEntity> findByExerciseId(Long exerciseId);
+
+    Page<ExerciseContestEntity> findAllByContestId(Long contestId, Pageable pageable);
+
+    List<ExerciseContestEntity> findAllByContestIdAndExerciseIdIn(Long contestId, List<Long> exerciseIds);
 }

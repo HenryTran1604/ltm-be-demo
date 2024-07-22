@@ -15,8 +15,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ExerciseContestRequest {
-    @NotBlank
+    @NotNull(message = "Contest must not be null")
     private Long contestId;
-    @NotEmpty
+    @NotEmpty(message = "exercises must not be empty")
     private List<Long> exerciseIds;
 }

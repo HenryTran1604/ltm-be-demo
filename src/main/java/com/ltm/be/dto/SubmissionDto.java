@@ -11,5 +11,5 @@ import java.time.LocalDateTime;
 public class SubmissionDto extends AbstractDto<Long> {
     private boolean ac;
     private String srcPath;
-    private UserExerciseContestDto userExerciseContestDto;
+    private UserExerciseContestDto userExerciseContest;
 }
