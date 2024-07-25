@@ -42,7 +42,6 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
         ));
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
         String role = userDetails.getRoles().stream().toList().get(0).toString();
-        System.out.println(role);
         if (role.equalsIgnoreCase("ROLE_USER") && !userService.existsByUsernameAndIp(request.getUsername(), request.getIp())) {
             throw new DataConflictException("Student has register with different IP!");
         }

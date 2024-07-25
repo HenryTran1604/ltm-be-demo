@@ -14,7 +14,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Table(name = "alias")
 public class AliasEntity extends AbstractEntity<Long>{
-    @Column(name = "code", unique = true)
+    @Column(name = "code")
     private String code;
 
     @ManyToOne

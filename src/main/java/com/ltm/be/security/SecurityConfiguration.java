@@ -17,9 +17,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
 @EnableWebSecurity
@@ -29,8 +26,8 @@ public class SecurityConfiguration {
     private static final String[] PUBLIC_ENDPOINTS = {"/api/auth/**", "/ws/**", "/api/webhook/**", "/actuator/**", "/v3/**", "/webjars/**", "/swagger-ui*/*swagger-initializer.js", "/swagger-ui*/**"};
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
-    private final UnAuthenticationHandler unAuthenticationHandler;
-    private final UnAuthorizationHandler unAuthorizationHandler;
+    private final RestAuthenticationHandler restAuthenticationHandler;
+    private final RestAuthorizationHandler restAuthorizationHandler;
     private final CustomUserDetailsService customUserDetailsService;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
@@ -38,9 +35,9 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(requests -> requests.requestMatchers(PUBLIC_ENDPOINTS).permitAll().anyRequest().authenticated())
                 .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider()).addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-//                .exceptionHandling(exception -> exception
-//                        .authenticationEntryPoint(unAuthenticationHandler)
-//                        .accessDeniedHandler(unAuthorizationHandler));
+                .exceptionHandling(exception -> exception
+                        .authenticationEntryPoint(restAuthenticationHandler)
+                        .accessDeniedHandler(restAuthorizationHandler));
         ;
         return httpSecurity.build();
     }
@@ -61,6 +58,7 @@ public class SecurityConfiguration {
         DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
         daoAuthenticationProvider.setUserDetailsService(customUserDetailsService);
         daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
+        daoAuthenticationProvider.setHideUserNotFoundExceptions(true);
         return daoAuthenticationProvider;
     }
 }

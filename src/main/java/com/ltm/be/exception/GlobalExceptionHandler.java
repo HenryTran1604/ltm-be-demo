@@ -130,7 +130,6 @@ public class GlobalExceptionHandler {
         @ExceptionHandler(UsernameNotFoundException.class)
         @ResponseStatus(HttpStatus.BAD_REQUEST)
         public ErrorResponse handleUsernameNotFoundException(UsernameNotFoundException exception, WebRequest request) {
-
             return ErrorResponse.builder()
                     .timestamp(new Date())
                     .status(HttpStatus.BAD_REQUEST.value())

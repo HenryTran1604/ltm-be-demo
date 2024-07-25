@@ -81,7 +81,7 @@ public class UserServiceImpl implements IUserService {
 
     private void checkExistedUsernameAndIp(String username, String ip) {
         if (userRepository.existsByUsernameAndIp(username, ip)) {
-            throw new UsernameAndIpAlreadyExistException("Username already registered with specific ip!");
+            throw new UsernameAndIpAlreadyExistException("Username already registered with another ip!");
         }
     }
 
