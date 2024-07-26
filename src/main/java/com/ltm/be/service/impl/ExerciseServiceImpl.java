@@ -21,10 +21,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -32,7 +29,6 @@ public class ExerciseServiceImpl implements IExerciseService {
     private final ExerciseRepository exerciseRepository;
     private final ExerciseConverter exerciseConverter;
     private final TopicRepository topicRepository;
-    private final AliasRepository aliasRepository;
 
     @Override
     public PageResponse<?> getAllExercises(int pageNo, int pageSize) {
@@ -64,8 +60,6 @@ public class ExerciseServiceImpl implements IExerciseService {
         // check topic exist
         TopicEntity topic = topicRepository.findById(request.getTopicId()).orElseThrow(() -> new ResourceNotFoundException("Topic not exist!"));
 
-        // check unique alias
-        checkByAliasNames(request.getAliases());
         // save exercise
         ExerciseEntity entity = ExerciseEntity.builder()
                 .name(request.getName())
@@ -73,13 +67,6 @@ public class ExerciseServiceImpl implements IExerciseService {
                 .topic(topic)
                 .build();
         ExerciseEntity result = exerciseRepository.save(entity);
-
-        // save alias of this exercise
-        List<AliasEntity> aliasEntities = request.getAliases().stream().map(alias -> AliasEntity.builder()
-                .code(alias.getCode())
-                .exercise(result)
-                .build()).toList();
-        aliasRepository.saveAll(aliasEntities);
     }
 
     @Override
@@ -97,35 +84,7 @@ public class ExerciseServiceImpl implements IExerciseService {
         exercise.setName(request.getName());
         exercise.setTopic(topic);
         exercise.setContent(request.getContent());
-
-        // Thêm alias mới và cập nhật alias cũ
-        for (AliasRequest newAlias : request.getAliases()) {
-            AliasEntity aliasEntity = AliasEntity.builder()
-                    .exercise(exercise)
-                    .code(newAlias.getCode())
-                    .build();
-            if (newAlias.getId() != null) {
-                // Alias cũ, cập nhật thông tin
-                aliasEntity.setId(newAlias.getId());
-            }
-            aliasRepository.save(aliasEntity);
-        }
-        // Xóa alias cũ không còn trong danh sách mới
-        Set<Long> newAliasIds = request.getAliases().stream().map(AliasRequest::getId).collect(Collectors.toSet());
-        exercise.getAliases().removeIf(alias -> !newAliasIds.contains(alias.getId()));
-
-        // Lưu exercise và danh sách alias mới
         exerciseRepository.save(exercise);
-    }
-
-    private void checkByAliasNames(List<AliasRequest> aliases) {
-        List<AliasEntity> existingAliases = aliasRepository.findByCodeIn(aliases.stream().map(AliasRequest::getCode).collect(Collectors.toSet()));
-        if (!existingAliases.isEmpty()) {
-            Set<String> existingAliasNames = existingAliases.stream()
-                    .map(AliasEntity::getCode)
-                    .collect(Collectors.toSet());
-            throw new DataConflictException("Aliases with names " + existingAliasNames + " already exist.");
-        }
     }
 
 }

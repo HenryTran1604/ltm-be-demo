@@ -11,7 +11,8 @@ public class AliasConverter {
         dto.setId(entity.getId());
         dto.setCode(entity.getCode());
         dto.setExerciseId(entity.getExercise().getId());
+        dto.setActive(entity.isActive());
         dto.setCreatedAt(entity.getCreatedAt());
-        return  dto;
+        return dto;
     }
 }

@@ -1,6 +1,5 @@
 package com.ltm.be.repository;
 
-import com.ltm.be.entity.UserContestEntity;
 import com.ltm.be.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

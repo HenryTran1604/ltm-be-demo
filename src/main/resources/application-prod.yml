@@ -16,4 +16,4 @@ open:
     version: v1.0.0
     description: demo
     serverUrl: http://20.198.242.126:${server.port}
-    serverName: server dev
+    serverName: server production

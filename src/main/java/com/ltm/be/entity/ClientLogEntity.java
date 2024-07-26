@@ -8,8 +8,8 @@ import lombok.*;
 @Setter
 @Builder
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "client_log")
 public class ClientLogEntity extends AbstractEntity<Long>{
     private String content;

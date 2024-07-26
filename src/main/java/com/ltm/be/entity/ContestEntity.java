@@ -8,10 +8,10 @@ import java.util.Set;
 
 @Getter
 @Setter
-@Builder
 @Entity
-@NoArgsConstructor
+@Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "contest")
 public class ContestEntity extends AbstractEntity<Long>{
     @Column(name = "start_time")
@@ -22,7 +22,7 @@ public class ContestEntity extends AbstractEntity<Long>{
     private String title;
 
     @OneToMany(mappedBy = "contest", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<UserContestEntity> userContests;
+    private Set<ContestUserEntity> contestUsers;
     @OneToMany(mappedBy = "contest", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<ExerciseContestEntity> exerciseContests;
+    private Set<ContestExerciseEntity> contestExercises;
 }

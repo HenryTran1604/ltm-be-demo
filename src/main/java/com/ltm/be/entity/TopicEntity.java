@@ -10,8 +10,8 @@ import java.util.Set;
 @Getter
 @Setter
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "topic")
 public class TopicEntity extends AbstractEntity<Integer>{
     @Column(name = "name")

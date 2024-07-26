@@ -9,5 +9,5 @@ import java.util.Set;
 
 @Repository
 public interface AliasRepository extends JpaRepository<AliasEntity, Long> {
-    List<AliasEntity> findByCodeIn(Set<String> names);
+    boolean existsByCodeAndActive(String code, boolean active);
 }

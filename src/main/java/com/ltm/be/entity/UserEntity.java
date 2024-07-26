@@ -1,20 +1,15 @@
 package com.ltm.be.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.ltm.be.payload.request.RegistrationRequest;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.*;
 
 @Getter
 @Setter
-@Builder
 @Entity
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "\"user\"",
@@ -36,5 +31,5 @@ public class UserEntity extends AbstractEntity<Long> {
     private RoleEntity role;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // note
-    private Set<UserContestEntity> userContest = new HashSet<>();
+    private Set<ContestUserEntity> contestUsers = new HashSet<>();
 }

@@ -1,7 +1,6 @@
 package com.ltm.be.controller;
 
 import com.ltm.be.payload.request.ContestRequest;
-import com.ltm.be.payload.request.RegistrationContestRequest;
 import com.ltm.be.payload.response.ResponseData;
 import com.ltm.be.service.IContestService;
 import lombok.RequiredArgsConstructor;

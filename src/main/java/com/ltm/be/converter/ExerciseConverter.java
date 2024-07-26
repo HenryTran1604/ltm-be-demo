@@ -9,21 +9,13 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class ExerciseConverter {
     private final TopicConverter topicConverter;
-    private final AliasConverter aliasConverter;
     public ExerciseDto toDto(ExerciseEntity entity) {
         ExerciseDto dto = new ExerciseDto();
         dto.setId(entity.getId());
         dto.setName(entity.getName());
-        dto.setAliases(entity.getAliases().stream().map(aliasConverter::toDto).toList());
         dto.setTopic(topicConverter.toDto(entity.getTopic()));
         dto.setContent(entity.getContent());
         dto.setCreatedAt(entity.getCreatedAt());
         return dto;
-    }
-    public ExerciseEntity toEntity (ExerciseDto dto) {
-        ExerciseEntity entity = new ExerciseEntity();
-        entity.setName(dto.getName());
-        entity.setContent(dto.getContent());
-        return entity;
     }
 }

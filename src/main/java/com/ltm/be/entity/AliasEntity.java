@@ -8,19 +8,22 @@ import java.util.Set;
 
 @Getter
 @Setter
-@Builder
 @Entity
-@NoArgsConstructor
+@Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "alias")
 public class AliasEntity extends AbstractEntity<Long>{
     @Column(name = "code")
     private String code;
+
+    @Column(name = "active")
+    private boolean active;
 
     @ManyToOne
     @JoinColumn(name = "exercise_id")
     private ExerciseEntity exercise;
 
     @OneToMany(mappedBy = "alias")
-    private Set<UserExerciseContestEntity> userExerciseContests = new HashSet<>();
+    private Set<ContestUserExerciseEntity> userExerciseContests = new HashSet<>();
 }

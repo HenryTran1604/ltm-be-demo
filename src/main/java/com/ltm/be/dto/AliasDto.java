@@ -12,4 +12,5 @@ import lombok.Setter;
 public class AliasDto extends AbstractDto<Long>{
     private Long exerciseId;
     private String code;
+    private boolean active;
 }

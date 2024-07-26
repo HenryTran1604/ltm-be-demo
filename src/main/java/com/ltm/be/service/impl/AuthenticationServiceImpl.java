@@ -8,6 +8,7 @@ import com.ltm.be.payload.response.LoginResponse;
 import com.ltm.be.security.CustomUserDetails;
 import com.ltm.be.service.IAuthenticationService;
 import com.ltm.be.service.IJwtService;
+import com.ltm.be.service.IPracticeUserExerciseService;
 import com.ltm.be.service.IUserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,19 +19,21 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class AuthenticationServiceImpl implements IAuthenticationService {
-    private final AuthenticationManager authenticationManager;
-    private final IUserService userService;
     private final IJwtService jwtService;
+    private final IUserService userService;
+    private final AuthenticationManager authenticationManager;
+    private final IPracticeUserExerciseService practiceUserExerciseService;
 
     @Override
     public LoginResponse register(RegistrationRequest request) {
-        UserDto userResponse = userService.addUser(request);
+        UserDto user = userService.addUser(request);
+        practiceUserExerciseService.addUserToPractice(user.getId());
         String accessToken = jwtService.generateAccessToken(request.getUsername());
         String refreshToken = jwtService.generateRefreshToken(request.getUsername());
         return LoginResponse.builder()
                 .accessToken(accessToken)
                 .refreshToken(refreshToken)
-                .user(userResponse)
+                .user(user)
                 .build();
     }
 

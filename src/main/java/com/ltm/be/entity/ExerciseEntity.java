@@ -4,13 +4,12 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 @Getter
 @Setter
-@Builder
 @Entity
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "exercise")
@@ -29,5 +28,5 @@ public class ExerciseEntity extends AbstractEntity<Long>{
     private List<AliasEntity> aliases = new ArrayList<>();;
 
     @OneToMany(mappedBy = "exercise", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<ExerciseContestEntity> exerciseContests = new ArrayList<>();
+    private List<ContestExerciseEntity> contestExercises = new ArrayList<>();
 }

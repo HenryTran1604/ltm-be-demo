@@ -7,8 +7,9 @@ spring:
     password: 1234
   jpa:
     hibernate:
-      ddl-auto: create
-#      ddl-auto: update
+#      ddl-auto: create
+      ddl-auto: update
+#    show-sql: true
 
 token:
   secretKey: c2VjcmV0QGtleS5hcGlfaGFzX2JlZW5fZGVzaWduZWRfYnlfVGF5TFE=
