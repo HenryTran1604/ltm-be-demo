@@ -1,9 +1,11 @@
 package com.ltm.be.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -15,6 +17,7 @@ import java.util.Set;
 @Table(name = "alias")
 public class AliasEntity extends AbstractEntity<Long>{
     @Column(name = "code")
+    @Size(min = 7, max = 8)
     private String code;
 
     @Column(name = "active")
@@ -25,5 +28,5 @@ public class AliasEntity extends AbstractEntity<Long>{
     private ExerciseEntity exercise;
 
     @OneToMany(mappedBy = "alias")
-    private Set<ContestUserExerciseEntity> userExerciseContests = new HashSet<>();
+    private List<ContestUserExerciseEntity> userExerciseContests;
 }

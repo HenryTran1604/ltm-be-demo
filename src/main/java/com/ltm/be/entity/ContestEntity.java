@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -22,7 +23,8 @@ public class ContestEntity extends AbstractEntity<Long>{
     private String title;
 
     @OneToMany(mappedBy = "contest", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<ContestUserEntity> contestUsers;
+    private List<ContestUserEntity> contestUsers;
     @OneToMany(mappedBy = "contest", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<ContestExerciseEntity> contestExercises;
+    private List<ContestExerciseEntity> contestExercises;
+    // needn't OneToMany for logs
 }

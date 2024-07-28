@@ -38,7 +38,7 @@ public class PracticeUserExerciseServiceImpl implements IPracticeUserExerciseSer
         List<ExerciseEntity> exercises = exerciseRepository.findAll();
         List<PracticeUserExerciseEntity> practiceUserExercises = new ArrayList<>();
         for(ExerciseEntity exercise : exercises) {
-            String aliasCode = aliasService.generateAliasCode(6);
+            String aliasCode = aliasService.generateAliasCode(8);
             AliasEntity alias = AliasEntity.builder()
                     .code(aliasCode)
                     .active(true)

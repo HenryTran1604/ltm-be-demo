@@ -14,6 +14,9 @@ public class PracticeSubmissionEntity extends AbstractEntity<Long> {
     @Column(name = "ac")
     private boolean ac;
 
+    @Column(name = "src_path")
+    private String srcPath;
+
     @ManyToOne
     @JoinColumn(name = "practice_user_exercise_id")
     private PracticeUserExerciseEntity practiceUserExercise;

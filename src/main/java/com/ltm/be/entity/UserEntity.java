@@ -1,6 +1,5 @@
 package com.ltm.be.entity;
 
-import com.ltm.be.payload.request.RegistrationRequest;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -31,5 +30,9 @@ public class UserEntity extends AbstractEntity<Long> {
     private RoleEntity role;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // note
-    private Set<ContestUserEntity> contestUsers = new HashSet<>();
+    private List<ContestUserEntity> contestUsers;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<PracticeUserExerciseEntity> practiceUserExercises;
+    // needn't OneToMany for logs
 }

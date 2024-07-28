@@ -3,6 +3,7 @@ package com.ltm.be.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -23,5 +24,7 @@ public class ContestUserEntity extends AbstractEntity<Long>{
     @JoinColumn(name = "user_id")
     private UserEntity user;
     @OneToMany(mappedBy = "contestUser", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<ContestUserExerciseEntity> contestUserExercises;
+    private List<ContestUserExerciseEntity> contestUserExercises;
+    @OneToMany(mappedBy = "contestUser", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<ContestLogEntity> contestLogs;
 }

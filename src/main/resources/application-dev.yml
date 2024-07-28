@@ -23,3 +23,5 @@ open:
     description: demo
     serverUrl: http://localhost:${server.port}
     serverName: server dev
+webhook:
+  token: graduationthesis

@@ -3,8 +3,7 @@ package com.ltm.be.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,5 +17,5 @@ public class TopicEntity extends AbstractEntity<Integer>{
     private String name;
 
     @OneToMany(mappedBy = "topic", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<ExerciseEntity> exercises = new HashSet<>();
+    private List<ExerciseEntity> exercises;
 }

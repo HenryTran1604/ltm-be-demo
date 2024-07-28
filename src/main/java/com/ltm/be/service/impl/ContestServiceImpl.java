@@ -70,7 +70,7 @@ public class ContestServiceImpl implements IContestService {
                 if (!exercises.isEmpty()) {
                     int randomExerciseIndex = random.nextInt(exercises.size());
                     ContestExerciseEntity randomExercise = exercises.get(randomExerciseIndex);
-                    String aliasCode = aliasService.generateAliasCode(8);
+                    String aliasCode = aliasService.generateAliasCode(7);
                     AliasEntity alias = AliasEntity.builder()
                             .code(aliasCode)
                             .exercise(randomExercise.getExercise())
