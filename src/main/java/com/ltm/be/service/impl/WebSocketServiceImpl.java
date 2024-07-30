@@ -24,6 +24,9 @@ public class WebSocketServiceImpl implements IWebSocketService {
     private final IPracticeLogService practiceLogService;
     private final IPracticeScoreBoardService practiceScoreBoardService;
     private String getStatusFromCode(int code) {
+        if (code == CONNECT_SUCCESS) {
+            return "CONNECT SUCCESSFULLY";
+        }
         if (code == ACCEPTED) {
             return "ACCEPTED";
         }
@@ -39,8 +42,8 @@ public class WebSocketServiceImpl implements IWebSocketService {
         if (code == REQUEST_WRONG_EXERCISE) {
             return "WRONG EXERCISE";
         }
-        if (code == INVALID_USER) {
-            return "INVALID USER";
+        if (code == MALFORMED_REQUEST_CODE) {
+            return "MALFORMED REQUEST CODE";
         }
         if (code == FORBIDDEN) {
             return "FORBIDDEN";
@@ -57,7 +60,7 @@ public class WebSocketServiceImpl implements IWebSocketService {
 
     @Override
     public void sendPracticeLog(PracticeLogRequest request) {
-        String destination = String.format("/topic/practice/%s/logs", request.getUsername());
+        String destination = String.format("/topic/practice/%s/%s/logs", request.getIp(), request.getUsername());
         String message = request.getAlias() + " " + getStatusFromCode(request.getCode()) + " " + request.getMessage();
         request.setMessage(message);
         simpMessagingTemplate.convertAndSend(destination, practiceLogService.savePracticeLog(request));
@@ -67,14 +70,14 @@ public class WebSocketServiceImpl implements IWebSocketService {
     @Override
     public void sendUpdatedContestScoreBoard(ContestScoreBoardRequest request) {
         ContestScoreBoardDto leaderBoard = contestScoreBoardService.getScoreBoardByContestUserId(request.getContestUserId());
-        String destination = String.format("/topic/contest/%s/%d/scoreboard", request.getUsername(), request.getContestId());
+        String destination = String.format("/topic/contest/%s/%s/scoreboard", request.getIp(), request.getUsername());
         simpMessagingTemplate.convertAndSend(destination, leaderBoard);
     }
 
     @Override
     public void sendUpdatedPracticeScoreBoard(PracticeScoreBoardRequest request) {
         PracticeScoreBoardDto leaderBoard = practiceScoreBoardService.getScoreBoardByUserId(request.getUserId());
-        String destination = String.format("/topic/practice/%s/scoreboard", request.getUsername());
+        String destination = String.format("/topic/practice/%s/%s/scoreboard", request.getIp(), request.getUsername());
         simpMessagingTemplate.convertAndSend(destination, leaderBoard);
     }
 }

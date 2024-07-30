@@ -25,7 +25,7 @@ public class PracticeLogServiceImpl implements IPracticeLogService {
     @Override
     public PracticeLogDto savePracticeLog(PracticeLogRequest request) {
         PracticeLogEntity log = PracticeLogEntity.builder()
-                .user(userRepository.findByUsername(request.getUsername()).orElseThrow(() -> new ResourceNotFoundException("Username not found")))
+                .user(userRepository.findByIpAndUsername(request.getIp(), request.getUsername()).orElseThrow(() -> new ResourceNotFoundException("User and IP not match")))
                 .content(request.getMessage())
                 .build();
         return practiceLogConverter.toDto(practiceLogRepository.save(log));
