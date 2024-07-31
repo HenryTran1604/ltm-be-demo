@@ -7,5 +7,7 @@ import lombok.Setter;
 @Setter
 public class PracticeLogDto extends AbstractDto<Long>{
     private Long userId;
-    private String content;
+    private String message;
+    private String code;
+    private String alias;
 }

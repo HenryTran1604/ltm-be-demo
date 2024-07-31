@@ -1,9 +1,6 @@
 package com.ltm.be.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -14,7 +11,12 @@ import lombok.*;
 @AllArgsConstructor
 @Table(name = "practice_log")
 public class PracticeLogEntity extends AbstractEntity<Long>{
-    private String content;
+    @Column(name = "alias")
+    private String alias;
+    @Column(name = "code")
+    private Integer code;
+    @Column(name = "message")
+    private String message;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

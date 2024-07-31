@@ -20,8 +20,6 @@ public class WebSocketController {
     }
     @MessageMapping("/practice")
     public void sendToSpecificUser(@Header("simpSessionId") String sessionId, String username) {
-        System.out.println(username);
-        System.out.println(sessionId);
         simpMessagingTemplate.convertAndSendToUser(username, "/queue/practice", "haha");
     }
 }

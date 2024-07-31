@@ -23,46 +23,15 @@ public class WebSocketServiceImpl implements IWebSocketService {
     private final IContestLogService contestLogService;
     private final IPracticeLogService practiceLogService;
     private final IPracticeScoreBoardService practiceScoreBoardService;
-    private String getStatusFromCode(int code) {
-        if (code == CONNECT_SUCCESS) {
-            return "CONNECT SUCCESSFULLY";
-        }
-        if (code == ACCEPTED) {
-            return "ACCEPTED";
-        }
-        if (code == WRONG_ANSWER) {
-            return "WRONG ANSWER";
-        }
-        if (code == INVALID_FORMAT_INPUT) {
-            return "INVALID FORMAT INPUT";
-        }
-        if (code == TIME_OUT) {
-            return "TIME OUT";
-        }
-        if (code == REQUEST_WRONG_EXERCISE) {
-            return "WRONG EXERCISE";
-        }
-        if (code == MALFORMED_REQUEST_CODE) {
-            return "MALFORMED REQUEST CODE";
-        }
-        if (code == FORBIDDEN) {
-            return "FORBIDDEN";
-        }
-        return "UNKNOWN STATUS";
-    }
     @Override
     public void sendContestLog(ContestLogRequest request) {
         String destination = String.format("/queue/contest/%d/logs", request.getContestId());
-        String message = request.getAlias() + " " + getStatusFromCode(request.getCode()) + " " + request.getMessage();
-        request.setMessage(message);
         simpMessagingTemplate.convertAndSend(destination,  contestLogService.saveContestLog(request));
     }
 
     @Override
     public void sendPracticeLog(PracticeLogRequest request) {
         String destination = String.format("/topic/practice/%s/%s/logs", request.getIp(), request.getUsername());
-        String message = request.getAlias() + " " + getStatusFromCode(request.getCode()) + " " + request.getMessage();
-        request.setMessage(message);
         simpMessagingTemplate.convertAndSend(destination, practiceLogService.savePracticeLog(request));
 
     }

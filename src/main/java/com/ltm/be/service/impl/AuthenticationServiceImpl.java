@@ -40,7 +40,7 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
     @Override
     public LoginResponse login(LoginRequest request) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-                request.getUsername(),
+                request.getUsername().toLowerCase(),
                 request.getPassword()
         ));
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
