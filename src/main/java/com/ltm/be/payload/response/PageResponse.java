@@ -5,10 +5,10 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class PageResponse<T> {
+public class PageResponse<D> {
     private int page;
     private int size;
     private long totalPages;
     private long totalElements;
-    private T items;
+    private D items;
 }

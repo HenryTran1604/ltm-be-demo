@@ -5,14 +5,14 @@ import com.ltm.be.entity.UserEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserConverter {
+public class UserConverter extends AbstractBaseConverter<UserDto, UserEntity>{
     public UserDto toDto(UserEntity entity) {
-        UserDto dto = new UserDto();
-        dto.setId(entity.getId());
-        dto.setUsername(entity.getUsername());
-        dto.setIp(entity.getIp());
-        dto.setCreatedAt(entity.getCreatedAt());
-        dto.setRole(entity.getRole().getName());
-        return dto;
+        return UserDto.builder()
+                .id(entity.getId())
+                .username(entity.getUsername())
+                .ip(entity.getIp())
+                .createdAt(entity.getCreatedAt())
+                .role(entity.getRole().getName())
+                .build();
     }
 }

@@ -1,52 +1,31 @@
 package com.ltm.be.service.impl;
 
-import com.ltm.be.dto.ContestScoreBoardDto;
-import com.ltm.be.dto.PracticeScoreBoardDto;
-import com.ltm.be.payload.request.webhook.ContestLogRequest;
-import com.ltm.be.payload.request.webhook.ContestScoreBoardRequest;
-import com.ltm.be.payload.request.webhook.PracticeLogRequest;
-import com.ltm.be.payload.request.webhook.PracticeScoreBoardRequest;
+import com.ltm.be.dto.ExamRankDto;
+import com.ltm.be.payload.request.webhook.ExamLogRequest;
+import com.ltm.be.payload.request.webhook.ExamRankRequest;
 import com.ltm.be.service.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
-import static com.ltm.be.util.Constants.*;
-
 @Service
 @Slf4j
 @RequiredArgsConstructor
 public class WebSocketServiceImpl implements IWebSocketService {
     private final SimpMessagingTemplate simpMessagingTemplate;
-    private final IContestScoreBoardService contestScoreBoardService;
-    private final IContestLogService contestLogService;
-    private final IPracticeLogService practiceLogService;
-    private final IPracticeScoreBoardService practiceScoreBoardService;
+    private final IExamRankService examRankService;
+    private final IExamLogService examLogService;
     @Override
-    public void sendContestLog(ContestLogRequest request) {
-        String destination = String.format("/queue/contest/%d/logs", request.getContestId());
-        simpMessagingTemplate.convertAndSend(destination,  contestLogService.saveContestLog(request));
+    public void sendExamLog(ExamLogRequest request) {
+        String destination = String.format("/topic/exam/%s/%s/%s/logs", request.getIp(), request.getUsername(), request.getExamId());
+        simpMessagingTemplate.convertAndSend(destination,  examLogService.create(request));
     }
 
     @Override
-    public void sendPracticeLog(PracticeLogRequest request) {
-        String destination = String.format("/topic/practice/%s/%s/logs", request.getIp(), request.getUsername());
-        simpMessagingTemplate.convertAndSend(destination, practiceLogService.savePracticeLog(request));
-
-    }
-
-    @Override
-    public void sendUpdatedContestScoreBoard(ContestScoreBoardRequest request) {
-        ContestScoreBoardDto leaderBoard = contestScoreBoardService.getScoreBoardByContestUserId(request.getContestUserId());
-        String destination = String.format("/topic/contest/%s/%s/scoreboard", request.getIp(), request.getUsername());
-        simpMessagingTemplate.convertAndSend(destination, leaderBoard);
-    }
-
-    @Override
-    public void sendUpdatedPracticeScoreBoard(PracticeScoreBoardRequest request) {
-        PracticeScoreBoardDto leaderBoard = practiceScoreBoardService.getScoreBoardByUserId(request.getUserId());
-        String destination = String.format("/topic/practice/%s/%s/scoreboard", request.getIp(), request.getUsername());
+    public void sendUpdatedExamRank(ExamRankRequest request) {
+        ExamRankDto leaderBoard = examRankService.getByExamIdAndUserId(request.getExamId(), request.getExamId());
+        String destination = String.format("/topic/exam/%s/%s/%s/scoreboard", request.getIp(), request.getUsername(), request.getExamId());
         simpMessagingTemplate.convertAndSend(destination, leaderBoard);
     }
 }

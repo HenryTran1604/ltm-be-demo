@@ -22,6 +22,6 @@ public class UserController {
     @GetMapping("/all")
     public ResponseData<?> getAllUsers(@RequestParam(defaultValue = "0", required = false) int pageNo,
                                        @RequestParam(defaultValue = "50", required = false) int pageSize) {
-        return new ResponseData<>(HttpStatus.OK.value(), "users", userService.getAllUsers(pageNo, pageSize));
+        return new ResponseData<>(HttpStatus.OK.value(), "users", userService.getPage(pageNo, pageSize));
     }
 }

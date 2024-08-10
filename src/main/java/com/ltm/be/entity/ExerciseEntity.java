@@ -28,5 +28,5 @@ public class ExerciseEntity extends AbstractEntity<Long>{
     private List<AliasEntity> aliases = new ArrayList<>();;
 
     @OneToMany(mappedBy = "exercise", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<ContestExerciseEntity> contestExercises = new ArrayList<>();
+    private List<ExamExerciseEntity> examExercises = new ArrayList<>();
 }

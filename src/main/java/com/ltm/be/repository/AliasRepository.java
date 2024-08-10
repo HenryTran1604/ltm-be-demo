@@ -8,6 +8,6 @@ import java.util.List;
 import java.util.Set;
 
 @Repository
-public interface AliasRepository extends JpaRepository<AliasEntity, Long> {
+public interface AliasRepository extends BaseRepository<AliasEntity, Long> {
     boolean existsByCodeAndActive(String code, boolean active);
 }

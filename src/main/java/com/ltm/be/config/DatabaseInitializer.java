@@ -3,7 +3,7 @@ package com.ltm.be.config;
 import com.ltm.be.entity.RoleEntity;
 import com.ltm.be.entity.UserEntity;
 import com.ltm.be.repository.RoleRepository;
-import com.ltm.be.repository.UserRepository;;
+import com.ltm.be.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -18,12 +18,12 @@ public class DatabaseInitializer implements CommandLineRunner {
 
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         if(!roleRepository.existsByName("ROLE_ADMIN")) {
             RoleEntity adminRole = RoleEntity.builder().name("ROLE_ADMIN").build();
             roleRepository.save(adminRole);
 
-            if(!userRepository.existsByUsername("b20dccn327admin")) {
+            if(!userRepository.existsByUsername("b20dccn327")) {
                 UserEntity admin = UserEntity.builder()
                     .username("b20dccn327")
                     .role(adminRole)

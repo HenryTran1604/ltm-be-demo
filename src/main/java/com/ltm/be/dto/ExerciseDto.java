@@ -1,13 +1,13 @@
 package com.ltm.be.dto;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@SuperBuilder
 public class ExerciseDto extends AbstractDto<Long> {
     private String name;
     private String content;

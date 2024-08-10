@@ -1,8 +1,7 @@
 package com.ltm.be.controller;
 
-import com.ltm.be.payload.request.webhook.ContestLogRequest;
-import com.ltm.be.payload.request.webhook.PracticeLogRequest;
-import com.ltm.be.payload.request.webhook.PracticeScoreBoardRequest;
+import com.ltm.be.payload.request.webhook.ExamLogRequest;
+import com.ltm.be.payload.request.webhook.ExamRankRequest;
 import com.ltm.be.service.IWebSocketService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -20,25 +19,14 @@ public class WebhookController {
     @Value("${webhook.token}")
     private String webhookToken;
 
-    @PostMapping("/contest/logs")
+    @PostMapping("/exam/logs")
     @Operation(
             summary = "Get client logs"
     )
-    public void handleContestLogs(@RequestHeader("secret-token") String token,
-                                 @RequestBody ContestLogRequest payload) {
+    public void handleExamLogs(@RequestHeader("secret-token") String token,
+                                 @RequestBody ExamLogRequest payload) {
         if (token.equals(webhookToken)) {
-            webSocketService.sendContestLog(payload);
-        }
-    }
-
-    @PostMapping("/practice/logs")
-    @Operation(
-            summary = "Get client logs"
-    )
-    public void handlePracticeLogs(@RequestHeader("secret-token") String token,
-                                  @RequestBody PracticeLogRequest payload) {
-        if (token.equals(webhookToken)) {
-            webSocketService.sendPracticeLog(payload);
+            webSocketService.sendExamLog(payload);
         }
     }
 
@@ -48,9 +36,9 @@ public class WebhookController {
             summary = "get init scoreboard"
     )
     public void handleScoreboard(@RequestHeader("secret-token") String token,
-                                 @RequestBody PracticeScoreBoardRequest payload) {
+                                 @RequestBody ExamRankRequest payload) {
         if(token.equals(webhookToken)) {
-            webSocketService.sendUpdatedPracticeScoreBoard(payload);
+            webSocketService.sendUpdatedExamRank(payload);
         }
     }
 }

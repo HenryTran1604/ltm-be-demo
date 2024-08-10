@@ -1,7 +1,7 @@
 package com.ltm.be.controller;
 
 import com.ltm.be.payload.response.ResponseData;
-import com.ltm.be.service.IContestLogService;
+import com.ltm.be.service.IExamLogService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.Min;
@@ -13,21 +13,21 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/logs")
 @RequiredArgsConstructor
-@Tag(name = "Contest log Controller")
+@Tag(name = "exam log Controller")
 public class ClientLogController {
-    private final IContestLogService contestLogService;
+    private final IExamLogService examLogService;
 
     @Operation(
-            summary = "Get logs in contest of user"
+            summary = "Get logs in exam of user"
     )
-    @GetMapping("/contest")
-    public ResponseData<?> getContestLogsByUser(@RequestParam Long contestId,
-                                                @RequestParam Long userId,
-                                                @RequestParam(defaultValue = "0") int pageNo,
-                                                @Min(1) @RequestParam(defaultValue = "1000") int pageSize) {
+    @GetMapping("/exam")
+    public ResponseData<?> getexamLogsByUser(@RequestParam Long examId,
+                                             @RequestParam Long userId,
+                                             @RequestParam(defaultValue = "0") int pageNo,
+                                             @Min(1) @RequestParam(defaultValue = "1000") int pageSize) {
         return new ResponseData<>(HttpStatus.OK.value(),
                 "Client logs",
-                contestLogService.getContestLogByUser(contestId, userId, pageNo, pageSize));
+                examLogService.getExamLogByUser(examId, userId, pageNo, pageSize));
     }
 
     @Operation(
@@ -36,7 +36,7 @@ public class ClientLogController {
     @DeleteMapping("/clear-logs")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseData<?> clearLog() {
-        contestLogService.clearLogs();
+        examLogService.clearLogs();
         return new ResponseData<>(HttpStatus.OK.value(), "Clear client logs successfully!");
     }
 }

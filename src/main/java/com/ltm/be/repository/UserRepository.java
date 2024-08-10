@@ -8,11 +8,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserEntity, Long> {
+public interface UserRepository extends BaseRepository<UserEntity, Long> {
     List<UserEntity> findAll();
-    Optional<UserEntity> findByIpAndUsername(String ip, String username);
     Optional<UserEntity> findByUsername(String username);
-    Optional<UserEntity> findByUsernameAndIp(String username, String ip);
     boolean existsByUsername(String username);
     boolean existsByUsernameAndIp(String username, String ip);
 

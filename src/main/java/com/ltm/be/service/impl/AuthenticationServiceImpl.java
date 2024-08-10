@@ -8,7 +8,6 @@ import com.ltm.be.payload.response.LoginResponse;
 import com.ltm.be.security.CustomUserDetails;
 import com.ltm.be.service.IAuthenticationService;
 import com.ltm.be.service.IJwtService;
-import com.ltm.be.service.IPracticeUserExerciseService;
 import com.ltm.be.service.IUserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,12 +21,10 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
     private final IJwtService jwtService;
     private final IUserService userService;
     private final AuthenticationManager authenticationManager;
-    private final IPracticeUserExerciseService practiceUserExerciseService;
 
     @Override
     public LoginResponse register(RegistrationRequest request) {
-        UserDto user = userService.addUser(request);
-        practiceUserExerciseService.addUserToPractice(user.getId());
+        UserDto user = userService.create(request);
         String accessToken = jwtService.generateAccessToken(request.getUsername());
         String refreshToken = jwtService.generateRefreshToken(request.getUsername());
         return LoginResponse.builder()
@@ -50,12 +47,13 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
         }
         String accessToken = jwtService.generateAccessToken(userDetails.getUsername());
         String refreshToken = jwtService.generateRefreshToken(userDetails.getUsername());
-        UserDto user = new UserDto();
-        user.setId(userDetails.getId());
-        user.setUsername(userDetails.getUsername());
-        user.setCreatedAt(userDetails.getCreatedAt());
-        user.setIp(userDetails.getIp());
-        user.setRole(role);
+        UserDto user = UserDto.builder()
+                .id(userDetails.getId())
+                .username(userDetails.getUsername())
+                .createdAt(userDetails.getCreatedAt())
+                .ip(userDetails.getIp())
+                .role(role)
+                .build();
         return LoginResponse.builder()
                 .accessToken(accessToken)
                 .refreshToken(refreshToken)

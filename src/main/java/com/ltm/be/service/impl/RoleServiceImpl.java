@@ -12,7 +12,7 @@ public class RoleServiceImpl implements IRoleService {
     private final RoleRepository roleRepository;
     @Override
     public RoleEntity createRoleIfNotFound(String name) {
-        if (!roleRepository.existsByName(name)) {
+        if (roleRepository.existsByName(name)) {
             RoleEntity role = RoleEntity.builder().name(name).build();
             return roleRepository.save(role);
         }

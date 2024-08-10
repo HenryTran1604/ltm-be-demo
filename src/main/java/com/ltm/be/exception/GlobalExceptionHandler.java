@@ -69,7 +69,7 @@ public class GlobalExceptionHandler {
             @ApiResponse(responseCode = "404", description = "NOT FOUND",
                     content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                             examples = @ExampleObject(
-                                    name = "400 Response",
+                                    name = "404 Response",
                                     summary = "Handle resource not found exception",
                                     value = """
                                             {
@@ -82,7 +82,7 @@ public class GlobalExceptionHandler {
                                             """
                             ))})
     })
-    public ErrorResponse handleResourceNotFoundException(ResourceNotFoundException exception, WebRequest request)  {
+    public ErrorResponse handleResourceNotFoundException(ResourceNotFoundException exception, WebRequest request) {
         return ErrorResponse.builder()
                 .timestamp(new Date())
                 .status(HttpStatus.NOT_FOUND.value())
@@ -116,9 +116,9 @@ public class GlobalExceptionHandler {
                 .build();
     }
 
-    @ExceptionHandler(BadRequestException.class)
+    @ExceptionHandler(UsernameNotFoundException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ErrorResponse handleBadRequestException(BadRequestException exception, WebRequest request) {
+    public ErrorResponse handleUsernameNotFoundException(UsernameNotFoundException exception, WebRequest request) {
         return ErrorResponse.builder()
                 .timestamp(new Date())
                 .status(HttpStatus.BAD_REQUEST.value())
@@ -127,20 +127,11 @@ public class GlobalExceptionHandler {
                 .message(exception.getMessage())
                 .build();
     }
-        @ExceptionHandler(UsernameNotFoundException.class)
-        @ResponseStatus(HttpStatus.BAD_REQUEST)
-        public ErrorResponse handleUsernameNotFoundException(UsernameNotFoundException exception, WebRequest request) {
-            return ErrorResponse.builder()
-                    .timestamp(new Date())
-                    .status(HttpStatus.BAD_REQUEST.value())
-                    .path(request.getDescription(false).replace("uri=", ""))
-                    .error(HttpStatus.BAD_REQUEST.getReasonPhrase())
-                    .message(exception.getMessage())
-                    .build();
-        }
+
     @ExceptionHandler(RuntimeException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorResponse handleRuntimeException(RuntimeException exception, WebRequest request) {
+        System.out.println(exception.getClass());
         return ErrorResponse.builder()
                 .timestamp(new Date())
                 .status(HttpStatus.BAD_REQUEST.value())
@@ -149,6 +140,7 @@ public class GlobalExceptionHandler {
                 .message(exception.getMessage())
                 .build();
     }
+
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ErrorResponse handleInternalServerError(Exception exception, WebRequest request) {

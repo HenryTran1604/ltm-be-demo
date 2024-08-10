@@ -1,5 +1,6 @@
 package com.ltm.be.service.impl;
 
+import com.ltm.be.converter.AbstractBaseConverter;
 import com.ltm.be.converter.UserConverter;
 import com.ltm.be.dto.UserDto;
 import com.ltm.be.entity.UserEntity;
@@ -8,9 +9,11 @@ import com.ltm.be.exception.ResourceNotFoundException;
 import com.ltm.be.exception.UsernameAndIpAlreadyExistException;
 import com.ltm.be.payload.request.RegistrationRequest;
 import com.ltm.be.payload.response.PageResponse;
+import com.ltm.be.repository.BaseRepository;
 import com.ltm.be.repository.RoleRepository;
 import com.ltm.be.repository.UserRepository;
 import com.ltm.be.service.IUserService;
+import com.ltm.be.service.base.BaseServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -21,15 +24,24 @@ import org.springframework.stereotype.Service;
 import java.util.Locale;
 
 @Service
-@RequiredArgsConstructor
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl extends BaseServiceImpl<UserDto, UserEntity, Long> implements IUserService {
     private final UserRepository userRepository;
     private final UserConverter userConverter;
     private final PasswordEncoder passwordEncoder;
     private final RoleRepository roleRepository;
 
+    public UserServiceImpl(UserRepository userRepository, UserConverter userConverter,
+                           PasswordEncoder passwordEncoder,
+                           RoleRepository roleRepository) {
+        super(userRepository, userConverter);
+        this.userRepository = userRepository;
+        this.userConverter = userConverter;
+        this.passwordEncoder = passwordEncoder;
+        this.roleRepository = roleRepository;
+    }
+
     @Override
-    public UserDto addUser(RegistrationRequest request) {
+    public UserDto create(RegistrationRequest request) {
         checkExistedUser(request.getUsername(), request.getIp());
         UserEntity userEntity = UserEntity.builder()
                 .username(request.getUsername().toLowerCase())
@@ -38,23 +50,7 @@ public class UserServiceImpl implements IUserService {
                 .role(roleRepository.findByName("ROLE_USER").orElseThrow(() -> new ResourceNotFoundException("Role user not exist")))
                 .build();
         UserEntity userResponse = userRepository.save(userEntity);
-        return userConverter.toDto(userResponse);
-    }
-    @Override
-    public PageResponse<?> getAllUsers(int pageNo, int pageSize) {
-        int page = 0;
-        if (pageNo > 0) {
-            page = pageNo - 1;
-        }
-        Pageable pageable = PageRequest.of(page, pageSize);
-        Page<UserEntity> users = userRepository.findAll(pageable);
-        return PageResponse.builder()
-                .page(pageNo)
-                .size(pageSize)
-                .totalPages(users.getTotalPages())
-                .totalElements(users.getTotalElements())
-                .items(users.stream().map(userConverter::toDto).toList())
-                .build();
+        return create(userResponse);
     }
 
     @Override

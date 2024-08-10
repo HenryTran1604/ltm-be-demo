@@ -1,14 +1,10 @@
 package com.ltm.be.service;
 
-import com.ltm.be.payload.request.webhook.ContestLogRequest;
-import com.ltm.be.payload.request.webhook.ContestScoreBoardRequest;
-import com.ltm.be.payload.request.webhook.PracticeLogRequest;
-import com.ltm.be.payload.request.webhook.PracticeScoreBoardRequest;
+import com.ltm.be.payload.request.webhook.ExamLogRequest;
+import com.ltm.be.payload.request.webhook.ExamRankRequest;
 
 public interface IWebSocketService {
-    void sendContestLog(ContestLogRequest request);
-    void sendPracticeLog(PracticeLogRequest request);
-    void sendUpdatedContestScoreBoard(ContestScoreBoardRequest request);
-    void sendUpdatedPracticeScoreBoard(PracticeScoreBoardRequest request);
+    void sendExamLog(ExamLogRequest request);
+    void sendUpdatedExamRank(ExamRankRequest request);
 
 }

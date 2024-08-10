@@ -26,8 +26,8 @@ public class SecurityConfiguration {
     private static final String[] PUBLIC_ENDPOINTS = {"/api/auth/**", "/ws/**", "/api/webhook/**", "/actuator/**", "/v3/**", "/webjars/**", "/swagger-ui*/*swagger-initializer.js", "/swagger-ui*/**"};
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
-    private final RestAuthenticationHandler restAuthenticationHandler;
-    private final RestAuthorizationHandler restAuthorizationHandler;
+    private final CustomAuthenticationHandler customAuthenticationHandler;
+    private final CustomAccessDeniedHandler customAccessDeniedHandler;
     private final CustomUserDetailsService customUserDetailsService;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
@@ -36,8 +36,8 @@ public class SecurityConfiguration {
                 .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider()).addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .exceptionHandling(exception -> exception
-                        .authenticationEntryPoint(restAuthenticationHandler)
-                        .accessDeniedHandler(restAuthorizationHandler));
+                        .authenticationEntryPoint(customAuthenticationHandler)
+                        .accessDeniedHandler(customAccessDeniedHandler));
         ;
         return httpSecurity.build();
     }

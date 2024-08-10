@@ -7,15 +7,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class ExerciseConverter {
+public class ExerciseConverter extends AbstractBaseConverter<ExerciseDto, ExerciseEntity> {
     private final TopicConverter topicConverter;
+
     public ExerciseDto toDto(ExerciseEntity entity) {
-        ExerciseDto dto = new ExerciseDto();
-        dto.setId(entity.getId());
-        dto.setName(entity.getName());
-        dto.setTopic(topicConverter.toDto(entity.getTopic()));
-        dto.setContent(entity.getContent());
-        dto.setCreatedAt(entity.getCreatedAt());
-        return dto;
+        return ExerciseDto.builder()
+                .id(entity.getId())
+                .name(entity.getName())
+                .topic(topicConverter.toDto(entity.getTopic()))
+                .content(entity.getContent())
+                .createdAt(entity.getCreatedAt())
+                .build();
     }
 }

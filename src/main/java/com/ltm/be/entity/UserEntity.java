@@ -13,7 +13,8 @@ import java.util.*;
 @AllArgsConstructor
 @Table(name = "\"user\"",
         uniqueConstraints = {
-                @UniqueConstraint(columnNames = {"username", "ip"})
+                @UniqueConstraint(columnNames = {"username", "ip"}),
+                @UniqueConstraint(columnNames = {"username"})
         })
 public class UserEntity extends AbstractEntity<Long> {
     @Column(name = "username")
@@ -30,9 +31,7 @@ public class UserEntity extends AbstractEntity<Long> {
     private RoleEntity role;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // note
-    private List<ContestUserEntity> contestUsers;
+    private List<ExamUserEntity> examUsers;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<PracticeUserExerciseEntity> practiceUserExercises;
     // needn't OneToMany for logs
 }

@@ -5,14 +5,15 @@ import com.ltm.be.entity.AliasEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AliasConverter {
+public class AliasConverter extends AbstractBaseConverter<AliasDto, AliasEntity> {
+    @Override
     public AliasDto toDto(AliasEntity entity) {
-        AliasDto dto = new AliasDto();
-        dto.setId(entity.getId());
-        dto.setCode(entity.getCode());
-        dto.setExerciseId(entity.getExercise().getId());
-        dto.setActive(entity.isActive());
-        dto.setCreatedAt(entity.getCreatedAt());
-        return dto;
+        return AliasDto.builder()
+                .id(entity.getId())
+                .code(entity.getCode())
+                .exerciseId(entity.getExercise().getId())
+                .active(entity.isActive())
+                .createdAt(entity.getCreatedAt())
+                .build();
     }
 }

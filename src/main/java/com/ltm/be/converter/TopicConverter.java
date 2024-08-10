@@ -5,11 +5,11 @@ import com.ltm.be.entity.TopicEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TopicConverter {
+public class TopicConverter extends AbstractBaseConverter<TopicDto, TopicEntity> {
     public TopicDto toDto(TopicEntity entity) {
-        TopicDto dto = new TopicDto();
-        dto.setId(entity.getId());
-        dto.setName(entity.getName());
-        return dto;
+        return TopicDto.builder()
+                .id(entity.getId())
+                .name(entity.getName())
+                .build();
     }
 }

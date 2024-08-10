@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 @Repository
-public interface ExerciseRepository extends JpaRepository<ExerciseEntity, Long> {
-    List<ExerciseEntity> findByTopic_Id(Integer id);
+public interface ExerciseRepository extends BaseRepository<ExerciseEntity, Long> {
 }

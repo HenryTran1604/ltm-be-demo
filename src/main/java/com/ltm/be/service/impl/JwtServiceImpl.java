@@ -1,5 +1,7 @@
 package com.ltm.be.service.impl;
 
+import com.ltm.be.exception.ExpiredTokenException;
+import com.ltm.be.exception.InvalidTokenException;
 import com.ltm.be.service.IJwtService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -43,7 +45,13 @@ public class JwtServiceImpl implements IJwtService {
 
     @Override
     public boolean isValid(String token) {
-        return isValidFormatToken(token) && !isTokenExpired(token);
+        if(!isValidFormatToken(token)) {
+            throw new InvalidTokenException("invalid token");
+        }
+        if(isTokenExpired(token)) {
+            throw new ExpiredTokenException("expired token");
+        }
+        return true;
     }
 
     private String generateToken(Map<String, Object> claims, String username, Long expirationTime) {

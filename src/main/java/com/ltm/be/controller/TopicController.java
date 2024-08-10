@@ -19,7 +19,7 @@ public class TopicController {
     @PostMapping("/add")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseData<?> addTopic(@RequestBody TopicRequest request) {
-        topicService.addTopic(request);
+        topicService.create(request);
         return new ResponseData<>(HttpStatus.CREATED.value(),
                 "Add Topic successfully!");
     }
@@ -29,6 +29,6 @@ public class TopicController {
 
         return new ResponseData<>(HttpStatus.OK.value(),
                 "Topics",
-                topicService.getAllTopics(pageNo, pageSize));
+                topicService.getPage(pageNo, pageSize));
     }
 }
