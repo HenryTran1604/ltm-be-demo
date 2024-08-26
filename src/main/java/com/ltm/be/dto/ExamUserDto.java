@@ -9,7 +9,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @SuperBuilder
-public class ExamUserDto extends AbstractDto<Long>{
+public class ExamUserDto extends AbstractDto{
     private UserDto user;
     private ExamDto exam;
     private boolean registered;

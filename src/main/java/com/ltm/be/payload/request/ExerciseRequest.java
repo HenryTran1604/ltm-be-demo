@@ -19,8 +19,6 @@ public class ExerciseRequest {
     private String name;
     @NotBlank(message = "Exercise content must not be blank")
     private String content;
-    @NotEmpty(message = "Exercise aliases must not be empty")
-    private List<AliasRequest> aliases;
     @NotBlank(message = "Exercise must be in a topic")
-    private Integer topicId;
+    private Long topicId;
 }

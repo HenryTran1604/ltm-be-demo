@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -11,19 +12,22 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "exam_user",
-        uniqueConstraints = @UniqueConstraint(
-                columnNames = {"exam_id", "user_id"}
-        ))
-public class ExamUserEntity extends AbstractEntity<Long>{
+@Table(name = "exam_user")
+public class ExamUserEntity extends AbstractEntity<UUID>{
+    @Column(name = "status")
+    private Integer status;
+
     @ManyToOne
     @JoinColumn(name = "exam_id")
     private ExamEntity exam;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserEntity user;
+
     @OneToMany(mappedBy = "examUser", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<ExamUserExerciseEntity> examUserExercises;
+    private List<ExamUserDetailEntity> examUserExercises;
+
     @OneToMany(mappedBy = "examUser", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<ExamLogEntity> examLogs;
+    private List<ExamRunEntity> examRuns;
 }

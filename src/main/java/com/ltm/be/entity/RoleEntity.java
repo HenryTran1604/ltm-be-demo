@@ -3,7 +3,9 @@ package com.ltm.be.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Set;
+import java.util.List;
+import java.util.UUID;
+
 @Getter
 @Setter
 @Entity
@@ -11,10 +13,13 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "role")
-public class RoleEntity extends AbstractEntity<Integer>{
+public class RoleEntity extends AbstractEntity<UUID>{
+    @Column(name = "code")
+    private String code;
+
     @Column(name = "name")
     private String name;
 
     @OneToMany(mappedBy = "role", fetch = FetchType.LAZY)
-    private Set<UserEntity> users;
+    private List<UserEntity> users;
 }

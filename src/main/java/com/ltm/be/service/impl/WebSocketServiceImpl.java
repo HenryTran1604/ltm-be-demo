@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 public class WebSocketServiceImpl implements IWebSocketService {
     private final SimpMessagingTemplate simpMessagingTemplate;
     private final IExamRankService examRankService;
-    private final IExamLogService examLogService;
+    private final IExamRunService examLogService;
     @Override
     public void sendExamLog(ExamLogRequest request) {
         String destination = String.format("/topic/exam/%s/%s/%s/logs", request.getIp(), request.getUsername(), request.getExamId());

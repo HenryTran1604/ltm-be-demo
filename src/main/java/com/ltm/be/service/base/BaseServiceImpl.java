@@ -1,6 +1,8 @@
 package com.ltm.be.service.base;
 
 import com.ltm.be.converter.AbstractBaseConverter;
+import com.ltm.be.dto.AbstractDto;
+import com.ltm.be.entity.AbstractEntity;
 import com.ltm.be.exception.ResourceNotFoundException;
 import com.ltm.be.payload.response.PageResponse;
 import com.ltm.be.repository.BaseRepository;
@@ -17,7 +19,7 @@ import java.util.List;
  * */
 
 @RequiredArgsConstructor
-public class BaseServiceImpl<D, E, K> implements IBaseService<D, E, K> {
+public class BaseServiceImpl<D extends AbstractDto<K>, E extends AbstractEntity<K>, K> implements IBaseService<D, E, K> {
     private final BaseRepository<E, K> baseRepository;
     private final AbstractBaseConverter<D, E> baseConverter;
 
@@ -57,7 +59,6 @@ public class BaseServiceImpl<D, E, K> implements IBaseService<D, E, K> {
     public PageResponse<?> getPage(int pageNo, int pageSize) {
         int page = pageNo > 0 ? pageNo -1 : pageNo;
         Pageable pageable = PageRequest.of(page, pageSize);
-        System.out.println(baseRepository.getClass());
         Page<E> bases = baseRepository.findAll(pageable);
 
         return PageResponse.builder()

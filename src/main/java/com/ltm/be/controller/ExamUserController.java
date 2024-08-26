@@ -12,7 +12,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/user-exam")
+@RequestMapping("/api/exam-users")
 @RequiredArgsConstructor
 @Tag(name = "User exam Controller")
 public class ExamUserController {

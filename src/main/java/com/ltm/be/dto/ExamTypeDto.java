@@ -9,6 +9,6 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @SuperBuilder
-public class ExamTypeDto extends AbstractDto<Integer>{
+public class ExamTypeDto extends AbstractDto{
     private String name;
 }

@@ -2,6 +2,7 @@ package com.ltm.be.controller;
 
 import com.ltm.be.payload.request.LoginRequest;
 import com.ltm.be.payload.request.RegistrationRequest;
+import com.ltm.be.payload.response.LoginResponse;
 import com.ltm.be.payload.response.ResponseData;
 import com.ltm.be.service.IAuthenticationService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -22,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
 public class AuthenticationController {
     private final IAuthenticationService authenticationService;
     @PostMapping("/login")
-    public ResponseData<?> login(@Valid @RequestBody LoginRequest request) {
+    public ResponseData<LoginResponse> login(@Valid @RequestBody LoginRequest request) {
             return new ResponseData<>(HttpStatus.OK.value(),
                     "login successfully!",
                     authenticationService.login(request));
@@ -32,7 +33,7 @@ public class AuthenticationController {
     @Operation(
             summary = "Register new user"
     )
-    public ResponseData<?> register(@Valid @RequestBody RegistrationRequest request, HttpServletRequest httpServletRequest) {
+    public ResponseData<LoginResponse> register(@Valid @RequestBody RegistrationRequest request, HttpServletRequest httpServletRequest) {
 //        request.setIp(httpServletRequest.getRemoteAddr());
         return new ResponseData<>(HttpStatus.CREATED.value(),
                 "Register successfully!",

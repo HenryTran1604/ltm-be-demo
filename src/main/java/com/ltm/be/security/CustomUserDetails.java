@@ -7,23 +7,24 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.UUID;
 
 @Getter
 @Setter
 public class CustomUserDetails implements UserDetails {
-    private Long id;
+    private UUID id;
     private String username;
-    private String ip;
+    private String ipAddress;
     private String password;
-    private LocalDateTime createdAt;
+    private OffsetDateTime createdAt;
     private Collection<? extends GrantedAuthority> roles;
     public CustomUserDetails(UserEntity user) {
         this.id = user.getId();
-        this.username = user.getUsername();
-        this.ip = user.getIp();
+        this.username = user.getUserName();
+        this.ipAddress = user.getIpAddress();
         this.password = user.getPassword();
         this.createdAt = user.getCreatedAt();
         this.roles = Collections.singletonList(new SimpleGrantedAuthority(user.getRole().getName()));

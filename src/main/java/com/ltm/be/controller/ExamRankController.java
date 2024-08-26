@@ -14,13 +14,16 @@ import org.springframework.web.bind.annotation.*;
 public class ExamRankController {
     private final IExamRankService rankService;
     @GetMapping("/scoreboard/all")
-    public ResponseData<?> getAllRank(@RequestParam Long examId) {
+    public ResponseData<?> getAll(@RequestParam Long examId,
+                                  @RequestParam(defaultValue = "0", required = false) int pageNo,
+                                  @RequestParam(defaultValue = "50", required = false) int pageSize) {
         return new ResponseData<>(HttpStatus.OK.value(),
                 "scoreboard",
-                rankService.getAllByExamId(examId));
+                rankService.getAllByExamId(examId, pageNo, pageSize));
     }
     @GetMapping("/scoreboard")
-    public ResponseData<?> getRankByUserIdAndExamId(@RequestParam Long userId, @RequestParam(defaultValue = "1") Long examId) {
+    public ResponseData<?> getRankByUserIdAndExamId(@RequestParam Long userId,
+                                                    @RequestParam(defaultValue = "1") Long examId) {
         return new ResponseData<>(HttpStatus.OK.value(),
                 "Scoreboard",
                 rankService.getByExamIdAndUserId(userId, examId));

@@ -14,27 +14,27 @@ import java.util.List;
 import java.util.Random;
 
 @Service
-public class ExamServiceImpl extends BaseServiceImpl<ExamDto, ExamEntity, Long> implements IExamService {
+public class ExamServiceImpl extends BaseServiceImpl<ExamDto, ExamEntity> implements IExamService {
     private final ExamUserRepository examUserRepository;
     private final ExamExerciseRepository examExerciseRepository;
-    private final TopicRepository topicRepository;
-    private final ExamUserExerciseRepository examUserExerciseRepository;
+    private final GroupRepository groupRepository;
+    private final ExamUserDetailRepository examUserDetailRepository;
     private final AliasRepository aliasRepository;
     private final IAliasService aliasService;
 
     public ExamServiceImpl(ExamRepository examRepository,
                            ExamUserRepository examUserRepository,
                            ExamExerciseRepository examExerciseRepository,
-                           TopicRepository topicRepository,
-                           ExamUserExerciseRepository examUserExerciseRepository,
+                           GroupRepository groupRepository,
+                           ExamUserDetailRepository examUserDetailRepository,
                            ExamConverter examConverter,
                            AliasRepository aliasRepository,
                            IAliasService aliasService) {
         super(examRepository, examConverter);
         this.examUserRepository = examUserRepository;
         this.examExerciseRepository = examExerciseRepository;
-        this.topicRepository = topicRepository;
-        this.examUserExerciseRepository = examUserExerciseRepository;
+        this.groupRepository = groupRepository;
+        this.examUserDetailRepository = examUserDetailRepository;
         this.aliasRepository = aliasRepository;
         this.aliasService = aliasService;
     }
@@ -63,30 +63,28 @@ public class ExamServiceImpl extends BaseServiceImpl<ExamDto, ExamEntity, Long> 
     @Override
     public void assignExercisesToUsers(Long id) {
         List<ExamUserEntity> users = examUserRepository.findAllByExamId(id);
-        List<TopicEntity> topics = topicRepository.findAll();
+        List<GroupEntity> topics = groupRepository.findAll();
         Random random = new Random();
         for (ExamUserEntity user : users) {
-            for (TopicEntity topic : topics) {
-                List<ExamExerciseEntity> exercises = examExerciseRepository.findByExercise_TopicId(topic.getId());
+            for (GroupEntity topic : topics) {
+                List<ExamDetailEntity> exercises = examExerciseRepository.findByExercise_TopicId(topic.getId());
                 if (!exercises.isEmpty()) {
                     int randomExerciseIndex = random.nextInt(exercises.size());
-                    ExamExerciseEntity randomExercise = exercises.get(randomExerciseIndex);
+                    ExamDetailEntity randomExercise = exercises.get(randomExerciseIndex);
                     String aliasCode = aliasService.generateAliasCode(7);
                     AliasEntity alias = AliasEntity.builder()
                             .code(aliasCode)
-                            .exercise(randomExercise.getExercise())
                             .build();
                     aliasRepository.save(alias);
 
-                    ExamUserExerciseEntity userExercise = ExamUserExerciseEntity.builder()
-                            .examExercise(randomExercise)
+                    ExamUserDetailEntity userExercise = ExamUserDetailEntity.builder()
+                            .examDetail(randomExercise)
                             .examUser(user)
                             .ac(false)
                             .alias(alias)
                             .srcPath("")
                             .build();
-
-                    examUserExerciseRepository.save(userExercise);
+                    examUserDetailRepository.save(userExercise);
                 }
             }
         }

@@ -7,12 +7,16 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.util.UUID;
 
 @Getter
 @Setter
 @SuperBuilder
-public class ExamDto extends AbstractDto<Long>{
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
-    private String title;
+public class ExamDto extends AbstractDto<UUID> {
+    private OffsetDateTime createdAt;
+    private OffsetDateTime startTime;
+    private OffsetDateTime endTime;
+    private String name;
+    private ExamTypeDto examType;
 }

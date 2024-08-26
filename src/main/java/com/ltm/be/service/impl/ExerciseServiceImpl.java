@@ -1,41 +1,28 @@
 package com.ltm.be.service.impl;
 
-import com.ltm.be.converter.AbstractBaseConverter;
 import com.ltm.be.converter.ExerciseConverter;
-import com.ltm.be.dto.ExerciseDto;
-import com.ltm.be.entity.AliasEntity;
-import com.ltm.be.entity.ExerciseEntity;
-import com.ltm.be.entity.TopicEntity;
-import com.ltm.be.exception.DataConflictException;
+import com.ltm.be.dto.QuestionDto;
+import com.ltm.be.entity.QuestionEntity;
+import com.ltm.be.entity.GroupEntity;
 import com.ltm.be.exception.ResourceNotFoundException;
-import com.ltm.be.payload.request.AliasRequest;
 import com.ltm.be.payload.request.ExerciseRequest;
-import com.ltm.be.payload.response.PageResponse;
-import com.ltm.be.repository.AliasRepository;
-import com.ltm.be.repository.BaseRepository;
 import com.ltm.be.repository.ExerciseRepository;
-import com.ltm.be.repository.TopicRepository;
+import com.ltm.be.repository.GroupRepository;
 import com.ltm.be.service.IExerciseService;
 import com.ltm.be.service.base.BaseServiceImpl;
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
-public class ExerciseServiceImpl extends BaseServiceImpl<ExerciseDto, ExerciseEntity, Long> implements IExerciseService {
-    private final TopicRepository topicRepository;
+public class ExerciseServiceImpl extends BaseServiceImpl<QuestionDto, QuestionEntity> implements IExerciseService {
+    private final GroupRepository groupRepository;
     private final ExerciseRepository exerciseRepository;
 
     public ExerciseServiceImpl(ExerciseRepository exerciseRepository,
                                ExerciseConverter exerciseConverter,
-                               TopicRepository topicRepository) {
+                               GroupRepository groupRepository) {
         super(exerciseRepository, exerciseConverter);
-        this.topicRepository = topicRepository;
+        this.groupRepository = groupRepository;
         this.exerciseRepository = exerciseRepository;
     }
 
@@ -43,13 +30,13 @@ public class ExerciseServiceImpl extends BaseServiceImpl<ExerciseDto, ExerciseEn
     @Transactional
     public void create(ExerciseRequest request) {
         // check topic exist
-        TopicEntity topic = topicRepository.findById(request.getTopicId()).orElseThrow(() -> new ResourceNotFoundException("Topic not exist!"));
+        GroupEntity topic = groupRepository.findById(request.getTopicId()).orElseThrow(() -> new ResourceNotFoundException("Topic not exist!"));
 
         // save exercise
-        ExerciseEntity entity = ExerciseEntity.builder()
+        QuestionEntity entity = QuestionEntity.builder()
                 .name(request.getName())
                 .content(request.getContent())
-                .topic(topic)
+                .group(topic)
                 .build();
         create(entity);
     }
@@ -58,16 +45,16 @@ public class ExerciseServiceImpl extends BaseServiceImpl<ExerciseDto, ExerciseEn
     @Transactional
     public void update(Long id, ExerciseRequest request) {
         // Tìm topic theo ID
-        TopicEntity topic = topicRepository.findById(request.getTopicId())
+        GroupEntity topic = groupRepository.findById(request.getTopicId())
                 .orElseThrow(() -> new ResourceNotFoundException("Topic not exist"));
 
         // Tìm exercise theo ID
-        ExerciseEntity exercise = exerciseRepository.findById(id)
+        QuestionEntity exercise = exerciseRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Topic not exist"));
 
         // Cập nhật thông tin exercise
         exercise.setName(request.getName());
-        exercise.setTopic(topic);
+        exercise.setGroup(topic);
         exercise.setContent(request.getContent());
         update(exercise);
     }

@@ -7,7 +7,7 @@ import com.ltm.be.payload.request.ExamUserRequest;
 import com.ltm.be.payload.response.PageResponse;
 import com.ltm.be.service.base.IBaseService;
 
-public interface IExamUserService extends IBaseService<ExamUserDto, ExamUserEntity, Long> {
+public interface IExamUserService extends IBaseService<ExamUserDto, ExamUserEntity> {
     void addUsersToExam(ExamUserRequest request);
 
     void register(ExamRegistrationRequest request);

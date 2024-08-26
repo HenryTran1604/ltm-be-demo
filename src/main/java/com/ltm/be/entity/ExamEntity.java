@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -13,13 +15,18 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "exam")
-public class ExamEntity extends AbstractEntity<Long>{
+public class ExamEntity extends AbstractEntity<UUID> {
+    @Column(name = "code")
+    private String code;
+
+    @Column(name = "name")
+    private String name;
+
     @Column(name = "start_time")
-    private LocalDateTime startTime;
+    private OffsetDateTime startTime;
+
     @Column(name = "end_time")
-    private LocalDateTime endTime;
-    @Column(name = "title")
-    private String title;
+    private OffsetDateTime endTime;
 
     @ManyToOne
     @JoinColumn(name = "exam_id")
@@ -27,7 +34,8 @@ public class ExamEntity extends AbstractEntity<Long>{
 
     @OneToMany(mappedBy = "exam", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<ExamUserEntity> examUsers;
+
     @OneToMany(mappedBy = "exam", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<ExamExerciseEntity> examExercises;
+    private List<ExamDetailEntity> examDetails;
     // needn't OneToMany for logs
 }

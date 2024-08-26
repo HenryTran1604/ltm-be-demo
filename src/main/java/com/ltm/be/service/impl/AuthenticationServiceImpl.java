@@ -51,7 +51,7 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
                 .id(userDetails.getId())
                 .username(userDetails.getUsername())
                 .createdAt(userDetails.getCreatedAt())
-                .ip(userDetails.getIp())
+                .ip(userDetails.getIpAddress())
                 .role(role)
                 .build();
         return LoginResponse.builder()

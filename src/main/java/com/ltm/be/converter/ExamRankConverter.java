@@ -2,7 +2,7 @@ package com.ltm.be.converter;
 
 import com.ltm.be.dto.ExamRankDto;
 import com.ltm.be.entity.ExamUserEntity;
-import com.ltm.be.entity.ExamUserExerciseEntity;
+import com.ltm.be.entity.ExamUserDetailEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -13,12 +13,12 @@ public class ExamRankConverter extends AbstractBaseConverter<ExamRankDto, ExamUs
     public ExamRankDto toDto(ExamUserEntity entity)  {
         return ExamRankDto.builder()
                 .id(entity.getId())
-                .username(entity.getUser().getUsername())
-                .ip(entity.getUser().getIp())
+                .username(entity.getUser().getUserName())
+                .ip(entity.getUser().getIpAddress())
                 .examUserId(entity.getId())
                 .examUserExercises(entity.getExamUserExercises().stream().map(examUserExerciseConverter::toDto).toList())
                 .score((int) entity.getExamUserExercises().stream()
-                        .filter(ExamUserExerciseEntity::isAc)
+                        .filter(ExamUserDetailEntity::isAc)
                         .count())
                 .build();
     }

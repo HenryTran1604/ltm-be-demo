@@ -1,7 +1,7 @@
 package com.ltm.be.controller;
 
 import com.ltm.be.payload.response.ResponseData;
-import com.ltm.be.service.IExamUserExerciseService;
+import com.ltm.be.service.IExamUserDetailService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @Tag(name = "User Exercise exam Controller")
 public class ExamUserExerciseController {
-    private final IExamUserExerciseService userExerciseExamService;
+    private final IExamUserDetailService userExerciseExamService;
 
     @GetMapping("/detail")
     public ResponseData<?> getexamUserExercisesByUser(@RequestParam Long userId,

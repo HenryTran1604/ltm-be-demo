@@ -6,8 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 @Repository
-public interface AliasRepository extends BaseRepository<AliasEntity, Long> {
+public interface AliasRepository extends BaseRepository<AliasEntity, UUID> {
     boolean existsByCodeAndActive(String code, boolean active);
 }

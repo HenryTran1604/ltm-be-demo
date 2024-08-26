@@ -11,7 +11,6 @@ public class AliasConverter extends AbstractBaseConverter<AliasDto, AliasEntity>
         return AliasDto.builder()
                 .id(entity.getId())
                 .code(entity.getCode())
-                .exerciseId(entity.getExercise().getId())
                 .active(entity.isActive())
                 .createdAt(entity.getCreatedAt())
                 .build();

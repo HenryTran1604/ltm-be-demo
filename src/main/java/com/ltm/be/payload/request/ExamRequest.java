@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Getter
 @Setter
@@ -17,10 +17,15 @@ import java.time.LocalDateTime;
 public class ExamRequest {
     @NotBlank(message = "Title must not be blank")
     private String title;
+
     @NotNull(message = "Exam type must not be empty")
     private Integer examTypeId;
+
+    @NotNull(message = "Start time must not be empty")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private LocalDateTime startTime;
+    private OffsetDateTime startTime;
+
+    @NotNull(message = "End time must not be empty")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private LocalDateTime endTime;
+    private OffsetDateTime endTime;
 }

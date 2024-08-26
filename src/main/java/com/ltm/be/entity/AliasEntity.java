@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
-import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -13,18 +13,11 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "alias")
-public class AliasEntity extends AbstractEntity<Long>{
-    @Column(name = "code")
+public class AliasEntity extends AbstractEntityWithAuditor<UUID> {
+    @Column(name = "name", nullable = false)
     @Size(min = 7, max = 8)
-    private String code;
+    private String name;
 
-    @Column(name = "active")
+    @Column(name = "active", nullable = false)
     private boolean active;
-
-    @ManyToOne
-    @JoinColumn(name = "exercise_id")
-    private ExerciseEntity exercise;
-
-    @OneToMany(mappedBy = "alias")
-    private List<ExamUserExerciseEntity> userExerciseExams;
 }

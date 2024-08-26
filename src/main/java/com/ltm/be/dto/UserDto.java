@@ -7,7 +7,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @SuperBuilder
-public class UserDto extends AbstractDto<Long>{
+public class UserDto extends AbstractDto{
     private String username;
     private String ip;
     private String role;

@@ -9,8 +9,8 @@ public class UserConverter extends AbstractBaseConverter<UserDto, UserEntity>{
     public UserDto toDto(UserEntity entity) {
         return UserDto.builder()
                 .id(entity.getId())
-                .username(entity.getUsername())
-                .ip(entity.getIp())
+                .username(entity.getUserName())
+                .ip(entity.getIpAddress())
                 .createdAt(entity.getCreatedAt())
                 .role(entity.getRole().getName())
                 .build();

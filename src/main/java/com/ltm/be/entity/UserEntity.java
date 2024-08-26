@@ -16,12 +16,12 @@ import java.util.*;
                 @UniqueConstraint(columnNames = {"username", "ip"}),
                 @UniqueConstraint(columnNames = {"username"})
         })
-public class UserEntity extends AbstractEntity<Long> {
-    @Column(name = "username")
-    private String username;
+public class UserEntity extends AbstractEntityWithAuditor<UUID>{
+    @Column(name = "user_name")
+    private String userName;
 
-    @Column(name = "ip")
-    private String ip;
+    @Column(name = "ip_address")
+    private String ipAddress;
 
     @Column(name = "password")
     private String password;

@@ -11,8 +11,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TopicRequest {
-    @NotBlank
+    @NotBlank(message = "Topic name must be not blank")
     private String name;
-    @NotBlank
+    @NotBlank(message = "Topic content must be not blank")
     private String content;
 }

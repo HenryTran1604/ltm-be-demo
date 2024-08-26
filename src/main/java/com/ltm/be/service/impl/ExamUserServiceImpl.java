@@ -30,7 +30,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
-public class ExamUserServiceImpl extends BaseServiceImpl<ExamUserDto, ExamUserEntity, Long> implements IExamUserService {
+public class ExamUserServiceImpl extends BaseServiceImpl<ExamUserDto, ExamUserEntity> implements IExamUserService {
     private final ExamUserRepository examUserRepository;
     private final ExamRepository examRepository;
     private final ExamConverter examConverter;

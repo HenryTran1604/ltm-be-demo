@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ExamExerciseRequest {
-    @NotNull(message = "exam must not be null")
+    @NotNull(message = "exam id must not be null")
     private Long examId;
     @NotEmpty(message = "exercises must not be empty")
     private List<Long> exerciseIds;
