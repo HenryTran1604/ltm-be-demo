@@ -12,7 +12,7 @@ public class ExamExerciseConverter extends AbstractBaseConverter<ExamDetailDto, 
     public ExamDetailDto toDto(ExamDetailEntity entity) {
         return ExamDetailDto.builder()
                 .id(entity.getId())
-                .exercise(exerciseConverter.toDto(entity.getQuestion()))
+                .question(exerciseConverter.toDto(entity.getQuestion()))
                 .examTopicId(entity.getExamTopic().getId())
                 .createdAt(entity.getCreatedAt())
                 .build();

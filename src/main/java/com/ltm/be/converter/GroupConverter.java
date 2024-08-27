@@ -5,7 +5,7 @@ import com.ltm.be.entity.GroupEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TopicConverter extends AbstractBaseConverter<GroupDto, GroupEntity> {
+public class GroupConverter extends AbstractBaseConverter<GroupDto, GroupEntity> {
     public GroupDto toDto(GroupEntity entity) {
         return GroupDto.builder()
                 .id(entity.getId())

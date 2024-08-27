@@ -5,6 +5,6 @@ import com.ltm.be.entity.SubmissionEntity;
 import com.ltm.be.payload.response.PageResponse;
 import com.ltm.be.service.base.IBaseService;
 
-public interface ISubmissionService extends IBaseService<SubmissionDto, SubmissionEntity> {
+public interface ISubmissionService {
     PageResponse<?> getAllByUserIdAndExamId(Long id, int pageNo, int pageSize);
 }

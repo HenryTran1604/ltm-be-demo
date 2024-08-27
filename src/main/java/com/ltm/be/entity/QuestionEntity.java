@@ -12,8 +12,8 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "exercise")
-public class QuestionEntity extends AbstractEntity<UUID>{
+@Table(name = "question")
+public class QuestionEntity extends AbstractEntityWithAuditor<UUID>{
     @Column(name = "code")
     private String code;
 

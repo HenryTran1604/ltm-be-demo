@@ -1,6 +1,6 @@
 package com.ltm.be.controller;
 
-import com.ltm.be.payload.request.ExamExerciseRequest;
+import com.ltm.be.payload.request.ExamDetailRequest;
 import com.ltm.be.payload.response.ResponseData;
 import com.ltm.be.service.IExamDetailService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -19,8 +19,8 @@ public class ExamExerciseController {
 
     @PostMapping("/add-all")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseData<?> create(@Valid @RequestBody ExamExerciseRequest request) {
-        exerciseExamService.addExercisesToExam(request);
+    public ResponseData<?> create(@Valid @RequestBody ExamDetailRequest request) {
+        exerciseExamService.create(request);
         return new ResponseData<>(HttpStatus.OK.value(),
                 "Add exercises to exam successfully!");
     }

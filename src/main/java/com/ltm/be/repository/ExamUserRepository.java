@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface ExamUserRepository extends BaseRepository<ExamUserEntity, UUID> {
+public interface ExamUserRepository extends org.springframework.data.jpa.repository.JpaRepository<ExamUserEntity, UUID> {
     List<ExamUserEntity> findAllByExamId(Long examId);
     Page<ExamUserEntity> findAllByExamId(Long examId, Pageable pageable);
     List<ExamUserEntity> findAllByExamIdAndUserIdIn(Long examId, List<Long> userIds);

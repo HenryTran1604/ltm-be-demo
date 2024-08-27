@@ -8,14 +8,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ExamExerciseRequest {
+public class ExamDetailRequest {
     @NotNull(message = "exam id must not be null")
-    private Long examId;
+    private UUID examId;
     @NotEmpty(message = "exercises must not be empty")
-    private List<Long> exerciseIds;
+    private List<UUID> exerciseIds;
 }

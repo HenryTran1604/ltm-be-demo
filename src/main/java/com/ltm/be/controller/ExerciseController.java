@@ -1,6 +1,6 @@
 package com.ltm.be.controller;
 
-import com.ltm.be.payload.request.ExerciseRequest;
+import com.ltm.be.payload.request.QuestionRequest;
 import com.ltm.be.payload.response.ResponseData;
 import com.ltm.be.service.IExerciseService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -22,7 +22,7 @@ public class ExerciseController {
     )
     @PostMapping("/add")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseData<?> addExercise(@RequestBody ExerciseRequest request) {
+    public ResponseData<?> addExercise(@RequestBody QuestionRequest request) {
         exerciseService.create(request);
         return new ResponseData<>(HttpStatus.CREATED.value(),
                 "Add exercises successfully!");
@@ -33,7 +33,7 @@ public class ExerciseController {
     )
     @PutMapping("/update")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseData<?> updateExercise(@RequestParam Long id, @RequestBody ExerciseRequest request) {
+    public ResponseData<?> updateExercise(@RequestParam Long id, @RequestBody QuestionRequest request) {
         exerciseService.update(id, request);
         return new ResponseData<>(HttpStatus.OK.value(),
                 "Update exercises successfully!");

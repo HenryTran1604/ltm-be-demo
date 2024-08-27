@@ -13,7 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "exam_type")
-public class ExamTypeEntity extends AbstractEntity<UUID>{
+public class ExamTypeEntity extends AbstractEntityWithAuditor<UUID>{
     @Column(name = "name", nullable = false)
     private String name;
 

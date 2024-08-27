@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface GroupRepository extends BaseRepository<GroupEntity, UUID> {
+public interface GroupRepository extends org.springframework.data.jpa.repository.JpaRepository<GroupEntity, UUID> {
 }

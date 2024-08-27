@@ -13,7 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "exam_user")
-public class ExamUserEntity extends AbstractEntity<UUID>{
+public class ExamUserEntity extends AbstractEntityWithAuditor<UUID>{
     @Column(name = "status")
     private Integer status;
 
@@ -26,7 +26,7 @@ public class ExamUserEntity extends AbstractEntity<UUID>{
     private UserEntity user;
 
     @OneToMany(mappedBy = "examUser", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<ExamUserDetailEntity> examUserExercises;
+    private List<ExamUserDetailEntity> examUserDetails;
 
     @OneToMany(mappedBy = "examUser", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<ExamRunEntity> examRuns;

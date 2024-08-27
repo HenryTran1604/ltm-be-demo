@@ -16,7 +16,7 @@ import java.util.Random;
 @Service
 public class ExamServiceImpl extends BaseServiceImpl<ExamDto, ExamEntity> implements IExamService {
     private final ExamUserRepository examUserRepository;
-    private final ExamExerciseRepository examExerciseRepository;
+    private final ExamDetailRepository examDetailRepository;
     private final GroupRepository groupRepository;
     private final ExamUserDetailRepository examUserDetailRepository;
     private final AliasRepository aliasRepository;
@@ -24,7 +24,7 @@ public class ExamServiceImpl extends BaseServiceImpl<ExamDto, ExamEntity> implem
 
     public ExamServiceImpl(ExamRepository examRepository,
                            ExamUserRepository examUserRepository,
-                           ExamExerciseRepository examExerciseRepository,
+                           ExamDetailRepository examDetailRepository,
                            GroupRepository groupRepository,
                            ExamUserDetailRepository examUserDetailRepository,
                            ExamConverter examConverter,
@@ -32,7 +32,7 @@ public class ExamServiceImpl extends BaseServiceImpl<ExamDto, ExamEntity> implem
                            IAliasService aliasService) {
         super(examRepository, examConverter);
         this.examUserRepository = examUserRepository;
-        this.examExerciseRepository = examExerciseRepository;
+        this.examDetailRepository = examDetailRepository;
         this.groupRepository = groupRepository;
         this.examUserDetailRepository = examUserDetailRepository;
         this.aliasRepository = aliasRepository;
@@ -67,7 +67,7 @@ public class ExamServiceImpl extends BaseServiceImpl<ExamDto, ExamEntity> implem
         Random random = new Random();
         for (ExamUserEntity user : users) {
             for (GroupEntity topic : topics) {
-                List<ExamDetailEntity> exercises = examExerciseRepository.findByExercise_TopicId(topic.getId());
+                List<ExamDetailEntity> exercises = examDetailRepository.findByExercise_TopicId(topic.getId());
                 if (!exercises.isEmpty()) {
                     int randomExerciseIndex = random.nextInt(exercises.size());
                     ExamDetailEntity randomExercise = exercises.get(randomExerciseIndex);

@@ -12,13 +12,10 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "exam_user_exercise",
-        uniqueConstraints = @UniqueConstraint(
-                columnNames = {"exam_user_id", "exam_exercise_id"}
-        ))
-public class ExamUserDetailEntity extends AbstractEntity <UUID>{
+@Table(name = "exam_user_exercise")
+public class ExamUserDetailEntity extends AbstractEntityWithAuditor <UUID>{
     @Column(name = "status")
-    private Integer status;
+    private boolean completed; // status: AC, NOT AC
 
     @ManyToOne
     @JoinColumn(name = "alias_id")

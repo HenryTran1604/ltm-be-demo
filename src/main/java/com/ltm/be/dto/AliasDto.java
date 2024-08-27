@@ -13,6 +13,6 @@ import java.util.UUID;
 @SuperBuilder
 public class AliasDto extends AbstractDto<UUID> {
     private UUID exerciseId;
-    private String code;
+    private String name;
     private boolean active;
 }

@@ -9,7 +9,7 @@ import com.ltm.be.service.base.IBaseService;
 
 import java.util.List;
 
-public interface IExamService extends IBaseService<ExamDto, ExamEntity> {
+public interface IExamService {
     void create(ExamRequest request);
     void update(Long id, ExamRequest request);
     void assignExercisesToUsers(Long id);

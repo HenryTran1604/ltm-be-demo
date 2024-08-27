@@ -21,7 +21,7 @@ public class ExamUserController {
     @PostMapping("/add-all")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseData<?> addUsersToExams(@Valid @RequestBody ExamUserRequest request) {
-        examUserService.addUsersToExam(request);
+        examUserService.create(request);
         return new ResponseData<>(HttpStatus.OK.value(),
                 "Add users to exam successfully!");
     }

@@ -1,6 +1,5 @@
 package com.ltm.be.converter;
 
-import com.ltm.be.dto.ExamTopicDto;
 import com.ltm.be.entity.ExamTopicEntity;
 import org.springframework.stereotype.Component;
 

@@ -1,14 +1,15 @@
 package com.ltm.be.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+
+import java.util.UUID;
 
 @Getter
 @Setter
 @SuperBuilder
-public class UserDto extends AbstractDto{
-    private String username;
-    private String ip;
+public class UserDto extends AbstractDto<UUID> {
+    private String userName;
+    private String ipAddress;
     private String role;
 }

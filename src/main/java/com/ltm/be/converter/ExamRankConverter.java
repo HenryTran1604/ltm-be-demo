@@ -16,8 +16,8 @@ public class ExamRankConverter extends AbstractBaseConverter<ExamRankDto, ExamUs
                 .username(entity.getUser().getUserName())
                 .ip(entity.getUser().getIpAddress())
                 .examUserId(entity.getId())
-                .examUserExercises(entity.getExamUserExercises().stream().map(examUserExerciseConverter::toDto).toList())
-                .score((int) entity.getExamUserExercises().stream()
+                .examUserExercises(entity.getExamUserDetails().stream().map(examUserExerciseConverter::toDto).toList())
+                .score((int) entity.getExamUserDetails().stream()
                         .filter(ExamUserDetailEntity::isAc)
                         .count())
                 .build();

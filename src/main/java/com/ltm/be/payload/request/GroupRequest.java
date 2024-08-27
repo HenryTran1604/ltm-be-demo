@@ -1,7 +1,6 @@
 package com.ltm.be.payload.request;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,9 +10,9 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ExamTopicRequest {
-    @NotNull(message = "Exam id must not be null")
-    private Long examId;
-    @NotBlank(message = "Exam topic name must not be blank")
+public class GroupRequest {
+    @NotBlank(message = "Group name must be not blank")
     private String name;
+    @NotBlank(message = "Group code must be not blank")
+    private String code;
 }

@@ -58,7 +58,7 @@ public class SecurityConfiguration {
         DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
         daoAuthenticationProvider.setUserDetailsService(customUserDetailsService);
         daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
-        daoAuthenticationProvider.setHideUserNotFoundExceptions(false);
+        daoAuthenticationProvider.setHideUserNotFoundExceptions(true);
         return daoAuthenticationProvider;
     }
 }

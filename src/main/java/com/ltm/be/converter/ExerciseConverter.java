@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class ExerciseConverter extends AbstractBaseConverter<QuestionDto, QuestionEntity> {
-    private final TopicConverter topicConverter;
+    private final GroupConverter groupConverter;
 
     public QuestionDto toDto(QuestionEntity entity) {
         return QuestionDto.builder()
                 .id(entity.getId())
                 .name(entity.getName())
-                .topic(topicConverter.toDto(entity.getGroup()))
+                .topic(groupConverter.toDto(entity.getGroup()))
                 .content(entity.getContent())
                 .createdAt(entity.getCreatedAt())
                 .build();

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -15,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 public class ExamUserRequest {
     @NotNull(message = "exam must not be null")
-    private Long examId;
+    private UUID examId;
     @NotEmpty(message = "Users must not be empty")
-    private List<Long> userIds;
+    private List<UUID> userIds;
 }

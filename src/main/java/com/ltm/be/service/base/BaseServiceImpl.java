@@ -1,11 +1,9 @@
 package com.ltm.be.service.base;
 
-import com.ltm.be.converter.AbstractBaseConverter;
 import com.ltm.be.dto.AbstractDto;
 import com.ltm.be.entity.AbstractEntity;
 import com.ltm.be.exception.ResourceNotFoundException;
 import com.ltm.be.payload.response.PageResponse;
-import com.ltm.be.repository.BaseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

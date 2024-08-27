@@ -10,8 +10,8 @@ import java.util.UUID;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "exam_submission")
-public class SubmissionEntity extends AbstractEntity<UUID>{
+@Table(name = "submission")
+public class SubmissionEntity extends AbstractEntityWithAuditor<UUID>{
     @Column(name = "name")
     private String name;
 

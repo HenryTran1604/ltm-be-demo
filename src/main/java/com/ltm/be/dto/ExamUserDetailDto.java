@@ -4,14 +4,15 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @SuperBuilder
-public class ExamUserDetailDto extends AbstractDto{
-    private Long userExamId;
+public class ExamUserDetailDto extends AbstractDto<UUID> {
+    private UUID userExamId;
     private String alias;
-    private boolean ac;
-    private String srcPath;
+    private boolean completed;
     private Integer attemptCount;
-    private ExamDetailDto examExercise;
+    private ExamDetailDto examDetail;
 }

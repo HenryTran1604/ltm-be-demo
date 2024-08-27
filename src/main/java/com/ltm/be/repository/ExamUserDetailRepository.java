@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface ExamUserDetailRepository extends BaseRepository<ExamUserDetailEntity, UUID> {
+public interface ExamUserDetailRepository extends org.springframework.data.jpa.repository.JpaRepository<ExamUserDetailEntity, UUID> {
     Page<ExamUserDetailEntity> findAllByExamUser_User_Id(Long userId, Pageable pageable);
 }

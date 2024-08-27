@@ -7,19 +7,19 @@ import com.ltm.be.payload.request.ExamTypeRequest;
 import com.ltm.be.repository.ExamTypeRepository;
 import com.ltm.be.service.IExamTypeService;
 import com.ltm.be.service.base.BaseServiceImpl;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ExamTypeServiceImpl extends BaseServiceImpl<ExamTypeDto, ExamTypeEntity> implements IExamTypeService {
-    public ExamTypeServiceImpl(ExamTypeRepository examTypeRepository, ExamTypeConverter examTypeConverter) {
-        super(examTypeRepository, examTypeConverter);
-    }
-
+@RequiredArgsConstructor
+public class ExamTypeServiceImpl implements IExamTypeService {
+    private final ExamTypeRepository examTypeRepository;
+    private final ExamTypeConverter examTypeConverter;
     @Override
     public ExamTypeDto create(ExamTypeRequest request) {
-        ExamTypeEntity examType = ExamTypeEntity.builder()
+        ExamTypeEntity entity = ExamTypeEntity.builder()
                 .name(request.getName())
                 .build();
-        return create(examType);
+        return examTypeConverter.toDto(examTypeRepository.save(entity));
     }
 }

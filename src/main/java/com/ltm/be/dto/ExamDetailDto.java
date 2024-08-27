@@ -10,5 +10,8 @@ import java.util.UUID;
 @Setter
 @SuperBuilder
 public class ExamDetailDto extends AbstractDto<UUID> {
-    private QuestionDto exercise;
+    private UUID examId;
+    private QuestionDto question;
+    private Integer status;
+    private Integer orderGroup;
 }

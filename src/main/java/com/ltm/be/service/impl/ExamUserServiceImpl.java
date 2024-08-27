@@ -1,6 +1,5 @@
 package com.ltm.be.service.impl;
 
-import com.ltm.be.converter.AbstractBaseConverter;
 import com.ltm.be.converter.ExamConverter;
 import com.ltm.be.converter.ExamUserConverter;
 import com.ltm.be.converter.UserConverter;
@@ -13,7 +12,6 @@ import com.ltm.be.exception.ResourceNotFoundException;
 import com.ltm.be.payload.request.ExamRegistrationRequest;
 import com.ltm.be.payload.request.ExamUserRequest;
 import com.ltm.be.payload.response.PageResponse;
-import com.ltm.be.repository.BaseRepository;
 import com.ltm.be.repository.ExamRepository;
 import com.ltm.be.repository.ExamUserRepository;
 import com.ltm.be.repository.UserRepository;
@@ -52,7 +50,7 @@ public class ExamUserServiceImpl extends BaseServiceImpl<ExamUserDto, ExamUserEn
     }
 
     @Override
-    public void addUsersToExam(ExamUserRequest request) {
+    public void create(ExamUserRequest request) {
         ExamEntity exam = examRepository.findById(request.getExamId()).orElseThrow(() -> new ResourceNotFoundException("exam not exist!"));
         List<UserEntity> users = userRepository.findAllById(request.getUserIds());
         // check user must exist

@@ -5,7 +5,7 @@ import com.ltm.be.entity.ExamUserEntity;
 import com.ltm.be.payload.response.PageResponse;
 import com.ltm.be.service.base.IBaseService;
 
-public interface IExamRankService extends IBaseService<ExamRankDto, ExamUserEntity> {
+public interface IExamRankService {
     PageResponse<?> getAllByExamId(Long examId, int pageNo, int pageSize);
     ExamRankDto getByExamIdAndUserId(Long userId, Long examId);
 }

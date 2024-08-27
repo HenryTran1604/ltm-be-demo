@@ -9,17 +9,18 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.OffsetDateTime;
+import java.util.UUID;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class ExamRequest {
-    @NotBlank(message = "Title must not be blank")
-    private String title;
+    @NotBlank(message = "Name must not be blank")
+    private String name;
 
     @NotNull(message = "Exam type must not be empty")
-    private Integer examTypeId;
+    private UUID examTypeId;
 
     @NotNull(message = "Start time must not be empty")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)

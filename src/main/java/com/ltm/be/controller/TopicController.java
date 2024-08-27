@@ -1,8 +1,8 @@
 package com.ltm.be.controller;
 
-import com.ltm.be.payload.request.TopicRequest;
+import com.ltm.be.payload.request.GroupRequest;
 import com.ltm.be.payload.response.ResponseData;
-import com.ltm.be.service.ITopicService;
+import com.ltm.be.service.IGroupService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @Tag(name = "Topic Controller")
 public class TopicController {
-    private final ITopicService topicService;
+    private final IGroupService topicService;
 
     @PostMapping("/add")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseData<?> addTopic(@RequestBody TopicRequest request) {
+    public ResponseData<?> addTopic(@RequestBody GroupRequest request) {
         topicService.create(request);
         return new ResponseData<>(HttpStatus.CREATED.value(),
                 "Add Topic successfully!");

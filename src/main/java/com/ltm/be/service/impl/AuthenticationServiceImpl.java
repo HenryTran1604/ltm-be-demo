@@ -25,8 +25,8 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
     @Override
     public LoginResponse register(RegistrationRequest request) {
         UserDto user = userService.create(request);
-        String accessToken = jwtService.generateAccessToken(request.getUsername());
-        String refreshToken = jwtService.generateRefreshToken(request.getUsername());
+        String accessToken = jwtService.generateAccessToken(request.getUserName());
+        String refreshToken = jwtService.generateRefreshToken(request.getUserName());
         return LoginResponse.builder()
                 .accessToken(accessToken)
                 .refreshToken(refreshToken)
@@ -37,21 +37,20 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
     @Override
     public LoginResponse login(LoginRequest request) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-                request.getUsername().toLowerCase(),
+                request.getUserName().toLowerCase(),
                 request.getPassword()
         ));
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
         String role = userDetails.getRoles().stream().toList().get(0).toString();
-        if (role.equalsIgnoreCase("ROLE_USER") && !userService.existsByUsernameAndIp(request.getUsername(), request.getIp())) {
+        if (role.equalsIgnoreCase("ROLE_USER") && !userService.existsByUsernameAndIp(request.getUserName(), request.getIpAddress())) {
             throw new DataConflictException("Student has register with different IP!");
         }
         String accessToken = jwtService.generateAccessToken(userDetails.getUsername());
         String refreshToken = jwtService.generateRefreshToken(userDetails.getUsername());
         UserDto user = UserDto.builder()
                 .id(userDetails.getId())
-                .username(userDetails.getUsername())
-                .createdAt(userDetails.getCreatedAt())
-                .ip(userDetails.getIpAddress())
+                .userName(userDetails.getUsername())
+                .ipAddress(userDetails.getIpAddress())
                 .role(role)
                 .build();
         return LoginResponse.builder()

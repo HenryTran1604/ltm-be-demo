@@ -1,7 +1,6 @@
 package com.ltm.be.controller;
 
 import com.ltm.be.payload.response.ResponseData;
-import com.ltm.be.service.IExamTopicService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

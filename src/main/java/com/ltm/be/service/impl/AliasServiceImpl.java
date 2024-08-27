@@ -6,25 +6,24 @@ import com.ltm.be.entity.AliasEntity;
 import com.ltm.be.repository.AliasRepository;
 import com.ltm.be.service.IAliasService;
 import com.ltm.be.service.base.BaseServiceImpl;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
 import java.util.UUID;
 
-@Service
-public class AliasServiceImpl extends BaseServiceImpl<AliasDto, AliasEntity, UUID> implements IAliasService {
-    private final AliasRepository aliasRepository;
-    private static final String allCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+import static com.ltm.be.contants.AppConstants.GeneratorConstants.ALL_CHARACTERS;
 
-    public AliasServiceImpl(AliasRepository aliasRepository, AliasConverter aliasConverter) {
-        super(aliasRepository, aliasConverter);
-        this.aliasRepository = aliasRepository;
-    }
+@Service
+@RequiredArgsConstructor
+public class AliasServiceImpl implements IAliasService{
+    private final AliasRepository aliasRepository;
+
     public String generate(int size) {
         Random random = new Random();
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < size; i++) {
-            sb.append(allCharacters.charAt(random.nextInt(allCharacters.length())));
+            sb.append(ALL_CHARACTERS.charAt(random.nextInt(ALL_CHARACTERS.length())));
         }
         return sb.toString();
     }

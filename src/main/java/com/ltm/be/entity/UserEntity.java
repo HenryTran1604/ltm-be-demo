@@ -11,11 +11,7 @@ import java.util.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "\"user\"",
-        uniqueConstraints = {
-                @UniqueConstraint(columnNames = {"username", "ip"}),
-                @UniqueConstraint(columnNames = {"username"})
-        })
+@Table(name = "\"user\"")
 public class UserEntity extends AbstractEntityWithAuditor<UUID>{
     @Column(name = "user_name")
     private String userName;

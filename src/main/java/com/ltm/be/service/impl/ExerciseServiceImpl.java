@@ -5,32 +5,34 @@ import com.ltm.be.dto.QuestionDto;
 import com.ltm.be.entity.QuestionEntity;
 import com.ltm.be.entity.GroupEntity;
 import com.ltm.be.exception.ResourceNotFoundException;
-import com.ltm.be.payload.request.ExerciseRequest;
-import com.ltm.be.repository.ExerciseRepository;
+import com.ltm.be.payload.request.QuestionRequest;
+import com.ltm.be.repository.QuestionRepository;
 import com.ltm.be.repository.GroupRepository;
 import com.ltm.be.service.IExerciseService;
 import com.ltm.be.service.base.BaseServiceImpl;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class ExerciseServiceImpl extends BaseServiceImpl<QuestionDto, QuestionEntity> implements IExerciseService {
     private final GroupRepository groupRepository;
-    private final ExerciseRepository exerciseRepository;
+    private final QuestionRepository questionRepository;
 
-    public ExerciseServiceImpl(ExerciseRepository exerciseRepository,
+    public ExerciseServiceImpl(QuestionRepository questionRepository,
                                ExerciseConverter exerciseConverter,
                                GroupRepository groupRepository) {
-        super(exerciseRepository, exerciseConverter);
+        super(questionRepository, exerciseConverter);
         this.groupRepository = groupRepository;
-        this.exerciseRepository = exerciseRepository;
+        this.questionRepository = questionRepository;
     }
 
     @Override
     @Transactional
-    public void create(ExerciseRequest request) {
+    public void create(QuestionRequest request) {
         // check topic exist
-        GroupEntity topic = groupRepository.findById(request.getTopicId()).orElseThrow(() -> new ResourceNotFoundException("Topic not exist!"));
+        GroupEntity topic = groupRepository.findById(request.getGroupId()).orElseThrow(() -> new ResourceNotFoundException("Topic not exist!"));
 
         // save exercise
         QuestionEntity entity = QuestionEntity.builder()
@@ -43,13 +45,13 @@ public class ExerciseServiceImpl extends BaseServiceImpl<QuestionDto, QuestionEn
 
     @Override
     @Transactional
-    public void update(Long id, ExerciseRequest request) {
+    public void update(UUID id, QuestionRequest request) {
         // Tìm topic theo ID
-        GroupEntity topic = groupRepository.findById(request.getTopicId())
+        GroupEntity topic = groupRepository.findById(request.getGroupId())
                 .orElseThrow(() -> new ResourceNotFoundException("Topic not exist"));
 
         // Tìm exercise theo ID
-        QuestionEntity exercise = exerciseRepository.findById(id)
+        QuestionEntity exercise = questionRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Topic not exist"));
 
         // Cập nhật thông tin exercise

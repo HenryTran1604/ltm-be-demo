@@ -13,7 +13,7 @@ public class ExamUserExerciseConverter extends AbstractBaseConverter<ExamUserDet
         return ExamUserDetailDto.builder()
                 .id(entity.getId())
                 .userExamId(entity.getExamUser().getId())
-                .examExercise(examExerciseConverter.toDto(entity.getExamDetail()))
+                .examDetail(examExerciseConverter.toDto(entity.getExamDetail()))
                 .ac(entity.isAc())
                 .alias(entity.getAlias().getCode())
                 .createdAt(entity.getCreatedAt())

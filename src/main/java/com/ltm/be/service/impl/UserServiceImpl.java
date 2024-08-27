@@ -33,10 +33,10 @@ public class UserServiceImpl extends BaseServiceImpl<UserDto, UserEntity> implem
 
     @Override
     public UserDto create(RegistrationRequest request) {
-        checkExistedUser(request.getUsername(), request.getIp());
+        checkExistedUser(request.getUserName(), request.getIpAddress());
         UserEntity userEntity = UserEntity.builder()
-                .userName(request.getUsername().toLowerCase())
-                .ipAddress(request.getIp())
+                .userName(request.getUserName().toLowerCase())
+                .ipAddress(request.getIpAddress())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(roleRepository.findByName("ROLE_USER").orElseThrow(() -> new ResourceNotFoundException("Role user not exist")))
                 .build();
@@ -45,14 +45,14 @@ public class UserServiceImpl extends BaseServiceImpl<UserDto, UserEntity> implem
     }
 
     @Override
-    public UserDto getUserByUsername(String username) {
-        UserEntity userEntity = userRepository.findByUserName(username).orElseThrow(() -> new ResourceNotFoundException("User not exists"));
+    public UserDto getByUsername(String userName) {
+        UserEntity userEntity = userRepository.findByUserName(userName).orElseThrow(() -> new ResourceNotFoundException("User not exists"));
         return userConverter.toDto(userEntity);
     }
 
     @Override
-    public boolean existsByUsernameAndIp(String username, String ip) {
-        return userRepository.existsByUserNameAndIpAddress(username, ip);
+    public boolean existsByUsernameAndIp(String userName, String ip) {
+        return userRepository.existsByUserNameAndIpAddress(userName, ip);
     }
 
     private void checkExistedUser(String username, String ip) {

@@ -8,15 +8,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class ExamConverter extends AbstractBaseConverter<ExamDto, ExamEntity>{
+public class ExamConverter {
     private final ExamTypeConverter examTypeConverter;
-    @Override
     public ExamDto toDto(ExamEntity entity) {
         return ExamDto.builder()
                 .id(entity.getId())
+                .name(entity.getName())
                 .startTime(entity.getStartTime())
                 .endTime(entity.getEndTime())
-                .title(entity.getTitle())
                 .examType(examTypeConverter.toDto(entity.getExamType()))
                 .createdAt(entity.getCreatedAt())
                 .build();
